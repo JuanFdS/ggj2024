@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=14 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_xrxmd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_30h5h"]
-size = Vector2(126, 672)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
+normal = Vector2(1, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1smdh"]
-size = Vector2(1182, 107)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wwflv"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dioxf"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66xfx"]
 radius = 30.0
@@ -36,26 +41,26 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_i1ca1")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-53, 326)
-shape = SubResource("RectangleShape2D_30h5h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(0, 327)
+shape = SubResource("WorldBoundaryShape2D_kf7ph")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1201, 326)
-shape = SubResource("RectangleShape2D_30h5h")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(1152, 323)
+shape = SubResource("WorldBoundaryShape2D_wwflv")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(581, -43.5)
-shape = SubResource("RectangleShape2D_1smdh")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(571, 0)
+shape = SubResource("WorldBoundaryShape2D_dioxf")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(581, 689)
-shape = SubResource("RectangleShape2D_1smdh")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(592, 647)
+shape = SubResource("WorldBoundaryShape2D_niugd")
 
 [node name="LamparitaRota" type="Node2D" parent="."]
 unique_name_in_owner = true
