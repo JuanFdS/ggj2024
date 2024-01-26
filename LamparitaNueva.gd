@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-@onready var area: Area2D = %Area
+@onready var areaRosca: Area2D = %AreaRosca
 
 func _ready():
-	area.area_entered.connect(func(otro_area):
+	areaRosca.area_entered.connect(func(otra_area):
 		collision_layer = 0
 		collision_mask = 0
 		sleeping = true

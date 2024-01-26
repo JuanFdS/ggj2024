@@ -3,7 +3,7 @@ extends Node2D
 var cantidad_gallinas = 1
 
 func _ready():
-	%Button.pressed.connect(func(): get_tree().reload_current_scene())
+	%BotonReiniciar.pressed.connect(func(): get_tree().reload_current_scene())
 
 func _process(_delta):
 	%Contador.text = "Gallinas: %s" % cantidad_gallinas

@@ -98,13 +98,13 @@ polygon = PackedVector2Array(566, 9, 566, 30, 557, 47, 558, 63, 571, 73, 588, 74
 position = Vector2(29.5717, -0.109863)
 shape = SubResource("RectangleShape2D_du3yr")
 
-[node name="Area" type="Area2D" parent="LamparitaNueva"]
+[node name="AreaRosca" type="Area2D" parent="LamparitaNueva"]
 unique_name_in_owner = true
 position = Vector2(8.57166, 1.89014)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva/Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva/AreaRosca"]
 shape = SubResource("CircleShape2D_o31s1")
 
 [node name="Gallina" type="RigidBody2D" parent="."]
@@ -144,7 +144,7 @@ unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Button" type="Button" parent="."]
+[node name="BotonReiniciar" type="Button" parent="."]
 unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
