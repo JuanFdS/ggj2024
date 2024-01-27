@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=18 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
 [ext_resource type="AudioStream" uid="uid://urn14dv2n22q" path="res://Sounds/Spawn/sp_7.ogg" id="2_rg2nc"]
@@ -21,10 +21,6 @@
 script = ExtResource("4_mss6c")
 streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), ExtResource("7_iyrit"), ExtResource("2_yxl5g"), ExtResource("9_mwsg2"), ExtResource("2_rg2nc"), ExtResource("10_ggvnp"), ExtResource("11_v3b3n"), ExtResource("12_bf3pd"), ExtResource("13_8s7xk")])
 
-[sub_resource type="Resource" id="Resource_y0eyd"]
-script = ExtResource("4_mss6c")
-streams = Array[AudioStream]([ExtResource("15_m26l7"), ExtResource("14_btymc"), ExtResource("16_fp62b")])
-
 [node name="Sounds" type="Node"]
 script = ExtResource("1_nv72u")
 
@@ -34,9 +30,40 @@ script = ExtResource("3_5uvqe")
 use_stream_array = true
 stream_array = SubResource("Resource_n5ycp")
 
-[node name="GallinaSfx" type="AudioStreamPlayer" parent="."]
+[node name="GallinaSfx" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GallinaSfx"]
 stream = ExtResource("14_btymc")
-max_polyphony = 12
-script = ExtResource("3_5uvqe")
-use_stream_array = true
-stream_array = SubResource("Resource_y0eyd")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("15_m26l7")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("16_fp62b")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("14_btymc")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("15_m26l7")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("16_fp62b")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("14_btymc")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("15_m26l7")
+bus = &"Gallinas"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="GallinaSfx"]
+stream = ExtResource("16_fp62b")
+bus = &"Gallinas"
