@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpa1iambc5006"]
+
+[ext_resource type="Script" path="res://EstadoDelJuego.gd" id="1_2hif3"]
+
+[node name="EstadoDelJuego" type="Node"]
+script = ExtResource("1_2hif3")

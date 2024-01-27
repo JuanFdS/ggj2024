@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 RuakeLayer="*res://addons/ruake/core/RuakeLayer.tscn"
+EstadoDelJuego="*res://EstadoDelJuego.tscn"
 
 [editor]
 
@@ -26,6 +27,7 @@ naming/scene_name_casing=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ruake/plugin.cfg")
+EstadoDelJuego="*res://EstadoDelJuego.tscn"
 
 [input]
 
@@ -39,3 +41,8 @@ toggle_ruake={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":49,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Cosas"
+2d_physics/layer_32="Terreno"

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr7eculfvr0fs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
+bounce = 1.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8v2r4"]
+radius = 48.28
+
+[node name="Gallina" type="RigidBody2D"]
+position = Vector2(219, 571)
+collision_mask = 2147483649
+physics_material_override = SubResource("PhysicsMaterial_ag5ly")
+
+[node name="Gallina" type="Polygon2D" parent="."]
+position = Vector2(-552, -564)
+polygon = PackedVector2Array(531, 600, 527, 580, 536, 565, 565, 555, 587, 564, 597, 579, 596, 588, 615, 581, 595, 599, 571, 607, 551, 609)
+
+[node name="Polygon2D" type="Polygon2D" parent="Gallina"]
+polygon = PackedVector2Array(537, 562, 526, 540, 534, 510, 551, 511, 563, 530, 561, 539, 552, 559)
+
+[node name="Pico" type="Polygon2D" parent="Gallina"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(528, 536, 498, 547, 532, 554)
+
+[node name="Ojos" type="Polygon2D" parent="Gallina"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(538, 527, 547, 516, 550, 531)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8v2r4")
