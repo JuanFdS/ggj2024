@@ -17,7 +17,7 @@ func configurar_tipos_de_cosas(tipos_de_cosas: Array[TipoDeCosa]):
 	)
 	if(tipos_de_cosas.size() == 1):
 		EstadoDelJuego.tipo_de_cosa_seleccionada = tipos_de_cosas.front()
-		hide()
+		%MenuDeCosas.hide()
 	else:
 		show()
 
