@@ -4,12 +4,11 @@ const GALLINA = preload("res://Gallina.tscn")
 
 var tipo_de_cosa_seleccionada: PackedScene
 var cantidad_de_cosas: int
-var ganado: bool = false
+var ganado: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	inicializar()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawnear_cosa() -> RigidBody2D:
@@ -19,6 +18,7 @@ func spawnear_cosa() -> RigidBody2D:
 func inicializar():
 	cantidad_de_cosas = 0
 	tipo_de_cosa_seleccionada = GALLINA
+	ganado = false
 	
 func reiniciar():
 	inicializar()
