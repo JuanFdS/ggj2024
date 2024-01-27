@@ -21,4 +21,4 @@ func stop_all_sounds():
 		stream.stop()
 
 func play_select_cosa():
-	pass
+	$SeleccionarSfx.play()
