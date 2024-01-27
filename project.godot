@@ -15,6 +15,10 @@ run/main_scene="res://Habitacion.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor]
+
+naming/scene_name_casing=1
+
 [input]
 
 spawn={
