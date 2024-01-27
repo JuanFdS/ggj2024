@@ -1,6 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
+[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/LamparitaRota.tscn" id="2_im02a"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
 [ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Cosas/Gallina.tscn" id="3_2a7ha"]
 [ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="3_mpgl4"]
@@ -19,9 +20,6 @@ normal = Vector2(-1, 0)
 normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_66xfx"]
-radius = 30.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppkp1"]
 font_size = 50
@@ -59,23 +57,8 @@ shape = SubResource("WorldBoundaryShape2D_dioxf")
 position = Vector2(592, 647)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
-[node name="LamparitaRota" type="Node2D" parent="."]
+[node name="LamparitaRota" parent="." instance=ExtResource("2_im02a")]
 unique_name_in_owner = true
-position = Vector2(555, 19)
-
-[node name="Polygon2D" type="Polygon2D" parent="LamparitaRota"]
-position = Vector2(-572, -6)
-color = Color(0.305882, 0.301961, 0, 1)
-polygon = PackedVector2Array(566, 9, 566, 30, 557, 47, 558, 63, 571, 73, 588, 74, 603, 69, 602, 52, 600, 40, 586, 33, 583, 9)
-
-[node name="Area2D" type="Area2D" parent="LamparitaRota"]
-position = Vector2(8, 34)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaRota/Area2D"]
-position = Vector2(-3, -4)
-shape = SubResource("CircleShape2D_66xfx")
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("2_sn8kj")]
 
