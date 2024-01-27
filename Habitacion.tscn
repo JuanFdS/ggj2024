@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
 [ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="7_7rnom"]
-[ext_resource type="PackedScene" path="res://Sounds.tscn" id="7_d6fj4"]
+[ext_resource type="PackedScene" uid="uid://dc63h80qidv81" path="res://Sounds.tscn" id="7_d6fj4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
