@@ -14,6 +14,7 @@ config/name="cuantasLamparitas"
 run/main_scene="res://scenes/boot/bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+run/physics_engine="DEFAULT"
 
 [autoload]
 

@@ -5,14 +5,8 @@ const velocidad_maxima_cosa = Vector2(1000, 1000)
 var ultima_posicion_cursor: Vector2
 var velocidad_cursor: Vector2
 
-@export var tipos_de_cosas: Array[TipoDeCosa]
-
 func _ready():
-	%InterfazDeUsuario.reiniciar.connect(func():
-		EstadoDePartida.reiniciar()
-		get_tree().reload_current_scene()
-	)
-	%InterfazDeUsuario.configurar_tipos_de_cosas(tipos_de_cosas)
+	pass
 
 func _process(delta):
 	var posicion_actual_cursor = get_viewport().get_mouse_position()

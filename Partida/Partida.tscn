@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7g5i5lqrsk17"]
+[gd_scene load_steps=3 format=3 uid="uid://b7g5i5lqrsk17"]
 
 [ext_resource type="Script" path="res://Partida/Partida.gd" id="1_vu7c2"]
+[ext_resource type="PackedScene" uid="uid://c2yocnvxnapsh" path="res://Partida/HUD/InterfazDeUsuario.tscn" id="2_16xwa"]
 
 [node name="Partida" type="Node2D"]
 script = ExtResource("1_vu7c2")
 
 [node name="Habitacion" type="Node2D" parent="."]
+
+[node name="InterfazDeUsuario" parent="." instance=ExtResource("2_16xwa")]
+unique_name_in_owner = true

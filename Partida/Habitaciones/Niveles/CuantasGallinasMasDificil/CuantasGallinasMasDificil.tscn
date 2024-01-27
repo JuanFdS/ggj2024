@@ -1,11 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bddrigd52rbbe"]
+[gd_scene load_steps=11 format=3 uid="uid://bddrigd52rbbe"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_7yjuk"]
-[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="2_ucpc3"]
 [ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="3_af1kb"]
 [ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="4_4e6o8"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="5_bgpm7"]
-[ext_resource type="PackedScene" uid="uid://c2yocnvxnapsh" path="res://Partida/HUD/InterfazDeUsuario.tscn" id="6_so7jn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -27,7 +25,6 @@ size = Vector2(22, 246)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_7yjuk")
-tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("2_ucpc3")])
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -1
@@ -70,9 +67,6 @@ position = Vector2(743, 587)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="InterfazDeUsuario" parent="." instance=ExtResource("6_so7jn")]
-unique_name_in_owner = true
 
 [node name="Mesita" type="StaticBody2D" parent="."]
 position = Vector2(789, 607)
