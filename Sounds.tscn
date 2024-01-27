@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=29 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
+[ext_resource type="AudioStream" uid="uid://ck3ols50rtx2x" path="res://Sounds/click.ogg" id="2_82y2r"]
 [ext_resource type="AudioStream" uid="uid://co1g80w50b8wl" path="res://Sounds/lampara_win.ogg" id="2_blt3v"]
 [ext_resource type="AudioStream" uid="uid://bbt77j1f6j1wc" path="res://Sounds/LampCollision/col lamp_4.ogg" id="2_g7byw"]
 [ext_resource type="AudioStream" uid="uid://urn14dv2n22q" path="res://Sounds/Spawn/sp_7.ogg" id="2_rg2nc"]
@@ -37,9 +38,14 @@ streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), Ex
 [node name="Sounds" type="Node"]
 script = ExtResource("1_nv72u")
 
+[node name="SeleccionarSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_82y2r")
+bus = &"Sound"
+
 [node name="LampWinSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_blt3v")
 volume_db = 18.0
+bus = &"Sound"
 
 [node name="LampCollisionSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g7byw")
@@ -52,6 +58,7 @@ stream_array = SubResource("Resource_fe3kv")
 
 [node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rg2nc")
+bus = &"Sound"
 script = ExtResource("3_5uvqe")
 use_stream_array = true
 stream_array = SubResource("Resource_n5ycp")
