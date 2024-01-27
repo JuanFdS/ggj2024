@@ -7,9 +7,6 @@
 friction = 0.5
 bounce = 1.2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_igyre"]
-size = Vector2(75, 246)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_psnfl"]
 radius = 1024.0
 
@@ -19,6 +16,9 @@ radius = 93.02
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh18q"]
 size = Vector2(162, 236)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igyre"]
+size = Vector2(49, 180)
+
 [node name="Ingeniero" type="RigidBody2D"]
 position = Vector2(1144, 1204)
 collision_mask = 2147483649
@@ -27,60 +27,64 @@ center_of_mass_mode = 1
 center_of_mass = Vector2(0, 1)
 script = ExtResource("1_l0uwo")
 
-[node name="PuntoDeEnchufado" type="Marker2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.7, 0.7)
+
+[node name="PuntoDeEnchufado" type="Marker2D" parent="Node2D"]
 unique_name_in_owner = true
 position = Vector2(4, -246)
 rotation = -0.0364874
+scale = Vector2(1, 1)
 
-[node name="Mirando" type="Polygon2D" parent="."]
+[node name="Mirando" type="Polygon2D" parent="Node2D"]
 unique_name_in_owner = true
 position = Vector2(8, -46)
 polygon = PackedVector2Array(-34, 86, -42, 42, -36, -44, -95, -1, -89, -29, -30, -69, -55, -94, -61, -129, -27, -175, 21, -175, 39, -150, 39, -120, 19, -88, 64, -94, 75, -148, 41, -165, 43, -177, 87, -160, 79, -95, 70, -80, 24, -75, 28, 22, 38, 80, 26, 78, 15, 33, -21, 42, -19, 74)
 
-[node name="AgarrandoLamparita" type="Polygon2D" parent="."]
+[node name="AgarrandoLamparita" type="Polygon2D" parent="Node2D"]
 unique_name_in_owner = true
 visible = false
 polygon = PackedVector2Array(-20, 31, -54, 11, -18, -23, -16, -61, -79, -108, -70, -144, -12, -184, -5, -174, -47, -146, -58, -124, -13, -83, -17, -112, -5, -130, 28, -129, 44, -110, 30, -98, 28, -83, 86, -115, 26, -169, 44, -184, 116, -111, 30, -67, 28, -27, 74, 4, 30, 31, 22, 20, 44, 8, 14, -12, -6, -15, -27, 5, -13, 20)
 
-[node name="Sprite2D" type="Sprite2D" parent="AgarrandoLamparita"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/AgarrandoLamparita"]
 position = Vector2(14, -194)
 rotation = 3.13316
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_3grnq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -87)
-shape = SubResource("RectangleShape2D_igyre")
-
-[node name="AreaDetectoraDeLamparitas" type="Area2D" parent="."]
+[node name="AreaDetectoraDeLamparitas" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
 position = Vector2(25, -39)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetectoraDeLamparitas"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaDetectoraDeLamparitas"]
 position = Vector2(-6, -62)
 shape = SubResource("CircleShape2D_psnfl")
 
-[node name="AreaAgarradoraDeLamparitas" type="Area2D" parent="."]
+[node name="AreaAgarradoraDeLamparitas" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAgarradoraDeLamparitas"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaAgarradoraDeLamparitas"]
 position = Vector2(4, -175)
 shape = SubResource("CircleShape2D_gpf5d")
 
-[node name="AreaDeEnchufado" type="Area2D" parent="."]
+[node name="AreaDeEnchufado" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeEnchufado"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaDeEnchufado"]
 position = Vector2(13, -89)
 shape = SubResource("RectangleShape2D_mh18q")
 
-[node name="Saltar" type="Timer" parent="."]
+[node name="Saltar" type="Timer" parent="Node2D"]
 unique_name_in_owner = true
 wait_time = 2.3
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -64)
+shape = SubResource("RectangleShape2D_igyre")
