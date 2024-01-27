@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://j5ipnhegb71v"]
+
+[ext_resource type="Texture2D" uid="uid://d3pnil56tdc0x" path="res://Assets/ingeniero/Ingen2.png" id="1_gykby"]
+[ext_resource type="Texture2D" uid="uid://c8jl2sdqqgr3" path="res://Assets/ingeniero/Ingen3.png" id="2_fbq13"]
+[ext_resource type="Texture2D" uid="uid://ci2bnrv4jqie0" path="res://Assets/ingeniero/Ingen4.png" id="3_retch"]
+[ext_resource type="Texture2D" uid="uid://nxb2lmgcnny1" path="res://Assets/ingeniero/Ingen5.png" id="4_eom7q"]
+[ext_resource type="Texture2D" uid="uid://c4che76qg1bkf" path="res://Assets/ingeniero/Ingen 1.png" id="5_hd451"]
+[ext_resource type="Texture2D" uid="uid://bvk0k4k1wt8pv" path="res://Assets/ingeniero/Ingeniero con foco.png" id="6_lg6nh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gykby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fbq13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_retch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eom7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hd451")
+}],
+"loop": true,
+"name": &"cayendose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lg6nh")
+}],
+"loop": true,
+"name": &"con_foco",
+"speed": 5.0
+}]

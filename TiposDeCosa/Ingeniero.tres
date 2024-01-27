@@ -2,12 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://chgyw6mdy5mon" path="res://Cosas/Ingeniero/Ingeniero.tscn" id="1_07wk0"]
 [ext_resource type="Script" path="res://TipoDeCosa.gd" id="2_ulbgs"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qywrp"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://bvk0k4k1wt8pv" path="res://Assets/ingeniero/Ingeniero con foco.png" id="3_2sduc"]
 
 [resource]
 script = ExtResource("2_ulbgs")
 nombre = "Ingeniero"
 escena = ExtResource("1_07wk0")
-textura = SubResource("PlaceholderTexture2D_qywrp")
+textura = ExtResource("3_2sduc")
