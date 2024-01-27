@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dms7l5mfubcpp"]
+[gd_scene load_steps=16 format=3 uid="uid://biwj7op75tfdu"]
 
-[ext_resource type="Script" path="res://Habitacion.gd" id="1_au45p"]
-[ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_4s6gc"]
-[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_1v38x"]
-[ext_resource type="PackedScene" uid="uid://btibma3e67qwh" path="res://Cosas/Elefante.tscn" id="3_28bn2"]
+[ext_resource type="Script" path="res://Habitacion.gd" id="1_6vmq2"]
+[ext_resource type="Script" path="res://Cosas/Lamparita/LamparitaNueva.gd" id="2_q2tu4"]
+[ext_resource type="PackedScene" uid="uid://btibma3e67qwh" path="res://Cosas/Elefante.tscn" id="3_hnv7c"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="4_2w0tk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -19,6 +19,16 @@ normal = Vector2(0, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_66xfx"]
 radius = 30.0
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1633i"]
+friction = 0.7
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o31s1"]
+radius = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
+size = Vector2(75, 36)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
 
@@ -31,7 +41,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Habitacion" type="Node2D"]
-script = ExtResource("1_au45p")
+script = ExtResource("1_6vmq2")
 
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648
@@ -72,7 +82,34 @@ collision_mask = 0
 position = Vector2(-3, -4)
 shape = SubResource("CircleShape2D_66xfx")
 
-[node name="LamparitaNueva" parent="." instance=ExtResource("2_4s6gc")]
+[node name="LamparitaNueva" type="RigidBody2D" parent="."]
+position = Vector2(752, 352)
+collision_layer = 0
+collision_mask = 2147483649
+physics_material_override = SubResource("PhysicsMaterial_1633i")
+sleeping = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("2_q2tu4")
+
+[node name="Polygon2D2" type="Polygon2D" parent="LamparitaNueva"]
+position = Vector2(-109.428, 564.89)
+rotation = -1.39289
+color = Color(0.921569, 0.988235, 0, 1)
+polygon = PackedVector2Array(566, 9, 566, 30, 557, 47, 558, 63, 571, 73, 588, 74, 603, 69, 602, 52, 600, 40, 586, 33, 583, 9)
+
+[node name="AreaRosca" type="Area2D" parent="LamparitaNueva"]
+unique_name_in_owner = true
+position = Vector2(8.57166, 1.89014)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva/AreaRosca"]
+shape = SubResource("CircleShape2D_o31s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva"]
+position = Vector2(29.5717, -0.109863)
+shape = SubResource("RectangleShape2D_du3yr")
 
 [node name="Gallina" type="RigidBody2D" parent="."]
 position = Vector2(219, 571)
@@ -97,10 +134,10 @@ polygon = PackedVector2Array(538, 527, 547, 516, 550, 531)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gallina"]
 shape = SubResource("CircleShape2D_8v2r4")
 
-[node name="RigidBody2D" parent="." instance=ExtResource("3_28bn2")]
+[node name="RigidBody2D" parent="." instance=ExtResource("3_hnv7c")]
 position = Vector2(1708, 1152)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("3_28bn2")]
+[node name="RigidBody2D2" parent="." instance=ExtResource("3_hnv7c")]
 position = Vector2(556, 1152)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -108,7 +145,7 @@ anchor_mode = 0
 zoom = Vector2(0.5, 0.5)
 
 [node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1v38x")
+stream = ExtResource("4_2w0tk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
