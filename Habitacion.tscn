@@ -158,3 +158,5 @@ text = "Reintentar"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
