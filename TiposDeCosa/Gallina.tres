@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TipoDeCosa" load_steps=4 format=3 uid="uid://ddj4n35rvig3h"]
+
+[ext_resource type="Script" path="res://TipoDeCosa.gd" id="1_0pp2g"]
+[ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Gallina.tscn" id="1_r1rad"]
+[ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/Pollo1.png" id="3_77yv6"]
+
+[resource]
+script = ExtResource("1_0pp2g")
+escena = ExtResource("1_r1rad")
+textura = ExtResource("3_77yv6")
