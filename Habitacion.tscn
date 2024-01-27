@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=19 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_xrxmd"]
+[ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Gallina.tscn" id="3_2a7ha"]
 [ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_mpgl4"]
+[ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -28,19 +30,20 @@ radius = 13.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
 size = Vector2(75, 36)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
-bounce = 1.1
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8v2r4"]
-radius = 48.28
-
 [sub_resource type="LabelSettings" id="LabelSettings_ppkp1"]
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3582"]
-size = Vector2(267, 549)
+size = Vector2(263.5, 549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anw5k"]
+
+[sub_resource type="Theme" id="Theme_aud63"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xtmx5"]
+size = Vector2(100, 100)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_i1ca1")
@@ -113,28 +116,7 @@ shape = SubResource("CircleShape2D_o31s1")
 position = Vector2(29.5717, -0.109863)
 shape = SubResource("RectangleShape2D_du3yr")
 
-[node name="Gallina" type="RigidBody2D" parent="."]
-position = Vector2(219, 571)
-collision_mask = 2147483649
-physics_material_override = SubResource("PhysicsMaterial_ag5ly")
-
-[node name="Gallina" type="Polygon2D" parent="Gallina"]
-position = Vector2(-552, -564)
-polygon = PackedVector2Array(531, 600, 527, 580, 536, 565, 565, 555, 587, 564, 597, 579, 596, 588, 615, 581, 595, 599, 571, 607, 551, 609)
-
-[node name="Polygon2D" type="Polygon2D" parent="Gallina/Gallina"]
-polygon = PackedVector2Array(537, 562, 526, 540, 534, 510, 551, 511, 563, 530, 561, 539, 552, 559)
-
-[node name="Pico" type="Polygon2D" parent="Gallina/Gallina"]
-color = Color(1, 1, 0, 1)
-polygon = PackedVector2Array(528, 536, 498, 547, 532, 554)
-
-[node name="Ojos" type="Polygon2D" parent="Gallina/Gallina"]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(538, 527, 547, 516, 550, 531)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gallina"]
-shape = SubResource("CircleShape2D_8v2r4")
+[node name="Gallina" parent="." instance=ExtResource("3_2a7ha")]
 
 [node name="Mensajito" type="Label" parent="."]
 unique_name_in_owner = true
@@ -165,14 +147,59 @@ text = "Reintentar"
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="MenúItem" type="RigidBody2D" parent="."]
+[node name="MenúItem" type="StaticBody2D" parent="."]
 position = Vector2(995, 342)
-collision_mask = 2147483649
+collision_layer = 2147483648
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MenúItem"]
+position = Vector2(1.75, 0)
 shape = SubResource("RectangleShape2D_r3582")
 
-[node name="Polygon2D" type="Polygon2D" parent="MenúItem"]
+[node name="CanvasLayer" type="CanvasLayer" parent="MenúItem"]
+
+[node name="Control" type="Control" parent="MenúItem/CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.773
+anchor_top = 0.145
+anchor_right = 0.957
+anchor_bottom = 0.923
+offset_left = -23.4961
+offset_top = -23.96
+offset_right = 25.536
+offset_bottom = 16.896
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenúItem/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_anw5k")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenúItem/CanvasLayer/Control/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_aud63")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="MenúItem/CanvasLayer/Control/PanelContainer/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureButton" type="TextureButton" parent="MenúItem/CanvasLayer/Control/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("PlaceholderTexture2D_xtmx5")
+script = ExtResource("4_th3gl")
+tipo_de_cosa = ExtResource("3_2a7ha")
 
 [node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mpgl4")
