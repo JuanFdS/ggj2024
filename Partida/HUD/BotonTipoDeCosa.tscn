@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgeq8sluvkhiw"]
 
-[ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/gallina/Pollo1.png" id="1_fgmb4"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="2_sbrd4"]
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="2_yino0"]
-[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_qk4fc"]
+[ext_resource type="Texture2D" uid="uid://bvk0k4k1wt8pv" path="res://Assets/ingeniero/Ingeniero con foco.png" id="3_f67tb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcp3f"]
 bg_color = Color(0.6, 0.6, 0.6, 0.0392157)
@@ -27,14 +27,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xcp3f")
 script = ExtResource("2_yino0")
-tipo_de_cosa = ExtResource("3_qk4fc")
+tipo_de_cosa = ExtResource("2_sbrd4")
 
 [node name="Boton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_fgmb4")
+texture_normal = ExtResource("3_f67tb")
 texture_focused = SubResource("GradientTexture1D_tiwdq")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 6
