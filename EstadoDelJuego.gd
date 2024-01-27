@@ -2,7 +2,7 @@ extends Node
 
 const GALLINA = preload("res://Cosas/Gallina.tscn")
 
-var tipo_de_cosa_seleccionada: PackedScene
+var tipo_de_cosa_seleccionada: PackedScene = GALLINA
 var cantidad_de_cosas: int
 var ganado: bool
 
@@ -16,8 +16,8 @@ func spawnear_cosa() -> RigidBody2D:
 	return tipo_de_cosa_seleccionada.instantiate()
 	
 func inicializar():
+	# tipo_de_cosa_seleccionada = GALLINA
 	cantidad_de_cosas = 0
-	tipo_de_cosa_seleccionada = GALLINA
 	ganado = false
 	
 func reiniciar():

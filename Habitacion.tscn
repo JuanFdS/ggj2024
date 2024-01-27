@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=18 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/Pollo1.png" id="4_ru17d"]
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
+[ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="7_7rnom"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -30,6 +31,9 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anw5k"]
 
 [sub_resource type="Theme" id="Theme_aud63"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xedp5"]
+size = Vector2(100, 100)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_i1ca1")
@@ -143,7 +147,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Reintentar"
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="BotonGallina" type="TextureButton" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -153,6 +157,17 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("4_th3gl")
 tipo_de_cosa = ExtResource("5_5pbi7")
+
+[node name="BotonElefante" type="TextureButton" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("PlaceholderTexture2D_xedp5")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("4_th3gl")
+tipo_de_cosa = ExtResource("7_7rnom")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_right = 40.0
