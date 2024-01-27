@@ -12,7 +12,11 @@ func _ready():
 	)
 
 func _process(delta):
-	%Contador.text = "Gallinas: %s" % EstadoDelJuego.cantidad_de_cosas
+	%Contador.text = " + ".join(EstadoDelJuego.cantidad_de_cosas.keys().map(func(cosa):
+		var cantidad = EstadoDelJuego.cantidad_de_cosas[cosa]
+		return "%d × %s" % [cantidad, cosa]
+	))
+	
 	if(EstadoDelJuego.ganado):
 		%Mensajito.text = "¡Ganaste!"
 	
