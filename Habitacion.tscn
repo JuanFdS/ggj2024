@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=15 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_xrxmd"]
@@ -21,11 +21,11 @@ radius = 30.0
 friction = 0.7
 bounce = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
-size = Vector2(75, 36)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_o31s1"]
 radius = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
+size = Vector2(75, 36)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
@@ -37,6 +37,9 @@ radius = 48.28
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3582"]
+size = Vector2(267, 549)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_i1ca1")
@@ -86,6 +89,8 @@ collision_layer = 0
 collision_mask = 2147483649
 physics_material_override = SubResource("PhysicsMaterial_1633i")
 sleeping = true
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("2_xrxmd")
 
 [node name="Polygon2D2" type="Polygon2D" parent="LamparitaNueva"]
@@ -93,10 +98,6 @@ position = Vector2(-109.428, 564.89)
 rotation = -1.39289
 color = Color(0.921569, 0.988235, 0, 1)
 polygon = PackedVector2Array(566, 9, 566, 30, 557, 47, 558, 63, 571, 73, 588, 74, 603, 69, 602, 52, 600, 40, 586, 33, 583, 9)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva"]
-position = Vector2(29.5717, -0.109863)
-shape = SubResource("RectangleShape2D_du3yr")
 
 [node name="AreaRosca" type="Area2D" parent="LamparitaNueva"]
 unique_name_in_owner = true
@@ -106,6 +107,10 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva/AreaRosca"]
 shape = SubResource("CircleShape2D_o31s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LamparitaNueva"]
+position = Vector2(29.5717, -0.109863)
+shape = SubResource("RectangleShape2D_du3yr")
 
 [node name="Gallina" type="RigidBody2D" parent="."]
 position = Vector2(219, 571)
@@ -158,3 +163,12 @@ text = "Reintentar"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="MenúItem" type="RigidBody2D" parent="."]
+position = Vector2(995, 342)
+collision_mask = 2147483649
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenúItem"]
+shape = SubResource("RectangleShape2D_r3582")
+
+[node name="Polygon2D" type="Polygon2D" parent="MenúItem"]

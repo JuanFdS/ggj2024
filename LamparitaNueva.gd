@@ -3,7 +3,7 @@ extends RigidBody2D
 @onready var areaRosca: Area2D = %AreaRosca
 
 func _ready():
-	areaRosca.area_entered.connect(func(otra_area):
+	areaRosca.area_entered.connect(func(_otra_area):
 		collision_layer = 0
 		collision_mask = 0
 		sleeping = true
@@ -12,3 +12,8 @@ func _ready():
 		global_position = %LamparitaRota.global_position
 		%Mensajito.text = "Ganaste, sos une cape!"
 	)
+	
+	body_entered.connect(func(_otra_area):
+		pass
+	)
+	
