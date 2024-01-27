@@ -14,6 +14,7 @@ func _ready():
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):
 		lamparita_a_buscar = lamparita
 		estado = Estado.BuscandoLamparita
+		%Mirando.animation = "corriendo"
 	, CONNECT_ONE_SHOT)
 	
 	%AreaAgarradoraDeLamparitas.body_entered.connect(func(lamparita: Node2D):
