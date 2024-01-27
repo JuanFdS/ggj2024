@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://btibma3e67qwh"]
+[gd_scene load_steps=9 format=3 uid="uid://btibma3e67qwh"]
 
 [ext_resource type="Script" path="res://Cosas/Elefante.gd" id="1_b3yir"]
+[ext_resource type="SpriteFrames" uid="uid://chveuwmwhwqfr" path="res://Assets/elefante/Elefante.tres" id="2_p7pum"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f7mod"]
 bounce = 10.0
@@ -56,6 +57,7 @@ collision_mask = 2147483648
 script = ExtResource("1_b3yir")
 
 [node name="Sprite" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(-1, -1)
 scale = Vector2(4, 4)
 color = Color(0.827451, 0.737255, 0.952941, 1)
@@ -109,3 +111,9 @@ collision_layer = 0
 collision_mask = 2147483648
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -37)
+scale = Vector2(0.578125, 0.519375)
+sprite_frames = ExtResource("2_p7pum")
+animation = &"izquierda_a_derecha"
