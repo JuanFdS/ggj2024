@@ -21,22 +21,23 @@ func _ready():
 		%Mirando.visible = false
 		%AgarrandoLamparita.visible = true
 		lamparita.queue_free()
-	, CONNECT_ONE_SHOT)
-	
-	%AreaDeEnchufado.area_entered.connect(func(area_lampara_rota):
-		estado = Estado.Enchufado
-		var lampara_rota = area_lampara_rota.get_parent()
-		global_position = lampara_rota.global_position - %PuntoDeEnchufado.position
-		await get_tree().physics_frame
-		collision_layer = 0
-		collision_mask = 0
-		sleeping = true
-		set_physics_process(false)
 		
-		var lamparita_nueva = $Node2D/AgarrandoLamparita/LamparitaNueva
-		lamparita_nueva.visible = false
-		lampara_rota.arreglar()
-		EstadoDelJuego.se_gano()
+		%AreaDeEnchufado.area_entered.connect(func(area_lampara_rota):
+			estado = Estado.Enchufado
+			var lampara_rota = area_lampara_rota.get_parent()
+			global_position = lampara_rota.global_position - %PuntoDeEnchufado.position
+			await get_tree().physics_frame
+			collision_layer = 0
+			collision_mask = 0
+			sleeping = true
+			set_physics_process(false)
+			
+			var lamparita_nueva = $Node2D/AgarrandoLamparita/LamparitaNueva
+			lamparita_nueva.visible = false
+			lampara_rota.arreglar()
+			EstadoDelJuego.se_gano()
+		, CONNECT_ONE_SHOT)
+		
 	, CONNECT_ONE_SHOT)
 	
 	%Saltar.timeout.connect(self.saltar)
