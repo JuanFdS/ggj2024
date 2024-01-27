@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://2petxoiduwhd"]
+
+[ext_resource type="Script" path="res://LamparitaNueva.gd" id="1_y0wex"]
+[ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_sld4w"]
+[ext_resource type="Texture2D" uid="uid://b86ekkcc5kn7t" path="res://Assets/lamparita/2d_lights_and_shadows_neutral_point_light.webp" id="3_ym527"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1633i"]
+friction = 0.7
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o31s1"]
+radius = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
+size = Vector2(75, 36)
+
+[node name="LamparitaNueva" type="RigidBody2D"]
+position = Vector2(752, 352)
+collision_layer = 0
+collision_mask = 2147483649
+physics_material_override = SubResource("PhysicsMaterial_1633i")
+sleeping = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_y0wex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(34, 1)
+rotation = 1.5993
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_sld4w")
+
+[node name="AreaRosca" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(8.57166, 1.89014)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRosca"]
+shape = SubResource("CircleShape2D_o31s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29.5717, -0.109863)
+shape = SubResource("RectangleShape2D_du3yr")
+
+[node name="Luz" type="PointLight2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("3_ym527")
+offset = Vector2(0, 2)
+texture_scale = 3.0

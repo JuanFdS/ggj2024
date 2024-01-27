@@ -13,6 +13,8 @@ func _ready():
 
 func _process(delta):
 	%Contador.text = "Gallinas: %s" % EstadoDelJuego.cantidad_de_cosas
+	if(EstadoDelJuego.ganado):
+		%Mensajito.text = "¡Ganaste!"
 	
 	var posicion_actual_cursor = get_viewport().get_mouse_position()
 	velocidad_cursor = (posicion_actual_cursor - ultima_posicion_cursor) / delta

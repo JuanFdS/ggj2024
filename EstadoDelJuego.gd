@@ -4,6 +4,7 @@ const GALLINA = preload("res://Gallina.tscn")
 
 var tipo_de_cosa_seleccionada: PackedScene
 var cantidad_de_cosas: int
+var ganado: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +22,6 @@ func inicializar():
 	
 func reiniciar():
 	inicializar()
+
+func se_gano():
+	ganado = true
