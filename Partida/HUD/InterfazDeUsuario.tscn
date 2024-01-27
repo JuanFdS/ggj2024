@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2yocnvxnapsh"]
+[gd_scene load_steps=6 format=3 uid="uid://c2yocnvxnapsh"]
 
 [ext_resource type="Script" path="res://Partida/HUD/InterfazDeUsuario.gd" id="1_ylw0i"]
 [ext_resource type="PackedScene" uid="uid://dgeq8sluvkhiw" path="res://Partida/HUD/BotonTipoDeCosa.tscn" id="2_8fph6"]
-[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_40b0q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppkp1"]
 font_size = 50
@@ -80,7 +79,6 @@ text = "Reintentar"
 
 [node name="BotonGallina" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas" instance=ExtResource("2_8fph6")]
 layout_mode = 2
-tipo_de_cosa = ExtResource("3_40b0q")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0
