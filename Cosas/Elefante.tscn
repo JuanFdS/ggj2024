@@ -214,7 +214,7 @@ shape = SubResource("RectangleShape2D_rigyh")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]
