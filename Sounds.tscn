@@ -1,0 +1,28 @@
+[gd_scene load_steps=15 format=3 uid="uid://dc63h80qidv81"]
+
+[ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
+[ext_resource type="AudioStream" uid="uid://urn14dv2n22q" path="res://Sounds/Spawn/sp_7.ogg" id="2_rg2nc"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="2_yxl5g"]
+[ext_resource type="Script" path="res://addons/random_audio/AudioStreamPlayerRandom.gd" id="3_5uvqe"]
+[ext_resource type="Script" path="res://addons/random_audio/AudioStreamArray.gd" id="4_mss6c"]
+[ext_resource type="AudioStream" uid="uid://fihexg2pv8iu" path="res://Sounds/Spawn/sp_9.ogg" id="5_xigwd"]
+[ext_resource type="AudioStream" uid="uid://ccgbgj0uath0e" path="res://Sounds/Spawn/sp_10.ogg" id="6_6s7yx"]
+[ext_resource type="AudioStream" uid="uid://dw3polvqxkgyn" path="res://Sounds/Spawn/sp_1.ogg" id="7_iyrit"]
+[ext_resource type="AudioStream" uid="uid://uti4xinhrqff" path="res://Sounds/Spawn/sp_4.ogg" id="9_mwsg2"]
+[ext_resource type="AudioStream" uid="uid://xbgv5emon4xi" path="res://Sounds/Spawn/sp_5.ogg" id="10_ggvnp"]
+[ext_resource type="AudioStream" uid="uid://dmql0yk4huypt" path="res://Sounds/Spawn/sp_6.ogg" id="11_v3b3n"]
+[ext_resource type="AudioStream" uid="uid://d122t8t5ysd6j" path="res://Sounds/Spawn/sp_8.ogg" id="12_bf3pd"]
+[ext_resource type="AudioStream" uid="uid://5epiltvinwlm" path="res://Sounds/Spawn/sp_3.ogg" id="13_8s7xk"]
+
+[sub_resource type="Resource" id="Resource_n5ycp"]
+script = ExtResource("4_mss6c")
+streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), ExtResource("7_iyrit"), ExtResource("2_yxl5g"), ExtResource("9_mwsg2"), ExtResource("2_rg2nc"), ExtResource("10_ggvnp"), ExtResource("11_v3b3n"), ExtResource("12_bf3pd"), ExtResource("13_8s7xk")])
+
+[node name="Sounds" type="Node"]
+script = ExtResource("1_nv72u")
+
+[node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rg2nc")
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_n5ycp")
