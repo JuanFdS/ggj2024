@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://fi0oenq5qr8t"]
+[gd_scene load_steps=7 format=3 uid="uid://fi0oenq5qr8t"]
 
 [ext_resource type="Script" path="res://Partida/SelectorDeNiveles/BotonSeleccionDeNivel.gd" id="1_t1lp0"]
+[ext_resource type="Resource" uid="uid://dfiurq5fr0u1j" path="res://Partida/Habitaciones/Niveles/CuantasGallinas/CuantasGallinas.tres" id="2_h1aes"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g14sf"]
 bg_color = Color(0.737255, 0.407843, 0.47451, 1)
@@ -53,6 +54,7 @@ corner_radius_bottom_left = 20
 [node name="BotonSeleccionDeNivel" type="MarginContainer"]
 custom_minimum_size = Vector2(150, 150)
 script = ExtResource("1_t1lp0")
+nivel = ExtResource("2_h1aes")
 
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
@@ -67,3 +69,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ergkc")
 text = "¿Cuantas
 gallinas?"
 clip_text = true
+
+[node name="Iconos" type="HBoxContainer" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -13.0
+offset_top = 64.0
+offset_right = 37.0
+offset_bottom = 114.0
+theme_override_constants/separation = -30

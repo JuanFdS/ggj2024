@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba8thcs7ita34"]
+[gd_scene load_steps=5 format=3 uid="uid://ba8thcs7ita34"]
 
 [ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="1_6bt0j"]
 [ext_resource type="Script" path="res://Partida/SelectorDeNiveles/SelectorDeNiveles.gd" id="2_h2qih"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmlni"]
 texture = ExtResource("1_6bt0j")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxfnk"]
+font_size = 30
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [node name="SelectorDeNiveles" type="PanelContainer"]
 anchors_preset = 15
@@ -28,3 +33,19 @@ layout_mode = 2
 [node name="BotonesContainer" type="HFlowContainer" parent="MarginContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -482.0
+offset_top = 23.0
+offset_right = 478.0
+offset_bottom = 773.0
+grow_horizontal = 2
+size_flags_vertical = 1
+text = "¿Cuantas _ se necesitan para cambiar una lamparita?"
+label_settings = SubResource("LabelSettings_fxfnk")
+horizontal_alignment = 1

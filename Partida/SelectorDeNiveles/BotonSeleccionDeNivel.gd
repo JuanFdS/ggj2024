@@ -8,6 +8,13 @@ func _ready():
 	$Button.focus_exited.connect(self.on_focus_exited)
 	$Button.text = nivel.nombre
 	$Button.pressed.connect(self.empezar_nivel)
+	nivel.tipos_de_cosas.map(func(tipo_de_cosa: TipoDeCosa):
+		var textura = TextureRect.new()
+		textura.texture = tipo_de_cosa.textura
+		textura.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		textura.custom_minimum_size = Vector2(60, 60)
+		%Iconos.add_child(textura, true)
+	)
 
 func focuseate():
 	$Button.grab_focus()
