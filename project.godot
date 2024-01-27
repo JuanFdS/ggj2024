@@ -30,9 +30,8 @@ naming/scene_name_casing=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/random_audio/plugin.cfg", "res://addons/ruake/plugin.cfg")
-EstadoDelJuego="*res://EstadoDelJuego.tscn"
 enabled=PackedStringArray("res://addons/random_audio/plugin.cfg")
+EstadoDelJuego="*res://EstadoDelJuego.tscn"
 
 [input]
 

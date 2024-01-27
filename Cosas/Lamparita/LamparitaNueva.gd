@@ -9,10 +9,12 @@ func _ready():
 		sleeping = true
 		set_physics_process(false)
 		rotation_degrees = 90
+		
 		var lamparita_rota = area_otra_lamparita.get_parent()
-		global_position = lamparita_rota.global_position
-		%Luz.visible = true
+		lamparita_rota.arreglar()
 		EstadoDelJuego.se_gano()
+		
+		queue_free()
 	)
 	
 	body_entered.connect(func(_otra_area):

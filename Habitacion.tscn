@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
-[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/LamparitaRota.tscn" id="2_im02a"]
+[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="2_im02a"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
 [ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Cosas/Gallina.tscn" id="3_2a7ha"]
 [ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/Pollo1.png" id="4_ru17d"]
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
 [ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="7_7rnom"]
-[ext_resource type="PackedScene" uid="uid://dc63h80qidv81" path="res://Sounds.tscn" id="7_d6fj4"]
+[ext_resource type="PackedScene" path="res://Sounds.tscn" id="7_d6fj4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -59,7 +59,7 @@ shape = SubResource("WorldBoundaryShape2D_dioxf")
 position = Vector2(592, 647)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
-[node name="LamparitaRota" parent="." instance=ExtResource("2_im02a")]
+[node name="Portalámparas" parent="." instance=ExtResource("2_im02a")]
 unique_name_in_owner = true
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("2_sn8kj")]
