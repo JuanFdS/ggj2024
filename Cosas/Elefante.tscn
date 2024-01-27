@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://btibma3e67qwh"]
+[gd_scene load_steps=10 format=3 uid="uid://btibma3e67qwh"]
 
 [ext_resource type="Script" path="res://Cosas/Elefante.gd" id="1_b3yir"]
 [ext_resource type="SpriteFrames" uid="uid://chveuwmwhwqfr" path="res://Assets/elefante/Elefante.tres" id="2_p7pum"]
+[ext_resource type="Texture2D" uid="uid://k5ptghjqoc4k" path="res://Assets/elefante/Trompa.png" id="2_trvs2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f7mod"]
 bounce = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rigyh"]
-size = Vector2(30.651, 12.0399)
+size = Vector2(25.5281, 10.2084)
 
 [sub_resource type="Animation" id="Animation_wlgcm"]
 length = 0.001
@@ -21,7 +22,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [2.83267]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpriteTrompa:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-82, 12)]
 }
 
 [sub_resource type="Animation" id="Animation_4j35n"]
@@ -38,7 +51,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, -0.348467, 0.706443]
+"values": [3.11143, 3.52207, 4.19391]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpriteTrompa:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-70, 22), Vector2(-82, 12)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ammg"]
@@ -48,45 +73,42 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyd1i"]
-radius = 24.75
-height = 99.9804
+radius = 28.7545
+height = 60.0053
 
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 2147483648
 script = ExtResource("1_b3yir")
 
-[node name="Sprite" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(-1, -1)
-scale = Vector2(4, 4)
-color = Color(0.827451, 0.737255, 0.952941, 1)
-offset = Vector2(-22.75, 0.25)
-polygon = PackedVector2Array(-12, -24, -4, -24, 14, -24, 31, -22, 47, -23, 53, -22, 56, -10, 57, -3, 63, 0, 72, -2, 69, 4, 62, 6, 54, 5, 50, 12, 50, 18, 51, 26, 38, 26, 28, 27, 31, 18, 34, 7, 28, 5, 22, 8, 9, 6, 9, 12, 12, 19, 14, 26, 1, 26, -6, 25, -10, 24, -10, 13, -6, 7, -6, 2)
-
-[node name="SpriteTrompa" type="Polygon2D" parent="."]
-position = Vector2(2, 3)
-scale = Vector2(4, 4)
-color = Color(0.827451, 0.737255, 0.952941, 1)
-offset = Vector2(-21.5, -3.75)
-polygon = PackedVector2Array(-13, -23, -20, -21, -25, -16, -28, -9, -29, -4, -30, 3, -34, 8, -41, 10, -49, 8, -49, 16, -49, 23, -42, 20, -37, 19, -31, 17, -28, 15, -23, 10, -20, 5, -18, 1, -13, 0, -10, 0, -8, -1, -4, -5, -2, -10, -1, -15, -4, -19)
+[node name="SpriteTrompa" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-82, 12)
+rotation = 2.83267
+scale = Vector2(0.568, -0.568)
+texture = ExtResource("2_trvs2")
+offset = Vector2(-120.566, -110.43)
 
 [node name="Trompa" type="StaticBody2D" parent="SpriteTrompa"]
 unique_name_in_owner = true
-position = Vector2(-19.25, -6)
+position = Vector2(651.117, -61.8024)
+rotation = 2.83267
+scale = Vector2(7.04225, -7.04225)
 collision_layer = 2147483648
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_f7mod")
 constant_linear_velocity = Vector2(0, -1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteTrompa/Trompa"]
-position = Vector2(-20, -7)
-rotation = -0.999386
+position = Vector2(88.5, -16)
+rotation = -1.3204
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rigyh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SpriteTrompa/Trompa"]
-position = Vector2(-37, 13)
-rotation = -0.39078
+position = Vector2(77.25, 1.74999)
+rotation = -0.555452
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rigyh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -94,12 +116,6 @@ root_node = NodePath("../Elefante")
 libraries = {
 "": SubResource("AnimationLibrary_1ammg")
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 2)
-rotation = 1.56701
-scale = Vector2(4, 4)
-shape = SubResource("CapsuleShape2D_hyd1i")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -113,7 +129,14 @@ collision_mask = 2147483648
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-14, -37)
+position = Vector2(-6, -30)
 scale = Vector2(0.578125, 0.519375)
 sprite_frames = ExtResource("2_p7pum")
 animation = &"izquierda_a_derecha"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.56701
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_hyd1i")
+metadata/_edit_lock_ = true
