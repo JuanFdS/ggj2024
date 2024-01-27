@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://j5ipnhegb71v"]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://j5ipnhegb71v"]
 
 [ext_resource type="Texture2D" uid="uid://d3pnil56tdc0x" path="res://Assets/ingeniero/Ingen2.png" id="1_gykby"]
 [ext_resource type="Texture2D" uid="uid://c8jl2sdqqgr3" path="res://Assets/ingeniero/Ingen3.png" id="2_fbq13"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mjxuvyv84tod" path="res://Assets/ingeniero/Corre2.png" id="8_k1eve"]
 [ext_resource type="Texture2D" uid="uid://crfiaaprde684" path="res://Assets/ingeniero/Corre3.png" id="9_d5pf0"]
 [ext_resource type="Texture2D" uid="uid://b3tmyxnglouny" path="res://Assets/ingeniero/Corre4.png" id="10_p374q"]
+[ext_resource type="Texture2D" uid="uid://bx0j0rnnlg1li" path="res://Assets/ingeniero/Ing sin foquito.png" id="11_38buc"]
 
 [resource]
 animations = [{
@@ -57,4 +58,12 @@ animations = [{
 "loop": true,
 "name": &"corriendo",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_38buc")
+}],
+"loop": true,
+"name": &"sin_foco",
+"speed": 5.0
 }]
