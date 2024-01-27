@@ -14,7 +14,7 @@ func _process(_delta):
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.is_echo():
 		var nueva_gallina = EstadoDelJuego.spawnear_cosa()
-		agregar_en(nueva_gallina, event.global_position)
+		agregar_en(nueva_gallina, event.global_position / get_viewport().get_camera_2d().zoom)
 		
 		$SpawnSfx.play()
 		cantidad_gallinas += 1
