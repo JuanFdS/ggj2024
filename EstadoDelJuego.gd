@@ -1,6 +1,6 @@
 extends Node
 
-const GALLINA = preload("res://Gallina.tscn")
+const GALLINA = preload("res://Cosas/Gallina.tscn")
 
 var tipo_de_cosa_seleccionada: PackedScene
 var cantidad_de_cosas: int

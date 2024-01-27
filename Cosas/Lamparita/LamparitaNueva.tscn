@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://2petxoiduwhd"]
 
-[ext_resource type="Script" path="res://LamparitaNueva.gd" id="1_y0wex"]
+[ext_resource type="Script" path="res://Cosas/Lamparita/LamparitaNueva.gd" id="1_y0wex"]
 [ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_sld4w"]
 [ext_resource type="Texture2D" uid="uid://b86ekkcc5kn7t" path="res://Assets/lamparita/2d_lights_and_shadows_neutral_point_light.webp" id="3_ym527"]
 
