@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func spawnear_cosa():
+func spawnear_cosa() -> RigidBody2D:
 	cantidad_de_cosas += 1
 	return tipo_de_cosa_seleccionada.instantiate()
 	

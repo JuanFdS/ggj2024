@@ -1,6 +1,7 @@
 extends Node2D
 
-var cantidad_gallinas = 1
+const velocidad_maxima_cosa = Vector2(1000, 1000)
+
 var ultima_posicion_cursor: Vector2
 var velocidad_cursor: Vector2
 
@@ -19,14 +20,16 @@ func _process(delta):
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.is_echo():
-		var nueva_gallina: RigidBody2D = EstadoDelJuego.spawnear_cosa()
-		var velocidad_maxima = Vector2(1000, 1000)
-		nueva_gallina.apply_central_impulse(clamp(velocidad_cursor, -velocidad_maxima, velocidad_maxima))
-		agregar_en(nueva_gallina, event.global_position / get_viewport().get_camera_2d().zoom)
+		var posicion_cursor = event.global_position / get_viewport().get_camera_2d().zoom
+		var nueva_cosa = EstadoDelJuego.spawnear_cosa()
+		
+		agregar_en(posicion_cursor, nueva_cosa)
 		
 		$SpawnSfx.play()
-		cantidad_gallinas += 1
 		
-func agregar_en(cosa, posicion_global):
+func agregar_en(posicion_global, cosa):
+	var velocidad_cosa = clamp(velocidad_cursor, -velocidad_maxima_cosa, velocidad_maxima_cosa)
+	
 	add_child(cosa)
 	cosa.global_position = posicion_global
+	cosa.apply_central_impulse(velocidad_cosa)
