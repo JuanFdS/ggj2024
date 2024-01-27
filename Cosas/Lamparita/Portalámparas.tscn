@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddiobupwuxrqh"]
+[gd_scene load_steps=5 format=3 uid="uid://ddiobupwuxrqh"]
 
 [ext_resource type="Texture2D" uid="uid://bfcsxk1usm6jn" path="res://Assets/lamparita/Lampara rota.png" id="1_7a2v3"]
+[ext_resource type="Script" path="res://Cosas/Lamparita/Portalámparas.gd" id="1_mfpmm"]
+[ext_resource type="Texture2D" uid="uid://b86ekkcc5kn7t" path="res://Assets/lamparita/2d_lights_and_shadows_neutral_point_light.webp" id="3_ma1wh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66xfx"]
 radius = 30.0
 
-[node name="LamparitaRota" type="Node2D"]
+[node name="Portalámparas" type="Node2D"]
 position = Vector2(555, 19)
+script = ExtResource("1_mfpmm")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
@@ -26,3 +29,12 @@ shape = SubResource("CircleShape2D_66xfx")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("1_7a2v3")
+
+[node name="Luz" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-1, 53)
+color = Color(1, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("3_ma1wh")
+offset = Vector2(0, 2)
+texture_scale = 3.0

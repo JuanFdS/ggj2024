@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq8j2x6mqtkfr"
-path="res://.godot/imported/Pollo4.png-ec95e3e3083b84d133d13b62ad432893.ctex"
+uid="uid://dosbu6ic6u8ey"
+path="res://.godot/imported/Ele10.png-606211d40b504450b03e8314a9340018.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pollo4.png"
-dest_files=["res://.godot/imported/Pollo4.png-ec95e3e3083b84d133d13b62ad432893.ctex"]
+source_file="res://Assets/elefante/Ele10.png"
+dest_files=["res://.godot/imported/Ele10.png-606211d40b504450b03e8314a9340018.ctex"]
 
 [params]
 

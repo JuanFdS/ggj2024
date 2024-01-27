@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr7eculfvr0fs"]
 
 [ext_resource type="Script" path="res://Cosas/Gallina.gd" id="1_c0wb3"]
-[ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/Gallina.tres" id="2_4lymy"]
+[ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/gallina/Gallina.tres" id="2_wuodg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
@@ -37,6 +37,6 @@ shape = SubResource("CircleShape2D_8v2r4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.8125, -3.68753)
 scale = Vector2(0.38125, 0.384191)
-sprite_frames = ExtResource("2_4lymy")
+sprite_frames = ExtResource("2_wuodg")
 frame = 1
 frame_progress = 0.538328

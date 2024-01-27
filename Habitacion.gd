@@ -12,7 +12,11 @@ func _ready():
 	)
 
 func _process(delta):
-	%Contador.text = "Gallinas: %s" % EstadoDelJuego.cantidad_de_cosas
+	%Contador.text = " + ".join(EstadoDelJuego.cantidad_de_cosas.keys().map(func(cosa):
+		var cantidad = EstadoDelJuego.cantidad_de_cosas[cosa]
+		return "%d × %s" % [cantidad, cosa]
+	))
+	
 	if(EstadoDelJuego.ganado):
 		%Mensajito.text = "¡Ganaste!"
 	
@@ -28,7 +32,7 @@ func _unhandled_input(event):
 		
 		agregar_en(posicion_cursor, nueva_cosa)
 		
-		$Sounds.play_spawn()
+		Sounds.play_spawn()
 		
 func agregar_en(posicion_global, cosa):
 	var velocidad_cosa = clamp(velocidad_cursor, -velocidad_maxima_cosa, velocidad_maxima_cosa)
