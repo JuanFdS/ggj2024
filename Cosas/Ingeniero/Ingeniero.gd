@@ -12,16 +12,16 @@ func _ready():
 	%AgarrandoLamparita.visible = false
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):
 		lamparita_a_buscar = lamparita
-		estado = Estado.BuscandoLamparita,
-		CONNECT_ONE_SHOT
-	)
+		estado = Estado.BuscandoLamparita
+	, CONNECT_ONE_SHOT)
+	
 	%AreaAgarradoraDeLamparitas.body_entered.connect(func(lamparita: Node2D):
 		estado = Estado.LamparitaEnMano
 		%Mirando.visible = false
 		%AgarrandoLamparita.visible = true
-		lamparita.queue_free(),
-		CONNECT_ONE_SHOT
-	)
+		lamparita.queue_free()
+	, CONNECT_ONE_SHOT)
+	
 	%AreaDeEnchufado.area_entered.connect(func(area_lampara_rota):
 		estado = Estado.Enchufado
 		var lampara_rota = area_lampara_rota.get_parent()
@@ -31,9 +31,13 @@ func _ready():
 		collision_mask = 0
 		sleeping = true
 		set_physics_process(false)
-		EstadoDelJuego.se_gano(),
-		CONNECT_ONE_SHOT
-	)
+		
+		var lamparita_nueva = $Node2D/AgarrandoLamparita/LamparitaNueva
+		lamparita_nueva.visible = false
+		lampara_rota.arreglar()
+		EstadoDelJuego.se_gano()
+	, CONNECT_ONE_SHOT)
+	
 	%Saltar.timeout.connect(self.saltar)
 
 func _physics_process(delta):

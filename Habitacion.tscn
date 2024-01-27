@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=19 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="2_im02a"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
 [ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="7_7rnom"]
 [ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="8_pon65"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="9_divun"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -30,6 +31,9 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_aud63"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xedp5"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qywrp"]
 size = Vector2(100, 100)
 
 [node name="Habitacion" type="Node2D"]
@@ -72,9 +76,9 @@ position = Vector2(718, 593)
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InterfazDeUsuario" type="CanvasLayer" parent="."]
 
-[node name="Mensajito" type="Label" parent="CanvasLayer"]
+[node name="Mensajito" type="Label" parent="InterfazDeUsuario"]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_ppkp1")
 
-[node name="PanelLateral" type="Control" parent="CanvasLayer"]
+[node name="PanelLateral" type="Control" parent="InterfazDeUsuario"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -100,7 +104,7 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelLateral"]
+[node name="MarginContainer" type="MarginContainer" parent="InterfazDeUsuario/PanelLateral"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,12 +116,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelLateral/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="InterfazDeUsuario/PanelLateral/MarginContainer"]
 modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_anw5k")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer"]
 layout_mode = 2
 theme = SubResource("Theme_aud63")
 theme_override_constants/margin_left = 15
@@ -125,17 +129,17 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 
-[node name="BotonReiniciar" type="Button" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="BotonReiniciar" type="Button" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Reintentar"
 
-[node name="BotonGallina" type="TextureButton" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="BotonGallina" type="TextureButton" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -146,7 +150,7 @@ stretch_mode = 4
 script = ExtResource("4_th3gl")
 tipo_de_cosa = ExtResource("5_5pbi7")
 
-[node name="BotonElefante" type="TextureButton" parent="CanvasLayer/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="BotonElefante" type="TextureButton" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -157,7 +161,18 @@ stretch_mode = 4
 script = ExtResource("4_th3gl")
 tipo_de_cosa = ExtResource("7_7rnom")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="BotonIngeniero" type="TextureButton" parent="InterfazDeUsuario/PanelLateral/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("PlaceholderTexture2D_qywrp")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("4_th3gl")
+tipo_de_cosa = ExtResource("9_divun")
+
+[node name="MarginContainer" type="MarginContainer" parent="InterfazDeUsuario"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
@@ -165,6 +180,6 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Contador" type="Label" parent="CanvasLayer/MarginContainer"]
+[node name="Contador" type="Label" parent="InterfazDeUsuario/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2

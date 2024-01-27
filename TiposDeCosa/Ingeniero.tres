@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TipoDeCosa" load_steps=4 format=3 uid="uid://bjrenhl57k3j3"]
+
+[ext_resource type="PackedScene" uid="uid://chgyw6mdy5mon" path="res://Cosas/Ingeniero/Ingeniero.tscn" id="1_07wk0"]
+[ext_resource type="Script" path="res://TipoDeCosa.gd" id="2_ulbgs"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qywrp"]
+size = Vector2(100, 100)
+
+[resource]
+script = ExtResource("2_ulbgs")
+nombre = "Ingeniero"
+escena = ExtResource("1_07wk0")
+textura = SubResource("PlaceholderTexture2D_qywrp")
