@@ -5,21 +5,16 @@ const velocidad_maxima_cosa = Vector2(1000, 1000)
 var ultima_posicion_cursor: Vector2
 var velocidad_cursor: Vector2
 
+@export var tipos_de_cosas: Array[TipoDeCosa]
+
 func _ready():
-	%BotonReiniciar.pressed.connect(func():
+	%InterfazDeUsuario.reiniciar.connect(func():
 		EstadoDelJuego.reiniciar()
 		get_tree().reload_current_scene()
 	)
+	%InterfazDeUsuario.configurar_tipos_de_cosas(tipos_de_cosas)
 
 func _process(delta):
-	%Contador.text = " + ".join(EstadoDelJuego.cantidad_de_cosas.keys().map(func(cosa):
-		var cantidad = EstadoDelJuego.cantidad_de_cosas[cosa]
-		return "%d × %s" % [cantidad, cosa]
-	))
-	
-	if(EstadoDelJuego.ganado):
-		%Mensajito.text = "¡Ganaste!"
-	
 	var posicion_actual_cursor = get_viewport().get_mouse_position()
 
 	velocidad_cursor = (posicion_actual_cursor - ultima_posicion_cursor) / delta

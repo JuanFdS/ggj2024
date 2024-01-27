@@ -1,13 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=12 format=3 uid="uid://c5ttswqrynkhn"]
 
-[ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
-[ext_resource type="PackedScene" path="res://Cosas/Lamparita/Portalámparas.tscn" id="2_im02a"]
-[ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
-[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
-[ext_resource type="PackedScene" uid="uid://c2yocnvxnapsh" path="res://Partida/HUD/InterfazDeUsuario.tscn" id="5_xlt8f"]
-[ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="7_7rnom"]
-[ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="8_pon65"]
-[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="9_divun"]
+[ext_resource type="Script" path="res://Habitacion.gd" id="1_chpqs"]
+[ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="2_c41qd"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_8dogh"]
+[ext_resource type="PackedScene" path="res://Cosas/Lamparita/Portalámparas.tscn" id="3_fgbml"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="4_qr652"]
+[ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="4_ygj8x"]
+[ext_resource type="PackedScene" uid="uid://c2yocnvxnapsh" path="res://Partida/HUD/InterfazDeUsuario.tscn" id="5_xl3mq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -21,13 +20,13 @@ normal = Vector2(0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
 
 [node name="Habitacion" type="Node2D"]
-script = ExtResource("1_i1ca1")
-tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("7_7rnom"), ExtResource("5_5pbi7"), ExtResource("9_divun")])
+script = ExtResource("1_chpqs")
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_8dogh"), ExtResource("4_qr652")])
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -1
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pon65")
+texture = ExtResource("2_c41qd")
 centered = false
 
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
@@ -51,15 +50,15 @@ shape = SubResource("WorldBoundaryShape2D_dioxf")
 position = Vector2(592, 702)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
-[node name="Portalámparas" parent="." instance=ExtResource("2_im02a")]
+[node name="Portalámparas" parent="." instance=ExtResource("3_fgbml")]
 unique_name_in_owner = true
 position = Vector2(505, 59)
 
-[node name="LamparitaNueva" parent="." instance=ExtResource("2_sn8kj")]
+[node name="LamparitaNueva" parent="." instance=ExtResource("4_ygj8x")]
 position = Vector2(718, 593)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="InterfazDeUsuario" parent="." instance=ExtResource("5_xlt8f")]
+[node name="InterfazDeUsuario" parent="." instance=ExtResource("5_xl3mq")]
 unique_name_in_owner = true

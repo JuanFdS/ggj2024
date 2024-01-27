@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgeq8sluvkhiw"]
+
+[ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/gallina/Pollo1.png" id="1_fgmb4"]
+[ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="2_yino0"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_qk4fc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcp3f"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0392157)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_22ren"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 0.54902)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tiwdq"]
+gradient = SubResource("Gradient_22ren")
+
+[node name="PanelContainer" type="PanelContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xcp3f")
+script = ExtResource("2_yino0")
+tipo_de_cosa = ExtResource("3_qk4fc")
+
+[node name="Boton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_fgmb4")
+texture_focused = SubResource("GradientTexture1D_tiwdq")
+ignore_texture_size = true
+stretch_mode = 4
