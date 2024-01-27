@@ -51,7 +51,7 @@ position = Vector2(0, 327)
 shape = SubResource("WorldBoundaryShape2D_kf7ph")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ParedesYPiso"]
-position = Vector2(1152, 323)
+position = Vector2(958, 323)
 shape = SubResource("WorldBoundaryShape2D_wwflv")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedesYPiso"]
@@ -67,7 +67,7 @@ unique_name_in_owner = true
 position = Vector2(505, 59)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("2_sn8kj")]
-position = Vector2(689, 377)
+position = Vector2(718, 593)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
