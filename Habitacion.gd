@@ -13,6 +13,8 @@ func _ready():
 
 func _process(delta):
 	%Contador.text = "Gallinas: %s" % EstadoDelJuego.cantidad_de_cosas
+	if(EstadoDelJuego.ganado):
+		%Mensajito.text = "¡Ganaste!"
 	
 	var posicion_actual_cursor = get_viewport().get_mouse_position()
 	velocidad_cursor = (posicion_actual_cursor - ultima_posicion_cursor) / delta
@@ -25,7 +27,7 @@ func _unhandled_input(event):
 		
 		agregar_en(posicion_cursor, nueva_cosa)
 		
-		$SpawnSfx.play()
+		$SpawnRandomSfx.play_random()
 		
 func agregar_en(posicion_global, cosa):
 	var velocidad_cosa = clamp(velocidad_cursor, -velocidad_maxima_cosa, velocidad_maxima_cosa)
