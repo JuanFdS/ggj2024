@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpccuxm74oow3"]
+[gd_scene load_steps=15 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_xrxmd"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_mpgl4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -160,3 +161,4 @@ text = "Reintentar"
 anchor_mode = 0
 
 [node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mpgl4")
