@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Nivel" load_steps=3 format=3 uid="uid://cbc2xj2l8odom"]
+
+[ext_resource type="Script" path="res://Partida/Habitaciones/Niveles/Nivel.gd" id="1_eo5hl"]
+[ext_resource type="PackedScene" uid="uid://bddrigd52rbbe" path="res://Partida/Habitaciones/Niveles/CuantasGallinasMasDificil/CuantasGallinasMasDificil.tscn" id="1_kgcqe"]
+
+[resource]
+script = ExtResource("1_eo5hl")
+escena = ExtResource("1_kgcqe")
+nombre = "Nivel 2"

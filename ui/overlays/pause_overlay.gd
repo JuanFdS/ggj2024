@@ -8,12 +8,18 @@ signal game_exited
 @onready var settings_container := %SettingsContainer
 @onready var menu_container := %MenuContainer
 @onready var back_button := %BackButton
+@onready var volver_a_seleccion_de_niveles_button := %VolverASeleccionDeNiveles
+const SELECTOR_DE_NIVELES = preload("res://Partida/SelectorDeNiveles/SelectorDeNiveles.tscn")
 
 func _ready() -> void:
 	resume_button.pressed.connect(_resume)
 	settings_button.pressed.connect(_settings)
 	exit_button.pressed.connect(_exit)
 	back_button.pressed.connect(_pause_menu)
+	volver_a_seleccion_de_niveles_button.pressed.connect(func():
+		get_tree().change_scene_to_packed(SELECTOR_DE_NIVELES)
+		_resume()
+	)
 	
 func grab_button_focus() -> void:
 	resume_button.grab_focus()
@@ -33,12 +39,16 @@ func _exit() -> void:
 	get_tree().quit()
 	
 func _pause_menu() -> void:
+	visible = true
 	settings_container.visible = false
 	menu_container.visible = true
 	settings_button.grab_focus()
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("pause") and visible:
+	if event.is_action_pressed("pause") and not visible and EstadoDelJuego.jugando:
+		get_viewport().set_input_as_handled()
+		_pause_menu()
+	elif event.is_action_pressed("pause") and visible:
 		get_viewport().set_input_as_handled()
 		if menu_container.visible:
 			_resume()

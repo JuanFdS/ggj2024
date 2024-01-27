@@ -1,9 +1,7 @@
 extends Node2D
 
-const CUANTAS_GALLINAS = preload("res://Partida/Habitaciones/Niveles/CuantasGallinas/CuantasGallinas.tscn")
-
 func _ready():
-	cargar_habitacion(CUANTAS_GALLINAS)
+	cargar_habitacion(EstadoDelJuego.nivel_actual)
 
-func cargar_habitacion(escena: PackedScene):
-	$Habitacion.add_child(escena.instantiate())
+func cargar_habitacion(nivel: Nivel):
+	$Habitacion.add_child(nivel.escena.instantiate())

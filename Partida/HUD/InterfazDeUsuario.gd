@@ -17,12 +17,14 @@ func configurar_tipos_de_cosas(tipos_de_cosas: Array[TipoDeCosa]):
 	)
 	if(tipos_de_cosas.size() == 1):
 		EstadoDePartida.tipo_de_cosa_seleccionada = tipos_de_cosas.front()
-		%MenuDeCosas.hide()
+		%PanelLateral.hide()
 	else:
 		show()
 
 func _ready():
+	%Mensajito.visible = false
 	%BotonReiniciar.pressed.connect(func(): reiniciar.emit())
+	%ProximoNivel.pressed.connect(func(): EstadoDelJuego.avanzar_nivel())
 
 func _process(_delta):
 	%Contador.text = " + ".join(EstadoDePartida.cantidad_de_cosas.keys().map(func(cosa):
@@ -31,5 +33,6 @@ func _process(_delta):
 	))
 	
 	if(EstadoDePartida.ganado):
+		%Mensajito.visible = true
 		%Mensajito.text = "¡Ganaste!"
 	

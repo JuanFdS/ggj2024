@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bja4572aya1sy"]
+
+[ext_resource type="Script" path="res://EstadoDelJuego.gd" id="1_2hif3"]
+[ext_resource type="Resource" uid="uid://dfiurq5fr0u1j" path="res://Partida/Habitaciones/Niveles/CuantasGallinas/CuantasGallinas.tres" id="2_gftwl"]
+[ext_resource type="Resource" uid="uid://cbc2xj2l8odom" path="res://Partida/Habitaciones/Niveles/CuantasGallinasMasDificil/CuantasGallinasMasDificil.tres" id="3_cgqng"]
+
+[node name="EstadoDelJuego" type="Node"]
+script = ExtResource("1_2hif3")
+niveles = Array[Resource("res://Partida/Habitaciones/Niveles/Nivel.gd")]([ExtResource("2_gftwl"), ExtResource("3_cgqng")])

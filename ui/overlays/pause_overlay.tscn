@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
 
 [node name="PauseOverlay" type="CenterContainer"]
+visible = false
+z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,6 +44,11 @@ theme_override_constants/separation = 8
 unique_name_in_owner = true
 layout_mode = 2
 text = "resume_game"
+
+[node name="VolverASeleccionDeNiveles" type="Button" parent="VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "volver_a_seleccion_de_niveles"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
