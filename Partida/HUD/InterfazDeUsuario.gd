@@ -15,6 +15,11 @@ func configurar_tipos_de_cosas(tipos_de_cosas: Array[TipoDeCosa]):
 		boton.tipo_de_cosa = tipo_de_cosa
 		%MenuDeCosas.add_child(boton, true)
 	)
+	if(tipos_de_cosas.size() == 1):
+		EstadoDelJuego.tipo_de_cosa_seleccionada = tipos_de_cosas.front()
+		hide()
+	else:
+		show()
 
 func _ready():
 	%BotonReiniciar.pressed.connect(func(): reiniciar.emit())
