@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://biwj7op75tfdu"]
+[gd_scene load_steps=12 format=3 uid="uid://biwj7op75tfdu"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_6vmq2"]
+[ext_resource type="PackedScene" uid="uid://dc63h80qidv81" path="res://Sounds.tscn" id="2_70lgq"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_ybxcn"]
-[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="4_2w0tk"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="4_2w0tk"]
+[ext_resource type="PackedScene" uid="uid://chgyw6mdy5mon" path="res://Cosas/Ingeniero/Ingeniero.tscn" id="5_26t1f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -26,7 +28,10 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_6vmq2")
 
+[node name="Sounds" parent="." instance=ExtResource("2_70lgq")]
+
 [node name="LamparitaNueva" parent="." instance=ExtResource("2_ybxcn")]
+position = Vector2(59, 342)
 
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648
@@ -102,8 +107,4 @@ offset_bottom = 52.0
 grow_horizontal = 0
 text = "Reintentar"
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(1035, 1188)
-
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(-34, 86, -42, 42, -36, -44, -95, -1, -89, -29, -30, -69, -55, -94, -61, -129, -27, -175, 21, -175, 39, -150, 39, -120, 19, -88, 64, -94, 75, -148, 41, -165, 43, -177, 87, -160, 79, -95, 70, -80, 24, -75, 28, 22, 38, 80, 26, 78, 15, 33, -21, 42, -19, 74)
+[node name="Ingeniero" parent="." instance=ExtResource("5_26t1f")]

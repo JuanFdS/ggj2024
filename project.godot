@@ -50,4 +50,6 @@ toggle_ruake={
 [layer_names]
 
 2d_physics/layer_1="Cosas"
+2d_physics/layer_2="Lamparita"
+2d_physics/layer_3="LamparitaRota"
 2d_physics/layer_32="Terreno"
