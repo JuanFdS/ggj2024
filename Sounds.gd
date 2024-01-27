@@ -9,4 +9,4 @@ func play_gallina():
 	stream.play()
 
 func play_lamp_collision():
-	pass
+	$LampCollisionSfx.play_random()
