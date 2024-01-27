@@ -10,3 +10,12 @@ func play_gallina():
 
 func play_lamp_collision():
 	$LampCollisionSfx.play_random()
+
+func play_lamp_win():
+	pass
+
+func stop_all_sounds():
+	$LampWinSfx.stop()
+	var streams = $GallinaSfx.get_children()
+	for stream in streams:
+		stream.stop()
