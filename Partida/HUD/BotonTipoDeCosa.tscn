@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgeq8sluvkhiw"]
 
 [ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/gallina/Pollo1.png" id="1_fgmb4"]
-[ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="2_yino0"]
+[ext_resource type="Script" path="res://BotonTipoDeCosa.gd" id="2_yino0"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_qk4fc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcp3f"]
