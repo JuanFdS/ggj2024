@@ -24,6 +24,8 @@ Sounds="*res://Sounds.tscn"
 
 [display]
 
+window/size/viewport_width=960
+window/size/viewport_height=750
 window/stretch/mode="canvas_items"
 
 [editor]
