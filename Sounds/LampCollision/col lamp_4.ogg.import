@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbt77j1f6j1wc"
+path="res://.godot/imported/col lamp_4.ogg-2eece126331c8afb69e9d914037e9687.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/LampCollision/col lamp_4.ogg"
+dest_files=["res://.godot/imported/col lamp_4.ogg-2eece126331c8afb69e9d914037e9687.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
