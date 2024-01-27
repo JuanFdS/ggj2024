@@ -13,7 +13,7 @@ func _ready():
 		return
 	
 	%Boton.pressed.connect(func():
-		EstadoDelJuego.tipo_de_cosa_seleccionada = tipo_de_cosa
+		EstadoDePartida.tipo_de_cosa_seleccionada = tipo_de_cosa
 	)
 
 

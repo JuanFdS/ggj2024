@@ -12,7 +12,7 @@ func _ready():
 		
 		var lamparita_rota = area_otra_lamparita.get_parent()
 		lamparita_rota.arreglar()
-		EstadoDelJuego.se_gano()
+		EstadoDePartida.se_gano()
 		
 		queue_free()
 	)

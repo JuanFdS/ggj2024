@@ -35,7 +35,7 @@ func _ready():
 			var lamparita_nueva = $Node2D/AgarrandoLamparita/LamparitaNueva
 			lamparita_nueva.visible = false
 			lampara_rota.arreglar()
-			EstadoDelJuego.se_gano()
+			EstadoDePartida.se_gano()
 		, CONNECT_ONE_SHOT)
 		
 	, CONNECT_ONE_SHOT)

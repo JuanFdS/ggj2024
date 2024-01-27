@@ -9,7 +9,7 @@ var velocidad_cursor: Vector2
 
 func _ready():
 	%InterfazDeUsuario.reiniciar.connect(func():
-		EstadoDelJuego.reiniciar()
+		EstadoDePartida.reiniciar()
 		get_tree().reload_current_scene()
 	)
 	%InterfazDeUsuario.configurar_tipos_de_cosas(tipos_de_cosas)
@@ -23,7 +23,7 @@ func _process(delta):
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.is_echo():
 		var posicion_cursor = event.global_position / get_viewport().get_camera_2d().zoom * TamanioVentana.escala_del_viewport()
-		var nueva_cosa = EstadoDelJuego.spawnear_cosa()
+		var nueva_cosa = EstadoDePartida.spawnear_cosa()
 		
 		agregar_en(posicion_cursor, nueva_cosa)
 		
