@@ -10,10 +10,9 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 @onready var timer := %Timer
 
 func _ready():
-	$AnimationPlayer.play("trompa")
+	$AnimationPlayer.play("trompa_izquierda")
 	$AnimatedSprite2D.play("izquierda")
 	trompa.add_collision_exception_with(self)
-	trompa.add_collision_exception_with($Elefante)
 	timer.timeout.connect(self.avanzar)
 
 func _physics_process(delta):
@@ -23,7 +22,7 @@ func avanzar():
 	if [true, false].pick_random():
 		cambiar_direccion()
 
-	apply_central_impulse(direccion * SPEED)
+	#apply_central_impulse(direccion * SPEED)
 
 func cambiar_direccion():
 	direccion *= -1
@@ -33,11 +32,13 @@ func cambiar_direccion():
 	else:
 		animar_transicion("izquierda", "derecha")
 	
-	$Sprite.scale.x *= -1
 	$SpriteTrompa.scale.x *= -1
 
 func animar_transicion(direccion_inicial, direccion_final):
 	$AnimatedSprite2D.play("%s_a_%s" % [direccion_inicial, direccion_final])
+	$SpriteTrompa.visible = false
 	$AnimatedSprite2D.animation_finished.connect(func():
 		$AnimatedSprite2D.play(direccion_final)
+		$AnimationPlayer.play("trompa_%s" % direccion_final)
+		$SpriteTrompa.visible = true
 	, CONNECT_ONE_SHOT)
