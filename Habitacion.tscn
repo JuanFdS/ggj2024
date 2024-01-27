@@ -121,7 +121,6 @@ anchor_mode = 0
 
 [node name="Mensajito" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
