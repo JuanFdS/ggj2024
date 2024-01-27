@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ehrvsjvp61gu"]
+[gd_scene load_steps=4 format=3 uid="uid://ehrvsjvp61gu"]
 
 [ext_resource type="Script" path="res://scenes/boot/bootsplash_scene.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cmmr5jbylu08i" path="res://scenes/boot/godot/godot_logo.tscn" id="2_ygt08"]
+[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="3_pv4ns"]
 
 [node name="BootsplashScene" type="Control"]
 layout_mode = 3
@@ -11,6 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
 fade_duration = 2.0
+node = ExtResource("2_ygt08")
+next_scene = ExtResource("3_pv4ns")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
