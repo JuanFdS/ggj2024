@@ -21,6 +21,7 @@ EstadoDelJuego="*res://EstadoDelJuego.tscn"
 RuakeLayer="*res://addons/ruake/core/RuakeLayer.tscn"
 TamanioVentana="*res://TamanioVentana.gd"
 Sounds="*res://Sounds.tscn"
+UserSettings="*res://settings/user_settings.gd"
 
 [display]
 
