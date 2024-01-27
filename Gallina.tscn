@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr7eculfvr0fs"]
+[gd_scene load_steps=5 format=3 uid="uid://cr7eculfvr0fs"]
+
+[ext_resource type="Script" path="res://Gallina.gd" id="1_4uqmc"]
+[ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/Gallina.tres" id="1_gmayw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8v2r4"]
-radius = 48.28
+radius = 32.0156
 
 [node name="Gallina" type="RigidBody2D"]
 position = Vector2(219, 571)
 collision_mask = 2147483649
 physics_material_override = SubResource("PhysicsMaterial_ag5ly")
+script = ExtResource("1_4uqmc")
 
 [node name="Gallina" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(-552, -564)
 polygon = PackedVector2Array(531, 600, 527, 580, 536, 565, 565, 555, 587, 564, 597, 579, 596, 588, 615, 581, 595, 599, 571, 607, 551, 609)
 
@@ -28,3 +33,10 @@ polygon = PackedVector2Array(538, 527, 547, 516, 550, 531)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8v2r4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.8125, -3.68753)
+scale = Vector2(0.38125, 0.384191)
+sprite_frames = ExtResource("1_gmayw")
+frame = 1
+frame_progress = 0.538328

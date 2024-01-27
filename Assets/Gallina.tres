@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bxfnqcvondsl6"]
+
+[ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/Pollo1.png" id="1_0s67t"]
+[ext_resource type="Texture2D" uid="uid://8tuyrxdepv1c" path="res://Assets/Pollo2.png" id="2_hn8x6"]
+[ext_resource type="Texture2D" uid="uid://ca3pfrwc8a0vi" path="res://Assets/Pollo3.png" id="3_mh4p3"]
+[ext_resource type="Texture2D" uid="uid://dq8j2x6mqtkfr" path="res://Assets/Pollo4.png" id="4_y45l7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0s67t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hn8x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mh4p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y45l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mh4p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hn8x6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
