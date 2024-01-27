@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr7eculfvr0fs"]
 
-[ext_resource type="Script" path="res://Gallina.gd" id="1_4uqmc"]
-[ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/Gallina.tres" id="1_gmayw"]
+[ext_resource type="Script" path="res://Cosas/Gallina.gd" id="1_c0wb3"]
+[ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/Gallina.tres" id="2_4lymy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
@@ -13,7 +13,7 @@ radius = 32.0156
 position = Vector2(219, 571)
 collision_mask = 2147483649
 physics_material_override = SubResource("PhysicsMaterial_ag5ly")
-script = ExtResource("1_4uqmc")
+script = ExtResource("1_c0wb3")
 
 [node name="Gallina" type="Polygon2D" parent="."]
 visible = false
@@ -37,6 +37,6 @@ shape = SubResource("CircleShape2D_8v2r4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.8125, -3.68753)
 scale = Vector2(0.38125, 0.384191)
-sprite_frames = ExtResource("1_gmayw")
+sprite_frames = ExtResource("2_4lymy")
 frame = 1
 frame_progress = 0.538328

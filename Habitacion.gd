@@ -30,7 +30,7 @@ func _unhandled_input(event):
 		
 		agregar_en(posicion_cursor, nueva_cosa)
 		
-		$SpawnSfx.play()
+		#$SpawnRandomSfx.play_random()
 		
 func agregar_en(posicion_global, cosa):
 	var velocidad_cosa = clamp(velocidad_cursor, -velocidad_maxima_cosa, velocidad_maxima_cosa)

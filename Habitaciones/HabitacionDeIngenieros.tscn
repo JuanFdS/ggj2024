@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://biwj7op75tfdu"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_6vmq2"]
-[ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_q2tu4"]
+[ext_resource type="Script" path="res://Cosas/Lamparita/LamparitaNueva.gd" id="2_q2tu4"]
 [ext_resource type="PackedScene" uid="uid://btibma3e67qwh" path="res://Cosas/Elefante.tscn" id="3_hnv7c"]
 [ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="4_2w0tk"]
 
