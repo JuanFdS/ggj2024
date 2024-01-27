@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" path="res://TipoDeCosa.gd" id="1_cc0c1"]
 [ext_resource type="PackedScene" uid="uid://btibma3e67qwh" path="res://Cosas/Elefante.tscn" id="1_oxxp1"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xedp5"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://bv8p8sp7ut6bo" path="res://Assets/elefante/Ele4.png" id="3_dhq3o"]
 
 [resource]
 script = ExtResource("1_cc0c1")
 nombre = "Elefante"
 escena = ExtResource("1_oxxp1")
-textura = SubResource("PlaceholderTexture2D_xedp5")
+textura = ExtResource("3_dhq3o")
