@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2yocnvxnapsh"]
+
+[ext_resource type="Script" path="res://Partida/HUD/InterfazDeUsuario.gd" id="1_ylw0i"]
+[ext_resource type="PackedScene" uid="uid://dgeq8sluvkhiw" path="res://Partida/HUD/BotonTipoDeCosa.tscn" id="2_8fph6"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_40b0q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ppkp1"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anw5k"]
+
+[sub_resource type="Theme" id="Theme_aud63"]
+
+[node name="InterfazDeUsuario" type="CanvasLayer"]
+script = ExtResource("1_ylw0i")
+
+[node name="Mensajito" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ppkp1")
+
+[node name="PanelLateral" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -186.0
+offset_bottom = 569.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelLateral"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelLateral/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_anw5k")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelLateral/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_aud63")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="MenuDeCosas" type="GridContainer" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+
+[node name="BotonReiniciar" type="Button" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Reintentar"
+
+[node name="BotonGallina" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas" instance=ExtResource("2_8fph6")]
+layout_mode = 2
+tipo_de_cosa = ExtResource("3_40b0q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Contador" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
