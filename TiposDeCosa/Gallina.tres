@@ -6,5 +6,6 @@
 
 [resource]
 script = ExtResource("1_0pp2g")
+nombre = "Gallina"
 escena = ExtResource("1_r1rad")
 textura = ExtResource("3_77yv6")

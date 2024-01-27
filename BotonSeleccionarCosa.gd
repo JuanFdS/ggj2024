@@ -10,5 +10,5 @@ func _ready():
 		return
 	
 	pressed.connect(func():
-		EstadoDelJuego.tipo_de_cosa_seleccionada = tipo_de_cosa.escena
+		EstadoDelJuego.tipo_de_cosa_seleccionada = tipo_de_cosa
 	)

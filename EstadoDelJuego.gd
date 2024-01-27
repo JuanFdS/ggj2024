@@ -1,8 +1,8 @@
 extends Node
 
-const GALLINA = preload("res://Cosas/Gallina.tscn")
+const GALLINA = preload("res://TiposDeCosa/Gallina.tres")
 
-var tipo_de_cosa_seleccionada: PackedScene = GALLINA
+var tipo_de_cosa_seleccionada: TipoDeCosa = GALLINA
 var cantidad_de_cosas: int
 var ganado: bool
 
@@ -13,10 +13,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawnear_cosa() -> RigidBody2D:
 	cantidad_de_cosas += 1
-	return tipo_de_cosa_seleccionada.instantiate()
+	return tipo_de_cosa_seleccionada.escena.instantiate()
 	
 func inicializar():
-	# tipo_de_cosa_seleccionada = GALLINA
 	cantidad_de_cosas = 0
 	ganado = false
 	
