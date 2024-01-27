@@ -28,6 +28,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0.568, -0.568)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteTrompa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.94549]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteTrompa:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-94, 19)]
+}
 
 [sub_resource type="Animation" id="Animation_eg5cy"]
 length = 0.001
@@ -89,10 +113,10 @@ tracks/1/path = NodePath("SpriteTrompa:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.594349, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(67, 27), Vector2(73.6667, 18.3333), Vector2(77, 14)]
+"values": [Vector2(79, 19), Vector2(73.6667, 18.3333), Vector2(80, 9), Vector2(77, 14)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -101,7 +125,7 @@ tracks/2/path = NodePath("SpriteTrompa:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.9),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [3.11143, 3.52207, 2.30034]
@@ -109,7 +133,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_g10a6"]
 resource_name = "trompa_izquierda"
-length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -118,10 +141,10 @@ tracks/0/path = NodePath("SpriteTrompa:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.307499, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [3.11143, 3.52207, 4.19391]
+"values": [3.98896, 3.6625, 3.61667, 3.11143]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -130,10 +153,10 @@ tracks/1/path = NodePath("SpriteTrompa:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-89, 21), Vector2(-106, 8)]
+"values": [Vector2(-96, 8), Vector2(-94, 19), Vector2(-89, 21)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -163,8 +186,8 @@ script = ExtResource("1_b3yir")
 
 [node name="SpriteTrompa" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(67, 27)
-rotation = 3.11143
+position = Vector2(-94, 19)
+rotation = 2.94549
 scale = Vector2(0.568, -0.568)
 texture = ExtResource("2_trvs2")
 offset = Vector2(-120.566, -110.43)
@@ -191,6 +214,7 @@ shape = SubResource("RectangleShape2D_rigyh")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
+wait_time = 5.0
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -199,9 +223,9 @@ autostart = true
 position = Vector2(-6, -30)
 scale = Vector2(0.578125, 0.519375)
 sprite_frames = ExtResource("2_p7pum")
-animation = &"izquierda"
-frame = 1
-frame_progress = 0.70615
+animation = &"derecha"
+frame = 3
+frame_progress = 0.103248
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -209,8 +233,6 @@ rotation = 1.56701
 scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_hyd1i")
 metadata/_edit_lock_ = true
-
-[node name="Elefante" type="CharacterBody2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cpccuxm74oow3"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
-[ext_resource type="PackedScene" path="res://Cosas/Lamparita/Portalámparas.tscn" id="2_im02a"]
+[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="2_im02a"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
 [ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/gallina/Pollo1.png" id="4_ru17d"]
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]

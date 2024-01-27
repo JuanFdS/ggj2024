@@ -20,7 +20,9 @@ func inicializar():
 	ganado = false
 	
 func reiniciar():
+	Sounds.stop_all_sounds()
 	inicializar()
 
 func se_gano():
+	Sounds.play_lamp_win()
 	ganado = true

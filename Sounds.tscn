@@ -1,15 +1,24 @@
-[gd_scene load_steps=18 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=28 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
+[ext_resource type="AudioStream" uid="uid://co1g80w50b8wl" path="res://Sounds/lampara_win.ogg" id="2_blt3v"]
+[ext_resource type="AudioStream" uid="uid://bbt77j1f6j1wc" path="res://Sounds/LampCollision/col lamp_4.ogg" id="2_g7byw"]
 [ext_resource type="AudioStream" uid="uid://urn14dv2n22q" path="res://Sounds/Spawn/sp_7.ogg" id="2_rg2nc"]
 [ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="2_yxl5g"]
 [ext_resource type="Script" path="res://addons/random_audio/AudioStreamPlayerRandom.gd" id="3_5uvqe"]
 [ext_resource type="Script" path="res://addons/random_audio/AudioStreamArray.gd" id="4_mss6c"]
+[ext_resource type="AudioStream" uid="uid://bhy8m0tj6vb0v" path="res://Sounds/LampCollision/col lamp_5.ogg" id="5_hcecr"]
 [ext_resource type="AudioStream" uid="uid://fihexg2pv8iu" path="res://Sounds/Spawn/sp_9.ogg" id="5_xigwd"]
 [ext_resource type="AudioStream" uid="uid://ccgbgj0uath0e" path="res://Sounds/Spawn/sp_10.ogg" id="6_6s7yx"]
+[ext_resource type="AudioStream" uid="uid://chcj063566amx" path="res://Sounds/LampCollision/col lamp_6.ogg" id="6_mm7sa"]
+[ext_resource type="AudioStream" uid="uid://brvxo3vfmpuek" path="res://Sounds/LampCollision/col lamp_8.ogg" id="7_h5q4w"]
 [ext_resource type="AudioStream" uid="uid://dw3polvqxkgyn" path="res://Sounds/Spawn/sp_1.ogg" id="7_iyrit"]
+[ext_resource type="AudioStream" uid="uid://bg2wi4jdmpx2l" path="res://Sounds/LampCollision/col lamp_7.ogg" id="8_064qm"]
 [ext_resource type="AudioStream" uid="uid://uti4xinhrqff" path="res://Sounds/Spawn/sp_4.ogg" id="9_mwsg2"]
+[ext_resource type="AudioStream" uid="uid://jc471tyclpki" path="res://Sounds/LampCollision/col lamp_1.ogg" id="9_rlsj2"]
+[ext_resource type="AudioStream" uid="uid://x6n1h1ugrbqt" path="res://Sounds/LampCollision/col lamp_2.ogg" id="10_bvg0s"]
 [ext_resource type="AudioStream" uid="uid://xbgv5emon4xi" path="res://Sounds/Spawn/sp_5.ogg" id="10_ggvnp"]
+[ext_resource type="AudioStream" uid="uid://dj8gn72p5t8qy" path="res://Sounds/LampCollision/col lamp_3.ogg" id="11_im1hl"]
 [ext_resource type="AudioStream" uid="uid://dmql0yk4huypt" path="res://Sounds/Spawn/sp_6.ogg" id="11_v3b3n"]
 [ext_resource type="AudioStream" uid="uid://d122t8t5ysd6j" path="res://Sounds/Spawn/sp_8.ogg" id="12_bf3pd"]
 [ext_resource type="AudioStream" uid="uid://5epiltvinwlm" path="res://Sounds/Spawn/sp_3.ogg" id="13_8s7xk"]
@@ -17,12 +26,28 @@
 [ext_resource type="AudioStream" uid="uid://cl352qa8aed0o" path="res://Sounds/Gallinas/Gallina_2.wav" id="15_m26l7"]
 [ext_resource type="AudioStream" uid="uid://d1ho1br8xej3e" path="res://Sounds/Gallinas/Gallina_3.wav" id="16_fp62b"]
 
+[sub_resource type="Resource" id="Resource_fe3kv"]
+script = ExtResource("4_mss6c")
+streams = Array[AudioStream]([ExtResource("2_g7byw"), ExtResource("5_hcecr"), ExtResource("6_mm7sa"), ExtResource("7_h5q4w"), ExtResource("8_064qm"), ExtResource("9_rlsj2"), ExtResource("10_bvg0s"), ExtResource("11_im1hl")])
+
 [sub_resource type="Resource" id="Resource_n5ycp"]
 script = ExtResource("4_mss6c")
 streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), ExtResource("7_iyrit"), ExtResource("2_yxl5g"), ExtResource("9_mwsg2"), ExtResource("2_rg2nc"), ExtResource("10_ggvnp"), ExtResource("11_v3b3n"), ExtResource("12_bf3pd"), ExtResource("13_8s7xk")])
 
 [node name="Sounds" type="Node"]
 script = ExtResource("1_nv72u")
+
+[node name="LampWinSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_blt3v")
+
+[node name="LampCollisionSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g7byw")
+volume_db = -3.0
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -3.0
+use_stream_array = true
+stream_array = SubResource("Resource_fe3kv")
 
 [node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rg2nc")
