@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dms7l5mfubcpp"]
+[gd_scene load_steps=14 format=3 uid="uid://dms7l5mfubcpp"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_au45p"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_4s6gc"]
-[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_1v38x"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="3_1v38x"]
 [ext_resource type="PackedScene" uid="uid://btibma3e67qwh" path="res://Cosas/Elefante.tscn" id="3_28bn2"]
+[ext_resource type="PackedScene" uid="uid://dgkjtc3vl2qun" path="res://Cosas/Ventilador/Ventilador.tscn" id="5_amouy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -137,3 +138,6 @@ offset_right = -24.0
 offset_bottom = 52.0
 grow_horizontal = 0
 text = "Reintentar"
+
+[node name="Ventilador" parent="." instance=ExtResource("5_amouy")]
+position = Vector2(1140, 979)
