@@ -1,3 +1,4 @@
+@tool
 class_name Elefante
 extends RigidBody2D
 
@@ -9,13 +10,18 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 @onready var origin_x = global_position.x
 @onready var timer := %Timer
 
+
 func _ready():
+	if Engine.is_editor_hint():
+		return
 	$AnimationPlayer.play("trompa_izquierda")
 	$AnimatedSprite2D.play("izquierda")
 	trompa.add_collision_exception_with(self)
 	timer.timeout.connect(self.avanzar)
 
 func _physics_process(delta):
+	if Engine.is_editor_hint():
+		return
 	pass
 
 func avanzar():
@@ -42,3 +48,24 @@ func animar_transicion(direccion_inicial, direccion_final):
 		$AnimationPlayer.play("trompa_%s" % direccion_final)
 		$SpriteTrompa.visible = true
 	, CONNECT_ONE_SHOT)
+
+func play_animations():
+	$AnimatedSprite2D.stop()
+	$AnimationPlayer.stop()
+	
+	$AnimatedSprite2D.play("derecha")
+	$AnimationPlayer.play("trompa_derecha")
+
+func stop_animations():
+	$AnimatedSprite2D.pause()
+	$AnimationPlayer.pause()
+
+func _extend_inspector_begin(inspector: ExtendableInspector):
+	var play_animations_button =\
+		CommonControls.new(inspector).method_button("play_animations")
+	var stop_animations_button =\
+		CommonControls.new(inspector).method_button("stop_animations")
+
+	inspector.add_custom_control(play_animations_button)
+	inspector.add_custom_control(stop_animations_button)
+
