@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=19 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
 [ext_resource type="AudioStream" uid="uid://urn14dv2n22q" path="res://Sounds/Spawn/sp_7.ogg" id="2_rg2nc"]
@@ -13,10 +13,17 @@
 [ext_resource type="AudioStream" uid="uid://dmql0yk4huypt" path="res://Sounds/Spawn/sp_6.ogg" id="11_v3b3n"]
 [ext_resource type="AudioStream" uid="uid://d122t8t5ysd6j" path="res://Sounds/Spawn/sp_8.ogg" id="12_bf3pd"]
 [ext_resource type="AudioStream" uid="uid://5epiltvinwlm" path="res://Sounds/Spawn/sp_3.ogg" id="13_8s7xk"]
+[ext_resource type="AudioStream" uid="uid://cdktt0scybjcx" path="res://Sounds/Gallinas/Gallina_1.wav" id="14_btymc"]
+[ext_resource type="AudioStream" uid="uid://cl352qa8aed0o" path="res://Sounds/Gallinas/Gallina_2.wav" id="15_m26l7"]
+[ext_resource type="AudioStream" uid="uid://d1ho1br8xej3e" path="res://Sounds/Gallinas/Gallina_3.wav" id="16_fp62b"]
 
 [sub_resource type="Resource" id="Resource_n5ycp"]
 script = ExtResource("4_mss6c")
 streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), ExtResource("7_iyrit"), ExtResource("2_yxl5g"), ExtResource("9_mwsg2"), ExtResource("2_rg2nc"), ExtResource("10_ggvnp"), ExtResource("11_v3b3n"), ExtResource("12_bf3pd"), ExtResource("13_8s7xk")])
+
+[sub_resource type="Resource" id="Resource_y0eyd"]
+script = ExtResource("4_mss6c")
+streams = Array[AudioStream]([ExtResource("15_m26l7"), ExtResource("14_btymc"), ExtResource("16_fp62b")])
 
 [node name="Sounds" type="Node"]
 script = ExtResource("1_nv72u")
@@ -26,3 +33,10 @@ stream = ExtResource("2_rg2nc")
 script = ExtResource("3_5uvqe")
 use_stream_array = true
 stream_array = SubResource("Resource_n5ycp")
+
+[node name="GallinaSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_btymc")
+max_polyphony = 12
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_y0eyd")
