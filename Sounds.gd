@@ -19,3 +19,6 @@ func stop_all_sounds():
 	var streams = $GallinaSfx.get_children()
 	for stream in streams:
 		stream.stop()
+
+func play_select_cosa():
+	$SeleccionarSfx.play()

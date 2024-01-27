@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://chgyw6mdy5mon"]
+[gd_scene load_steps=9 format=3 uid="uid://chgyw6mdy5mon"]
 
 [ext_resource type="Script" path="res://Cosas/Ingeniero/Ingeniero.gd" id="1_l0uwo"]
 [ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_3grnq"]
+[ext_resource type="SpriteFrames" uid="uid://j5ipnhegb71v" path="res://Assets/ingeniero/Ingeniero.tres" id="2_6c07u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
@@ -35,20 +36,18 @@ unique_name_in_owner = true
 position = Vector2(4, -246)
 rotation = -0.0364874
 
-[node name="Mirando" type="Polygon2D" parent="Node2D"]
-unique_name_in_owner = true
-position = Vector2(8, -46)
-polygon = PackedVector2Array(-34, 86, -42, 42, -36, -44, -95, -1, -89, -29, -30, -69, -55, -94, -61, -129, -27, -175, 21, -175, 39, -150, 39, -120, 19, -88, 64, -94, 75, -148, 41, -165, 43, -177, 87, -160, 79, -95, 70, -80, 24, -75, 28, 22, 38, 80, 26, 78, 15, 33, -21, 42, -19, 74)
-
-[node name="AgarrandoLamparita" type="Polygon2D" parent="Node2D"]
+[node name="AgarrandoLamparita" type="AnimatedSprite2D" parent="Node2D"]
 unique_name_in_owner = true
 visible = false
-polygon = PackedVector2Array(-20, 31, -54, 11, -18, -23, -16, -61, -79, -108, -70, -144, -12, -184, -5, -174, -47, -146, -58, -124, -13, -83, -17, -112, -5, -130, 28, -129, 44, -110, 30, -98, 28, -83, 86, -115, 26, -169, 44, -184, 116, -111, 30, -67, 28, -27, 74, 4, 30, 31, 22, 20, 44, 8, 14, -12, -6, -15, -27, 5, -13, 20)
+position = Vector2(-6.75049, -82.5099)
+scale = Vector2(0.607644, 0.607644)
+sprite_frames = ExtResource("2_6c07u")
+animation = &"con_foco"
 
 [node name="LamparitaNueva" type="Sprite2D" parent="Node2D/AgarrandoLamparita"]
-position = Vector2(14, -194)
-rotation = 3.13316
-scale = Vector2(0.65, 0.65)
+position = Vector2(36.9705, -136.929)
+rotation = 0.0702803
+scale = Vector2(1.0697, 1.0697)
 texture = ExtResource("2_3grnq")
 
 [node name="AreaDetectoraDeLamparitas" type="Area2D" parent="Node2D"]
@@ -83,6 +82,13 @@ shape = SubResource("RectangleShape2D_mh18q")
 unique_name_in_owner = true
 wait_time = 2.3
 autostart = true
+
+[node name="Mirando" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(8.57143, -62.8571)
+scale = Vector2(0.595391, 0.595391)
+sprite_frames = ExtResource("2_6c07u")
+animation = &"cayendose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -64)

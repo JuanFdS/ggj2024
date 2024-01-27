@@ -9,6 +9,7 @@ var estado = Estado.Paveando
 
 func _ready():
 	%Mirando.visible = true
+	%Mirando.play()
 	%AgarrandoLamparita.visible = false
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):
 		lamparita_a_buscar = lamparita
