@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="2_sn8kj"]
 [ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Cosas/Gallina.tscn" id="3_2a7ha"]
-[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_mpgl4"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/Spawn/spawn_1.wav" id="3_mpgl4"]
 [ext_resource type="Texture2D" uid="uid://cmkbbdvwgvn5g" path="res://Assets/Pollo1.png" id="4_ru17d"]
 [ext_resource type="Script" path="res://BotonSeleccionarCosa.gd" id="4_th3gl"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="5_5pbi7"]
