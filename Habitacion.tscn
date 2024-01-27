@@ -35,6 +35,12 @@ size = Vector2(100, 100)
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_i1ca1")
 
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_pon65")
+centered = false
+
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648
 collision_mask = 0
@@ -58,8 +64,10 @@ shape = SubResource("WorldBoundaryShape2D_niugd")
 
 [node name="Portalámparas" parent="." instance=ExtResource("2_im02a")]
 unique_name_in_owner = true
+position = Vector2(505, 59)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("2_sn8kj")]
+position = Vector2(689, 377)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -160,8 +168,3 @@ theme_override_constants/margin_bottom = 10
 [node name="Contador" type="Label" parent="CanvasLayer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Fondo" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pon65")
-centered = false
