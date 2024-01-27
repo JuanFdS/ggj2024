@@ -34,7 +34,6 @@ scale = Vector2(0.7, 0.7)
 unique_name_in_owner = true
 position = Vector2(4, -246)
 rotation = -0.0364874
-scale = Vector2(1, 1)
 
 [node name="Mirando" type="Polygon2D" parent="Node2D"]
 unique_name_in_owner = true
@@ -46,7 +45,7 @@ unique_name_in_owner = true
 visible = false
 polygon = PackedVector2Array(-20, 31, -54, 11, -18, -23, -16, -61, -79, -108, -70, -144, -12, -184, -5, -174, -47, -146, -58, -124, -13, -83, -17, -112, -5, -130, 28, -129, 44, -110, 30, -98, 28, -83, 86, -115, 26, -169, 44, -184, 116, -111, 30, -67, 28, -27, 74, 4, 30, 31, 22, 20, 44, 8, 14, -12, -6, -15, -27, 5, -13, 20)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/AgarrandoLamparita"]
+[node name="LamparitaNueva" type="Sprite2D" parent="Node2D/AgarrandoLamparita"]
 position = Vector2(14, -194)
 rotation = 3.13316
 scale = Vector2(0.65, 0.65)
