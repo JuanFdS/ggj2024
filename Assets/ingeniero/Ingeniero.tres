@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://j5ipnhegb71v"]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://j5ipnhegb71v"]
 
 [ext_resource type="Texture2D" uid="uid://d3pnil56tdc0x" path="res://Assets/ingeniero/Ingen2.png" id="1_gykby"]
 [ext_resource type="Texture2D" uid="uid://c8jl2sdqqgr3" path="res://Assets/ingeniero/Ingen3.png" id="2_fbq13"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://nxb2lmgcnny1" path="res://Assets/ingeniero/Ingen5.png" id="4_eom7q"]
 [ext_resource type="Texture2D" uid="uid://c4che76qg1bkf" path="res://Assets/ingeniero/Ingen 1.png" id="5_hd451"]
 [ext_resource type="Texture2D" uid="uid://bvk0k4k1wt8pv" path="res://Assets/ingeniero/Ingeniero con foco.png" id="6_lg6nh"]
+[ext_resource type="Texture2D" uid="uid://vo7dcas8wcj0" path="res://Assets/ingeniero/Corre1.png" id="7_7uyjm"]
+[ext_resource type="Texture2D" uid="uid://mjxuvyv84tod" path="res://Assets/ingeniero/Corre2.png" id="8_k1eve"]
+[ext_resource type="Texture2D" uid="uid://crfiaaprde684" path="res://Assets/ingeniero/Corre3.png" id="9_d5pf0"]
+[ext_resource type="Texture2D" uid="uid://b3tmyxnglouny" path="res://Assets/ingeniero/Corre4.png" id="10_p374q"]
+[ext_resource type="Texture2D" uid="uid://bx0j0rnnlg1li" path="res://Assets/ingeniero/Ing sin foquito.png" id="11_38buc"]
 
 [resource]
 animations = [{
@@ -35,5 +40,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"con_foco",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7uyjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k1eve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d5pf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p374q")
+}],
+"loop": true,
+"name": &"corriendo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_38buc")
+}],
+"loop": true,
+"name": &"sin_foco",
 "speed": 5.0
 }]

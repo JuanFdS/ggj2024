@@ -41,7 +41,7 @@ unique_name_in_owner = true
 position = Vector2(-6.75049, -82.5099)
 scale = Vector2(0.607644, 0.607644)
 sprite_frames = ExtResource("2_6c07u")
-animation = &"con_foco"
+animation = &"sin_foco"
 
 [node name="LamparitaNueva" type="Sprite2D" parent="Node2D/AgarrandoLamparita"]
 position = Vector2(36.9705, -136.929)
