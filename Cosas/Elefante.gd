@@ -14,8 +14,8 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 func _ready():
 	if Engine.is_editor_hint():
 		return
-	$AnimationPlayer.play("trompa_izquierda")
-	$AnimatedSprite2D.play("izquierda")
+	
+	animar_trompa_hacia("izquierda")
 	trompa.add_collision_exception_with(self)
 	timer.timeout.connect(self.avanzar)
 
@@ -44,10 +44,13 @@ func animar_transicion(direccion_inicial, direccion_final):
 	$AnimatedSprite2D.play("%s_a_%s" % [direccion_inicial, direccion_final])
 	$SpriteTrompa.visible = false
 	$AnimatedSprite2D.animation_finished.connect(func():
-		$AnimatedSprite2D.play(direccion_final)
-		$AnimationPlayer.play("trompa_%s" % direccion_final)
+		animar_trompa_hacia(direccion_final)
 		$SpriteTrompa.visible = true
 	, CONNECT_ONE_SHOT)
+
+func animar_trompa_hacia(nombre_direccion):
+	$AnimatedSprite2D.play(nombre_direccion)
+	$AnimationPlayer.play("trompa_%s" % nombre_direccion)
 
 func play_animations():
 	$AnimatedSprite2D.stop()
