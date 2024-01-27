@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddiobupwuxrqh"]
+
+[ext_resource type="Texture2D" uid="uid://bfcsxk1usm6jn" path="res://Assets/lamparita/Lampara rota.png" id="1_7a2v3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66xfx"]
+radius = 30.0
+
+[node name="LamparitaRota" type="Node2D"]
+position = Vector2(555, 19)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-572, -6)
+color = Color(0.305882, 0.301961, 0, 1)
+polygon = PackedVector2Array(566, 9, 566, 30, 557, 47, 558, 63, 571, 73, 588, 74, 603, 69, 602, 52, 600, 40, 586, 33, 583, 9)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 34)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -4)
+shape = SubResource("CircleShape2D_66xfx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("1_7a2v3")
