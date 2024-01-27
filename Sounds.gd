@@ -12,7 +12,7 @@ func play_lamp_collision():
 	$LampCollisionSfx.play_random()
 
 func play_lamp_win():
-	pass
+	$LampWinSfx.play()
 
 func stop_all_sounds():
 	$LampWinSfx.stop()

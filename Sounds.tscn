@@ -39,13 +39,14 @@ script = ExtResource("1_nv72u")
 
 [node name="LampWinSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_blt3v")
+volume_db = 18.0
 
 [node name="LampCollisionSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g7byw")
 volume_db = -3.0
 bus = &"Sound"
 script = ExtResource("3_5uvqe")
-volume = -3.0
+volume = -27.0
 use_stream_array = true
 stream_array = SubResource("Resource_fe3kv")
 
