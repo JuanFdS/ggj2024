@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_i1ca1"]
 [ext_resource type="Script" path="res://LamparitaNueva.gd" id="2_xrxmd"]
+[ext_resource type="AudioStream" uid="uid://m00i60fa0h3b" path="res://Sounds/spawn_1.wav" id="3_mpgl4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -172,3 +173,6 @@ collision_mask = 2147483649
 shape = SubResource("RectangleShape2D_r3582")
 
 [node name="Polygon2D" type="Polygon2D" parent="MenúItem"]
+
+[node name="SpawnSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mpgl4")

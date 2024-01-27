@@ -13,4 +13,5 @@ func _unhandled_input(event):
 		var nueva_gallina = $Gallina.duplicate()
 		add_child(nueva_gallina)
 		nueva_gallina.global_position = event.global_position
+		$SpawnSfx.play()
 		cantidad_gallinas += 1
