@@ -18,6 +18,6 @@ func _ready():
 	)
 	
 	body_entered.connect(func(_otra_area):
-		pass
+		Sounds.play_lamp_collision()
 	)
 	
