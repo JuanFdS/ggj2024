@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://chgyw6mdy5mon"]
+[gd_scene load_steps=16 format=3 uid="uid://chgyw6mdy5mon"]
 
 [ext_resource type="Script" path="res://Cosas/Ingeniero/Ingeniero.gd" id="1_l0uwo"]
 [ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_3grnq"]
 [ext_resource type="SpriteFrames" uid="uid://j5ipnhegb71v" path="res://Assets/ingeniero/Ingeniero.tres" id="2_6c07u"]
 [ext_resource type="Texture2D" uid="uid://b7101vs5n6utg" path="res://Assets/ingeniero/nubeDePolvo.png" id="4_tojtx"]
-[ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="6_7mvwe"]
 [ext_resource type="AudioStream" uid="uid://yge8n0081sv0" path="res://Sounds/Ingeniero/pasos.ogg" id="5_u8hmj"]
+[ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="6_7mvwe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
