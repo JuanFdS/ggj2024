@@ -8,6 +8,7 @@ var unfocused_stylebox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%Foco.visible = false
 	%Boton.texture_normal = tipo_de_cosa.textura
 	if Engine.is_editor_hint():
 		return
@@ -24,6 +25,8 @@ func _ready():
 		EstadoDePartida.tipo_de_cosa_seleccionada = tipo_de_cosa
 	)
 
+func _process(delta):
+	%Foco.visible = EstadoDePartida.tipo_de_cosa_seleccionada == tipo_de_cosa
 
 func set_tipo_de_cosa(nuevo_tipo_de_cosa: TipoDeCosa):
 	tipo_de_cosa = nuevo_tipo_de_cosa
