@@ -46,4 +46,17 @@ func _process(_delta):
 	if(EstadoDePartida.ganado):
 		%Mensajito.visible = true
 		%Mensajito.text = EstadoDePartida.mensaje_ganador
+		%CantidadValor.text = %Contador.text
+		%TiempoValor.text = %LabelTimer.text
+		var nivel = EstadoDelJuego.nivel_actual
+		%MejorCantidad.text = EstadoDelJuego.puntaje_alto_como_texto_para(nivel, EstadoDelJuego.CANTIDAD)
+		%MejorTiempo.text = EstadoDelJuego.puntaje_alto_como_texto_para(nivel, EstadoDelJuego.TIEMPO)
+		if(not EstadoDelJuego.puntajes_altos_para_nivel(nivel).is_empty()):
+			var mejor_puntaje_cantidad = EstadoDelJuego.puntajes_altos_para_nivel(nivel)[EstadoDelJuego.CANTIDAD]
+			var mejor_puntaje_tiempo = EstadoDelJuego.puntajes_altos_para_nivel(nivel)[EstadoDelJuego.TIEMPO]
+			%NuevoRecordCantidad.visible =\
+				mejor_puntaje_cantidad.cantidad_de_cosas == EstadoDePartida.cantidad_de_cosas
+			%NuevoRecordTiempo.visible =\
+				mejor_puntaje_cantidad.tiempo == EstadoDePartida.tiempo
+			
 	

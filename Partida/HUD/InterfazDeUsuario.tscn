@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2yocnvxnapsh"]
+[gd_scene load_steps=8 format=3 uid="uid://c2yocnvxnapsh"]
 
 [ext_resource type="Script" path="res://Partida/HUD/InterfazDeUsuario.gd" id="1_ylw0i"]
 [ext_resource type="PackedScene" uid="uid://dgeq8sluvkhiw" path="res://Partida/HUD/BotonTipoDeCosa.tscn" id="2_8fph6"]
@@ -8,6 +8,17 @@
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7xr5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anw5k"]
 
@@ -30,6 +41,7 @@ offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+text = "Ganaste!"
 label_settings = SubResource("LabelSettings_ppkp1")
 
 [node name="ProximoNivel" type="Button" parent="Mensajito"]
@@ -47,6 +59,93 @@ offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Próximo Nivel  ▶"
+
+[node name="PanelContainer" type="PanelContainer" parent="Mensajito"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 129.0
+offset_right = 112.5
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n7xr5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mensajito/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mensajito/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Cantidad" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cambiaste la lamparita con: "
+horizontal_alignment = 2
+
+[node name="CantidadValor" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Mensajito/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Tiempo" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tardaste:"
+horizontal_alignment = 2
+
+[node name="TiempoValor" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Mensajito/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Mensajito/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NuevoRecordCantidad" type="RichTextLabel" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[wave][rainbow]Nuevo record![/rainbow][/wave]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MejorCantidad" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mejor cantidad:"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Mensajito/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NuevoRecordTiempo" type="RichTextLabel" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[wave][rainbow]Nuevo record![/rainbow][/wave]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MejorTiempo" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mejor tiempo:"
+horizontal_alignment = 2
 
 [node name="BotonMostrarPanelLateral" type="TextureButton" parent="."]
 unique_name_in_owner = true
