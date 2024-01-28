@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=21 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://ba8thcs7ita34" path="res://Partida/SelectorDeNiveles/SelectorDeNiveles.tscn" id="2_1x4ih"]
@@ -7,13 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
 [ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="4_nek06"]
 [ext_resource type="PackedScene" uid="uid://cr7eculfvr0fs" path="res://Cosas/Gallina.tscn" id="4_qpccf"]
+[ext_resource type="Texture2D" uid="uid://8wcni3xuyg2a" path="res://Assets/creditos/Creditos1.png" id="8_g0yqj"]
+[ext_resource type="Script" path="res://scenes/CreditosContainer.gd" id="8_t55xn"]
+[ext_resource type="Texture2D" uid="uid://dhre84fxi2kcy" path="res://Assets/creditos/Creditos2.png" id="9_jo7qp"]
+[ext_resource type="Texture2D" uid="uid://c0byuiadrlnov" path="res://Assets/creditos/Creditos3.png" id="10_8s6bv"]
+[ext_resource type="Texture2D" uid="uid://bfbx8o657fox1" path="res://Assets/creditos/Creditos4.png" id="11_2e2s6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jw8ik"]
 texture = ExtResource("4_nek06")
 
-[sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
-font_size = 8
-font_color = Color(1, 1, 1, 0.486275)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieef5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_clw65"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2k43"]
+font_size = 30
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0mcge"]
 normal = Vector2(1, 0)
@@ -58,6 +68,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jw8ik")
 
+[node name="Titulo" type="RichTextLabel" parent="UI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 25.0
+offset_right = 450.0
+offset_bottom = 2058.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 0.901961, 0.54902, 1)
+theme_override_colors/font_shadow_color = Color(0.713726, 0.592157, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]¿Cuantas
+[tornado][color=black]gallinas[/color][/tornado]
+se necesitan para cambiar un foquito?
+[/center]"
+fit_content = true
+
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,19 +106,12 @@ theme_override_constants/separation = 5
 [node name="GameLogo" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("4_fnufg")]
 layout_mode = 2
 
-[node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "continue"
-
 [node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "new_game"
+text = "play"
 
 [node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -93,6 +120,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "settings"
 
+[node name="CreditsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "credits"
+
 [node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
@@ -100,25 +134,155 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "leave_game"
 
-[node name="Credits" type="MarginContainer" parent="UI/CenterContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/margin_top = 10
-
-[node name="Label" type="Label" parent="UI/CenterContainer/VBoxContainer/Credits"]
-layout_mode = 2
-text = "credits"
-label_settings = SubResource("LabelSettings_2ikbh")
-horizontal_alignment = 1
-
 [node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
 unique_name_in_owner = true
 visible = false
 z_index = 10
 
+[node name="CreditosContainer" type="PanelContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ieef5")
+script = ExtResource("8_t55xn")
+
+[node name="Control" type="Control" parent="UI/CreditosContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 65.0
+offset_right = 409.0
+offset_bottom = 134.0
+text = "Arte"
+label_settings = SubResource("LabelSettings_clw65")
+
+[node name="Label2" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 136.0
+offset_right = 742.0
+offset_bottom = 205.0
+text = "Lucía Lopez Lemir"
+label_settings = SubResource("LabelSettings_t2k43")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = 358.0
+offset_top = -134.0
+offset_right = 1074.0
+offset_bottom = 365.0
+texture = ExtResource("10_8s6bv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pausa" type="Control" parent="UI/CreditosContainer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 235.0
+offset_right = 578.0
+offset_bottom = 304.0
+text = "Música y Sonido"
+label_settings = SubResource("LabelSettings_clw65")
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 305.0
+offset_right = 574.0
+offset_bottom = 374.0
+text = "Lucas Lucas (?"
+label_settings = SubResource("LabelSettings_t2k43")
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = -16.0
+offset_top = 153.0
+offset_right = 406.0
+offset_bottom = 557.0
+texture = ExtResource("9_jo7qp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Pausa2" type="Control" parent="UI/CreditosContainer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label5" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 475.0
+offset_right = 703.0
+offset_bottom = 544.0
+text = "Programación"
+label_settings = SubResource("LabelSettings_clw65")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 548.0
+offset_right = 703.0
+offset_bottom = 590.0
+text = "Facundo Gelatti"
+label_settings = SubResource("LabelSettings_t2k43")
+horizontal_alignment = 2
+
+[node name="TextureRect4" type="TextureRect" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = 673.0
+offset_top = 375.0
+offset_right = 960.0
+offset_bottom = 664.0
+texture = ExtResource("11_2e2s6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label7" type="Label" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 594.0
+offset_right = 703.0
+offset_bottom = 681.0
+text = "Juan Manuel
+Fernandes dos Santos"
+label_settings = SubResource("LabelSettings_t2k43")
+
+[node name="TextureRect" type="TextureRect" parent="UI/CreditosContainer/Control"]
+layout_mode = 2
+offset_left = -28.0
+offset_top = 488.0
+offset_right = 249.0
+offset_bottom = 749.0
+texture = ExtResource("8_g0yqj")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = &"Music"
+
+[node name="TituloTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
 
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648

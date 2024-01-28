@@ -47,6 +47,7 @@ func _to_main_menu():
 	_resume()
 
 func _pause_menu() -> void:
+	get_tree().paused = true
 	visible = true
 	settings_container.visible = false
 	menu_container.visible = true
