@@ -72,4 +72,5 @@ func _physics_process(_delta):
 
 func saltar():
 	if(estado == Estado.LamparitaEnMano):
+		%ParticulasSalto.restart()
 		apply_impulse(Vector2(0, -700).rotated(rotation) * mass)

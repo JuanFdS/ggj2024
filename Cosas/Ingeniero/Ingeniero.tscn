@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://chgyw6mdy5mon"]
+[gd_scene load_steps=12 format=3 uid="uid://chgyw6mdy5mon"]
 
 [ext_resource type="Script" path="res://Cosas/Ingeniero/Ingeniero.gd" id="1_l0uwo"]
 [ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_3grnq"]
 [ext_resource type="SpriteFrames" uid="uid://j5ipnhegb71v" path="res://Assets/ingeniero/Ingeniero.tres" id="2_6c07u"]
+[ext_resource type="Texture2D" uid="uid://b7101vs5n6utg" path="res://Assets/ingeniero/nubeDePolvo.png" id="4_tojtx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
@@ -19,6 +20,13 @@ size = Vector2(94.2857, 111.428)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igyre"]
 size = Vector2(51, 114)
+
+[sub_resource type="Curve" id="Curve_t5ojk"]
+_data = [Vector2(0, 0.182803), 0.0, 0.0, 0, 0, Vector2(0.638298, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.116071), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_k5q3e"]
+colors = PackedColorArray(0.668978, 0.647933, 0.657169, 1, 1, 1, 1, 0)
 
 [node name="Ingeniero" type="RigidBody2D"]
 position = Vector2(1144, 1204)
@@ -104,3 +112,19 @@ wait_time = 3.0
 [node name="TimerPlayPiensa" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="ParticulasSalto" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.5
+texture = ExtResource("4_tojtx")
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.8
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_t5ojk")
+color = Color(0.745098, 0.745098, 0.745098, 1)
+color_ramp = SubResource("Gradient_k5q3e")
