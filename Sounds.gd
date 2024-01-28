@@ -22,3 +22,12 @@ func stop_all_sounds():
 
 func play_select_cosa():
 	$SeleccionarSfx.play()
+
+func play_elefante_pasos():
+	$ElefantePasosSfx.play()
+	
+func play_elefante_revolea():
+	$ElefanteRevoleaSfx.play()
+	
+func play_elefante_resonga():
+	$ElefanteResongaSfx.play()

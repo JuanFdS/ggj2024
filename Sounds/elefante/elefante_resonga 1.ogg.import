@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdcbew7kxqco0"
+path="res://.godot/imported/elefante_resonga 1.ogg-9d4be8fee8d434c27f3d983405e02fc3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/elefante/elefante_resonga 1.ogg"
+dest_files=["res://.godot/imported/elefante_resonga 1.ogg-9d4be8fee8d434c27f3d983405e02fc3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
