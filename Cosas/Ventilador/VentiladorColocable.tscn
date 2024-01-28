@@ -1,14 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh01bmxbbhyhx"]
+[gd_scene load_steps=5 format=3 uid="uid://dh01bmxbbhyhx"]
 
 [ext_resource type="PackedScene" uid="uid://dgkjtc3vl2qun" path="res://Cosas/Ventilador/Ventilador.tscn" id="1_hehek"]
 [ext_resource type="Script" path="res://Cosas/Ventilador/VentiladorColocable.gd" id="1_sol6i"]
 [ext_resource type="BitMap" uid="uid://c0qw5y8st17gg" path="res://Assets/ventilador/VentiladorClickMask.png" id="3_0f3qt"]
+[ext_resource type="Texture2D" uid="uid://dp8qvsh5e245a" path="res://Assets/Icons/KEY/Rotate.png" id="3_44e5m"]
 
 [node name="VentiladorColocable" type="Node2D"]
 script = ExtResource("1_sol6i")
 
 [node name="Ventilador" parent="." instance=ExtResource("1_hehek")]
+position = Vector2(-4, 0)
 fuerza = 1000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+z_index = 10
+position = Vector2(0, 55)
+scale = Vector2(0.39533, 0.39533)
+texture = ExtResource("3_44e5m")
 
 [node name="BotonRotar" type="TextureButton" parent="."]
 anchors_preset = 8
@@ -16,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -83.0
-offset_right = 155.0
-offset_bottom = 155.0
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 130.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
