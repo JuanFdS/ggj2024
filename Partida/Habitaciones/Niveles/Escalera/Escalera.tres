@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Nivel" load_steps=5 format=3 uid="uid://xct6bk544phk"]
+
+[ext_resource type="Script" path="res://Partida/Habitaciones/Niveles/Nivel.gd" id="1_k7fhl"]
+[ext_resource type="PackedScene" uid="uid://csh3tnax0rycn" path="res://Partida/Habitaciones/Niveles/Escalera/Escalera.tscn" id="1_v47id"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="3_rxplc"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="4_4wn56"]
+
+[resource]
+script = ExtResource("1_k7fhl")
+escena = ExtResource("1_v47id")
+nombre = "Escalera al cielo"
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_rxplc"), ExtResource("4_4wn56")])
