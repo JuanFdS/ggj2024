@@ -57,12 +57,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaDetectoraDeLamparitas"]
 position = Vector2(333.571, -43.8571)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_526vh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/AreaDetectoraDeLamparitas"]
 position = Vector2(333.571, -43.8571)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_526vh")
 
 [node name="AreaAgarradoraDeLamparitas" type="Area2D" parent="Node2D"]
@@ -98,3 +96,11 @@ animation = &"cayendose"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -47)
 shape = SubResource("RectangleShape2D_igyre")
+
+[node name="TimerPlayRie" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="TimerPlayPiensa" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

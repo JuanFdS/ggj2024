@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=49 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
 [ext_resource type="AudioStream" uid="uid://ck3ols50rtx2x" path="res://Sounds/click.ogg" id="2_82y2r"]
@@ -29,6 +29,21 @@
 [ext_resource type="AudioStream" uid="uid://q3lok0023mk2" path="res://Sounds/elefante/elefante_pasos.ogg" id="27_l160b"]
 [ext_resource type="AudioStream" uid="uid://cncik2i3wa3pc" path="res://Sounds/elefante/elefante_revolea.ogg" id="28_ub8wp"]
 [ext_resource type="AudioStream" uid="uid://cdcbew7kxqco0" path="res://Sounds/elefante/elefante_resonga 1.ogg" id="29_gkpce"]
+[ext_resource type="AudioStream" uid="uid://dg2jru4qafkk6" path="res://Sounds/Ingeniero/piensa/piensa 4.ogg" id="30_gvf1l"]
+[ext_resource type="AudioStream" uid="uid://dnc1abdufe4vp" path="res://Sounds/Ingeniero/piensa/piensa 3.ogg" id="31_11c3n"]
+[ext_resource type="AudioStream" uid="uid://bvil8o2srgv51" path="res://Sounds/Ingeniero/piensa/piensa 1.ogg" id="32_6gknt"]
+[ext_resource type="AudioStream" uid="uid://5kifei6olbps" path="res://Sounds/Ingeniero/piensa/piensa 2.ogg" id="33_rdkp2"]
+[ext_resource type="AudioStream" uid="uid://g3yr85rn0psh" path="res://Sounds/Ingeniero/piensa/piensa 5.ogg" id="34_agn64"]
+[ext_resource type="AudioStream" uid="uid://dae2jycsrlo1k" path="res://Sounds/Ingeniero/piensa/piensa 6.ogg" id="35_xglch"]
+[ext_resource type="AudioStream" uid="uid://crwqr4jajwsg3" path="res://Sounds/Ingeniero/piensa/piensa 7.ogg" id="36_yqjgq"]
+[ext_resource type="AudioStream" uid="uid://cvsoxawcjj3na" path="res://Sounds/Ingeniero/rie/rie 7.ogg" id="37_exkqi"]
+[ext_resource type="AudioStream" uid="uid://bcoalm6uhv80l" path="res://Sounds/Ingeniero/rie/rie 1.ogg" id="38_m5fx6"]
+[ext_resource type="AudioStream" uid="uid://bqs54lql1i2jv" path="res://Sounds/Ingeniero/rie/rie 4.ogg" id="39_k68y7"]
+[ext_resource type="AudioStream" uid="uid://1rh8srj3gjk7" path="res://Sounds/Ingeniero/rie/rie 6.ogg" id="40_fyxq2"]
+[ext_resource type="AudioStream" uid="uid://df3xpjoww0x0t" path="res://Sounds/Ingeniero/rie/rie 3.ogg" id="41_u7m5u"]
+[ext_resource type="AudioStream" uid="uid://qexk42b2tino" path="res://Sounds/Ingeniero/rie/rie 5.ogg" id="42_8or0x"]
+[ext_resource type="AudioStream" uid="uid://dddrxhupbif7q" path="res://Sounds/Ingeniero/rie/rie 2.ogg" id="43_t2txa"]
+[ext_resource type="AudioStream" uid="uid://yge8n0081sv0" path="res://Sounds/Ingeniero/pasos.ogg" id="44_mph8s"]
 
 [sub_resource type="Resource" id="Resource_fe3kv"]
 script = ExtResource("4_mss6c")
@@ -37,6 +52,14 @@ streams = Array[AudioStream]([ExtResource("2_g7byw"), ExtResource("5_hcecr"), Ex
 [sub_resource type="Resource" id="Resource_n5ycp"]
 script = ExtResource("4_mss6c")
 streams = Array[AudioStream]([ExtResource("5_xigwd"), ExtResource("6_6s7yx"), ExtResource("7_iyrit"), ExtResource("2_yxl5g"), ExtResource("9_mwsg2"), ExtResource("2_rg2nc"), ExtResource("10_ggvnp"), ExtResource("11_v3b3n"), ExtResource("12_bf3pd"), ExtResource("13_8s7xk")])
+
+[sub_resource type="Resource" id="Resource_qjicm"]
+script = ExtResource("4_mss6c")
+streams = Array[AudioStream]([ExtResource("30_gvf1l"), ExtResource("34_agn64"), ExtResource("33_rdkp2"), ExtResource("35_xglch"), ExtResource("36_yqjgq"), ExtResource("32_6gknt"), ExtResource("31_11c3n")])
+
+[sub_resource type="Resource" id="Resource_fnojt"]
+script = ExtResource("4_mss6c")
+streams = Array[AudioStream]([ExtResource("38_m5fx6"), ExtResource("39_k68y7"), ExtResource("40_fyxq2"), ExtResource("37_exkqi"), ExtResource("41_u7m5u"), ExtResource("42_8or0x"), ExtResource("43_t2txa")])
 
 [node name="Sounds" type="Node"]
 script = ExtResource("1_nv72u")
@@ -118,4 +141,122 @@ max_polyphony = 2
 [node name="ElefanteResongaSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_gkpce")
 volume_db = -9.37
+bus = &"Sound"
+
+[node name="IngenieroPiensaSfx" type="Node" parent="."]
+
+[node name="IngenieroPiensaSfx1" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("30_gvf1l")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroPiensaSfx2" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("32_6gknt")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroPiensaSfx3" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("35_xglch")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroPiensaSfx4" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("35_xglch")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroPiensaSfx5" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("35_xglch")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroPiensaSfx6" type="AudioStreamPlayer" parent="IngenieroPiensaSfx"]
+stream = ExtResource("35_xglch")
+volume_db = -6.0
+pitch_scale = 0.93
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+volume = -6.0
+pitch = 0.93
+use_stream_array = true
+stream_array = SubResource("Resource_qjicm")
+
+[node name="IngenieroRieSfx" type="Node" parent="."]
+
+[node name="IngenieroRieSfx1" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroRieSfx2" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroRieSfx3" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroRieSfx4" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroRieSfx5" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroRieSfx6" type="AudioStreamPlayer" parent="IngenieroRieSfx"]
+stream = ExtResource("37_exkqi")
+bus = &"Sound"
+script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_fnojt")
+
+[node name="IngenieroCamina" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_mph8s")
+volume_db = -9.0
+max_polyphony = 3
 bus = &"Sound"

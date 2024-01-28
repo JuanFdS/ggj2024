@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5kifei6olbps"
+path="res://.godot/imported/piensa 2.ogg-cc85e60c167a095d5b30cd2177425831.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Ingeniero/piensa/piensa 2.ogg"
+dest_files=["res://.godot/imported/piensa 2.ogg-cc85e60c167a095d5b30cd2177425831.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
