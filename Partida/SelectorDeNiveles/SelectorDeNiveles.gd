@@ -3,6 +3,7 @@ extends PanelContainer
 const BOTON_SELECCION_DE_NIVEL = preload("res://Partida/SelectorDeNiveles/BotonSeleccionDeNivel.tscn")
 
 func _ready():
+	Sounds.stop_all_sounds()
 	EstadoDelJuego.jugando = false
 	generar_botoncitos()
 	%BotonesContainer.get_children().front().focuseate()

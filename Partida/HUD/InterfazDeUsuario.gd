@@ -15,11 +15,7 @@ func configurar_tipos_de_cosas(tipos_de_cosas: Array[TipoDeCosa]):
 		boton.tipo_de_cosa = tipo_de_cosa
 		%MenuDeCosas.add_child(boton, true)
 	)
-	if(tipos_de_cosas.size() == 1):
-		EstadoDePartida.tipo_de_cosa_seleccionada = tipos_de_cosas.front()
-		%PanelLateral.hide()
-	else:
-		show()
+	show()
 
 func _ready():
 	%Mensajito.visible = false

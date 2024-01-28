@@ -141,7 +141,6 @@ z_index = 10
 
 [node name="CreditosContainer" type="PanelContainer" parent="UI"]
 unique_name_in_owner = true
-visible = false
 z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,7 +205,7 @@ offset_left = 139.0
 offset_top = 305.0
 offset_right = 574.0
 offset_bottom = 374.0
-text = "Lucas Lucas (?"
+text = "Lucas González"
 label_settings = SubResource("LabelSettings_t2k43")
 horizontal_alignment = 2
 
