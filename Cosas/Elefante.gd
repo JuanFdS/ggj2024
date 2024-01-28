@@ -19,7 +19,7 @@ func _ready():
 	trompa.add_collision_exception_with(self)
 	timer.timeout.connect(self.avanzar)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Engine.is_editor_hint():
 		return
 	pass

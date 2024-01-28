@@ -16,7 +16,7 @@ func _ready():
 	#tween.tween_property(self, "rotation", PI / 4.0, 3.0)
 	#tween.tween_property(self, "rotation", 0.0, 3.0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	cosas_ventiladas.map(func(cosa: RigidBody2D):
 		cosa.apply_central_force(
 			Vector2.RIGHT.rotated(rotation) * fuerza

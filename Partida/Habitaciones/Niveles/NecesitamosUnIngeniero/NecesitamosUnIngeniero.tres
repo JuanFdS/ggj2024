@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Nivel" load_steps=5 format=3 uid="uid://b4481rag0o6ch"]
+
+[ext_resource type="Script" path="res://Partida/Habitaciones/Niveles/Nivel.gd" id="1_1hngx"]
+[ext_resource type="PackedScene" uid="uid://cjrcugrmjh0ls" path="res://Partida/Habitaciones/Niveles/NecesitamosUnIngeniero/NecesitamosUnIngeniero.tscn" id="1_n073s"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_vtrly"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="4_53e3f"]
+
+[resource]
+script = ExtResource("1_1hngx")
+escena = ExtResource("1_n073s")
+nombre = "Nivel 4"
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_vtrly"), ExtResource("4_53e3f")])
