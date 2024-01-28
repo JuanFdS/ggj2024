@@ -5,6 +5,7 @@ var cosas_ventiladas: Array = []
 @onready var area_de_vientito: Area2D = %AreaDeVientito
 
 func _ready():
+	$AnimatedSprite2D.play()
 	area_de_vientito.body_entered.connect(func(cosa):
 		cosas_ventiladas.push_back(cosa)
 	)
