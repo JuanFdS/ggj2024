@@ -68,13 +68,22 @@ func _ready():
 	%Saltar.timeout.connect(self.saltar)
 
 func _physics_process(_delta):
-	if(is_instance_valid(lamparita_a_buscar) and estado == Estado.BuscandoLamparita):
+	if is_instance_valid(lamparita_a_buscar) and estado == Estado.BuscandoLamparita:
 		var direction_x: float = sign(global_position.direction_to(lamparita_a_buscar.global_position).x)
 		
 		apply_central_force(mass * 800.0 * Vector2(direction_x, 0.5))
+	elif estado == Estado.LamparitaEnMano:
+		var original_rotation = global_rotation
+		look_at(get_viewport().get_mouse_position())
+		rotate(PI/2)
+		var target_rotation = global_rotation
+		
+		global_rotation = move_toward(original_rotation, target_rotation, 0.1)
+		
 
 func saltar():
-	if(estado == Estado.LamparitaEnMano):
+	if estado == Estado.LamparitaEnMano:
 		%ParticulasSalto.restart()
 		Sounds.play_ingeniero_salta()
 		apply_impulse(Vector2(0, -700).rotated(rotation) * mass)
+

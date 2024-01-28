@@ -7,7 +7,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
-bounce = 1.2
+bounce = 0.8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_526vh"]
 size = Vector2(520, 910)
@@ -18,8 +18,9 @@ radius = 93.02
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh18q"]
 size = Vector2(94.2857, 111.428)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_igyre"]
-size = Vector2(51, 114)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_el7ct"]
+radius = 29.0
+height = 112.0
 
 [sub_resource type="Curve" id="Curve_t5ojk"]
 _data = [Vector2(0, 0.182803), 0.0, 0.0, 0, 0, Vector2(0.638298, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.116071), 0.0, 0.0, 0, 0]
@@ -102,8 +103,8 @@ sprite_frames = ExtResource("2_6c07u")
 animation = &"cayendose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -47)
-shape = SubResource("RectangleShape2D_igyre")
+position = Vector2(-5, -48)
+shape = SubResource("CapsuleShape2D_el7ct")
 
 [node name="TimerPlayRie" type="Timer" parent="."]
 unique_name_in_owner = true
