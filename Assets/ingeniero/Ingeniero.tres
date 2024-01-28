@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://j5ipnhegb71v"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://j5ipnhegb71v"]
 
 [ext_resource type="Texture2D" uid="uid://d3pnil56tdc0x" path="res://Assets/ingeniero/Ingen2.png" id="1_gykby"]
 [ext_resource type="Texture2D" uid="uid://c8jl2sdqqgr3" path="res://Assets/ingeniero/Ingen3.png" id="2_fbq13"]
@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://crfiaaprde684" path="res://Assets/ingeniero/Corre3.png" id="9_d5pf0"]
 [ext_resource type="Texture2D" uid="uid://b3tmyxnglouny" path="res://Assets/ingeniero/Corre4.png" id="10_p374q"]
 [ext_resource type="Texture2D" uid="uid://bx0j0rnnlg1li" path="res://Assets/ingeniero/Ing sin foquito.png" id="11_38buc"]
+[ext_resource type="Texture2D" uid="uid://dh6jfvormg3mp" path="res://Assets/ingeniero/Electro1.png" id="11_igeql"]
+[ext_resource type="Texture2D" uid="uid://bdglbqbsdoxrv" path="res://Assets/ingeniero/Electro2.png" id="12_3r8y8"]
+[ext_resource type="Texture2D" uid="uid://cuphifbrkvwh1" path="res://Assets/ingeniero/Electro3.png" id="13_berbs"]
+[ext_resource type="Texture2D" uid="uid://dv57b4t7dpikr" path="res://Assets/ingeniero/Electro4.png" id="14_f0wpj"]
+[ext_resource type="Texture2D" uid="uid://8mfgly8m85r" path="res://Assets/ingeniero/Electro5.png" id="15_msnd2"]
+[ext_resource type="Texture2D" uid="uid://bnnwbsjkllu0b" path="res://Assets/ingeniero/Electro6.png" id="16_8waxb"]
 
 [resource]
 animations = [{
@@ -58,6 +64,29 @@ animations = [{
 "loop": true,
 "name": &"corriendo",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_igeql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3r8y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_berbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f0wpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_msnd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8waxb")
+}],
+"loop": true,
+"name": &"electrocutándose",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
