@@ -84,7 +84,7 @@ layout_mode = 2
 [node name="Cantidad" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Cambiaste la lamparita con: "
+text = "Cambiaste la lamparita con:"
 horizontal_alignment = 2
 
 [node name="CantidadValor" type="Label" parent="Mensajito/PanelContainer/VBoxContainer/HBoxContainer"]

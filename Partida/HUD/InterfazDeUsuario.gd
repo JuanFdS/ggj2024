@@ -54,6 +54,9 @@ func _process(_delta):
 		if(not EstadoDelJuego.puntajes_altos_para_nivel(nivel).is_empty()):
 			var mejor_puntaje_cantidad = EstadoDelJuego.puntajes_altos_para_nivel(nivel)[EstadoDelJuego.CANTIDAD]
 			var mejor_puntaje_tiempo = EstadoDelJuego.puntajes_altos_para_nivel(nivel)[EstadoDelJuego.TIEMPO]
+			var nuevo_record_texto = "[wave][rainbow]%s[/rainbow][/wave]" % tr("¡Nuevo record!")
+			%NuevoRecordCantidad.text = nuevo_record_texto
+			%NuevoRecordTiempo.text = nuevo_record_texto
 			%NuevoRecordCantidad.visible =\
 				mejor_puntaje_cantidad.cantidad_de_cosas == EstadoDePartida.cantidad_de_cosas
 			%NuevoRecordTiempo.visible =\
