@@ -6,6 +6,7 @@ var tipo_de_cosa_seleccionada: TipoDeCosa = GALLINA
 var cantidad_de_cosas := {}
 var tiempo := 0.0
 var ganado: bool
+var mensaje_ganador: String
 
 var contando_el_tiempo := false
 
@@ -32,7 +33,8 @@ func reiniciar():
 	Sounds.stop_all_sounds()
 	inicializar()
 
-func se_gano():
+func se_gano(mensaje = "¡Ganaste!"):
+	mensaje_ganador = mensaje
 	EstadoDelJuego.partida_ganada(cantidad_de_cosas, tiempo)
 	Sounds.play_lamp_win()
 	ganado = true

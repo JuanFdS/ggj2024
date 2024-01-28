@@ -37,5 +37,5 @@ func _process(_delta):
 	
 	if(EstadoDePartida.ganado):
 		%Mensajito.visible = true
-		%Mensajito.text = "¡Ganaste!"
+		%Mensajito.text = EstadoDePartida.mensaje_ganador
 	
