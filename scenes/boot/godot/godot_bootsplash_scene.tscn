@@ -17,4 +17,3 @@ theme = ExtResource("1_il62e")
 layout_mode = 1
 theme = ExtResource("1_il62e")
 next_scene = ExtResource("3_j311y")
-interuptable = true

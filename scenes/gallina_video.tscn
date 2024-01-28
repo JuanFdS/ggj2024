@@ -10,7 +10,7 @@ font_size = 20
 
 [sub_resource type="Animation" id="Animation_wxksl"]
 resource_name = "intro"
-length = 6.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,7 +18,7 @@ tracks/0/path = NodePath("CanvasLayer/Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 756), Vector2(0, 132)]
@@ -81,6 +81,13 @@ text = "Desde hace milenios la humanidad ha buscado la respuesta a una pregunta.
 ...¿cuantas gallinas se necesitan para cambiar un foquito?"
 label_settings = SubResource("LabelSettings_d8y2b")
 horizontal_alignment = 1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Label"]
+offset_left = 2.0
+offset_top = 57.2
+offset_right = 962.0
+offset_bottom = 457.2
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

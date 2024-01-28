@@ -12,8 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
-fade_duration = 3.0
-stay_duration = 7.0
+fade_duration = 3.5
+stay_duration = 9.0
 node = ExtResource("2_1qxuf")
 next_scene = ExtResource("3_vsw68")
 
