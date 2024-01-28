@@ -37,7 +37,8 @@ func _ready():
 		toggle_panel_lateral(true)
 	)
 	%Pause.pressed.connect(func():
-		PauseOverlay._pause_menu()
+		if not PauseOverlay.visible and EstadoDelJuego.jugando:
+			PauseOverlay._pause_menu()
 	)
 
 func toggle_panel_lateral(abrir: bool):

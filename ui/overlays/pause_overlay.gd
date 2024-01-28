@@ -47,12 +47,11 @@ func _to_main_menu():
 	_resume()
 
 func _pause_menu() -> void:
-	if not visible and EstadoDelJuego.jugando:
-		get_tree().paused = true
-		visible = true
-		settings_container.visible = false
-		menu_container.visible = true
-		settings_button.grab_focus()
+	get_tree().paused = true
+	visible = true
+	settings_container.visible = false
+	menu_container.visible = true
+	settings_button.grab_focus()
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause") and not visible and EstadoDelJuego.jugando:
