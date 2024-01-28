@@ -16,10 +16,9 @@ func _process(delta):
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.is_echo():
-		var posicion_cursor = event.global_position / get_viewport().get_camera_2d().zoom * TamanioVentana.escala_del_viewport()
 		var nueva_cosa = EstadoDePartida.spawnear_cosa()
 		
-		agregar_en(posicion_cursor, nueva_cosa)
+		agregar_en(ultima_posicion_cursor, nueva_cosa)
 		
 		Sounds.play_spawn()
 
