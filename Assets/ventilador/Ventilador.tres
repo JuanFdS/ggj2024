@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bc71gtarr63ox"]
+
+[ext_resource type="Texture2D" uid="uid://b7r7gnj13tpa2" path="res://Assets/ventilador/Ventilador1.png" id="1_32i7d"]
+[ext_resource type="Texture2D" uid="uid://burqa5spc8ooy" path="res://Assets/ventilador/Ventilador2.png" id="2_vkkav"]
+[ext_resource type="Texture2D" uid="uid://c0tmxokpox4wr" path="res://Assets/ventilador/Ventilador3.png" id="3_tlq7v"]
+[ext_resource type="Texture2D" uid="uid://djnv6htu8sv6p" path="res://Assets/ventilador/Ventilador4.png" id="4_7865l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_32i7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vkkav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tlq7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7865l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

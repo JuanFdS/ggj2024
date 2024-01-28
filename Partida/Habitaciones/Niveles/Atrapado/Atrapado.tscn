@@ -1,0 +1,143 @@
+[gd_scene load_steps=15 format=3 uid="uid://b83c57cwhkoa6"]
+
+[ext_resource type="Script" path="res://Habitacion.gd" id="1_8wtqr"]
+[ext_resource type="Texture2D" uid="uid://bqp5blb354016" path="res://Assets/habitación/Mesa.png" id="3_6quc6"]
+[ext_resource type="Texture2D" uid="uid://bdx7dsh7l13fy" path="res://Assets/habitación/Cuarto.jpg" id="3_73cvw"]
+[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="4_vgu78"]
+[ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="5_7jgex"]
+[ext_resource type="Texture2D" uid="uid://j4ltqjc1e7mx" path="res://Assets/habitación/Madero.png" id="6_d51rr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wwflv"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dioxf"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedih"]
+size = Vector2(101.602, 327)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se3hk"]
+size = Vector2(39, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5fsx"]
+size = Vector2(42.3682, 285.345)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jacte"]
+a = Vector2(-3.81615, 8.07465)
+b = Vector2(199.084, 1.54919)
+
+[node name="Habitacion" type="Node2D"]
+script = ExtResource("1_8wtqr")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_73cvw")
+centered = false
+
+[node name="ParedesYPiso" type="StaticBody2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(0, 327)
+shape = SubResource("WorldBoundaryShape2D_kf7ph")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(958, 323)
+shape = SubResource("WorldBoundaryShape2D_wwflv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(571, 0)
+shape = SubResource("WorldBoundaryShape2D_dioxf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(592, 702)
+shape = SubResource("WorldBoundaryShape2D_niugd")
+
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2(203, -44)
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(298, 60.5)
+shape = SubResource("RectangleShape2D_gedih")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared"]
+position = Vector2(275, 107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_d51rr")
+
+[node name="Pared2" type="StaticBody2D" parent="."]
+position = Vector2(44, 539)
+rotation = -1.5708
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
+position = Vector2(271.5, 59)
+shape = SubResource("RectangleShape2D_se3hk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared2"]
+position = Vector2(279, 65)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_d51rr")
+flip_v = true
+
+[node name="Pared3" type="StaticBody2D" parent="."]
+position = Vector2(145, 517)
+rotation = -1.0341
+scale = Vector2(1, 1)
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared3"]
+position = Vector2(262.765, 86.8968)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h5fsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pared3"]
+position = Vector2(269.496, 107)
+scale = Vector2(0.575025, 0.5)
+texture = ExtResource("6_d51rr")
+
+[node name="Mesita" type="StaticBody2D" parent="."]
+position = Vector2(811, 620)
+rotation = 3.14114
+scale = Vector2(-0.823, 0.823)
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mesita"]
+position = Vector2(0.00408936, -9)
+scale = Vector2(0.694244, 0.694244)
+texture = ExtResource("3_6quc6")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
+position = Vector2(104.99, 22.0475)
+rotation = -3.11878
+shape = SubResource("SegmentShape2D_jacte")
+one_way_collision = true
+
+[node name="Portalámparas" parent="." instance=ExtResource("4_vgu78")]
+position = Vector2(162, 21)
+rotation = 0.00162134
+
+[node name="Line2D" type="Line2D" parent="Portalámparas"]
+points = PackedVector2Array(-1, -75, 0, -331)
+width = 3.0
+default_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="LamparitaNueva" parent="." instance=ExtResource("5_7jgex")]
+position = Vector2(790, 590)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
