@@ -48,7 +48,7 @@ position = Vector2(592, 702)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
 [node name="Portalámparas" parent="." instance=ExtResource("4_xtbtn")]
-position = Vector2(417, 461)
+position = Vector2(480, 20)
 rotation = 0.00162134
 
 [node name="Line2D" type="Line2D" parent="Portalámparas"]
@@ -57,10 +57,10 @@ width = 3.0
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("5_r00g1")]
-position = Vector2(403, 584)
+position = Vector2(525, 295)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="Ingeniero" parent="." instance=ExtResource("5_aq4sg")]
-position = Vector2(239, 569)
+position = Vector2(128, 654)
