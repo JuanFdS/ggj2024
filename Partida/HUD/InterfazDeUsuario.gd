@@ -36,6 +36,9 @@ func _ready():
 	%BotonMostrarPanelLateral.pressed.connect(func():
 		toggle_panel_lateral(true)
 	)
+	%Pause.pressed.connect(func():
+		PauseOverlay._pause_menu()
+	)
 
 func toggle_panel_lateral(abrir: bool):
 	if(abrir):
