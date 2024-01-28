@@ -21,6 +21,18 @@ func _ready():
 	%Mensajito.visible = false
 	%BotonReiniciar.pressed.connect(func(): reiniciar.emit())
 	%ProximoNivel.pressed.connect(func(): EstadoDelJuego.avanzar_nivel())
+	%BotonMostrarPanelLateral.visible = false
+	%BotonEsconderPanelLateral.pressed.connect(func():
+		await create_tween().tween_property(
+			%PanelLateral, "position:x", 976, 0.4).set_trans(Tween.TRANS_QUAD).finished
+		%BotonMostrarPanelLateral.visible = true
+	)
+	%BotonMostrarPanelLateral.pressed.connect(func():
+		%BotonMostrarPanelLateral.visible = false
+		await create_tween().tween_property(
+			%PanelLateral, "position:x",
+			%PosicionInicialPanelLateral.position.x, 0.4).set_trans(Tween.TRANS_QUAD).finished
+	)
 
 func _process(_delta):
 	%Contador.text = " + ".join(EstadoDePartida.cantidad_de_cosas.keys().map(func(cosa):

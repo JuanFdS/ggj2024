@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2yocnvxnapsh"]
+[gd_scene load_steps=7 format=3 uid="uid://c2yocnvxnapsh"]
 
 [ext_resource type="Script" path="res://Partida/HUD/InterfazDeUsuario.gd" id="1_ylw0i"]
 [ext_resource type="PackedScene" uid="uid://dgeq8sluvkhiw" path="res://Partida/HUD/BotonTipoDeCosa.tscn" id="2_8fph6"]
+[ext_resource type="Texture2D" uid="uid://dt35uigpp8np8" path="res://Assets/colapsarUI.png" id="2_8tlqb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppkp1"]
 font_size = 50
@@ -46,6 +47,16 @@ offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Próximo Nivel  ▶"
+
+[node name="BotonMostrarPanelLateral" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 897.0
+offset_top = 14.0
+offset_right = 947.0
+offset_bottom = 64.0
+size_flags_horizontal = 8
+texture_normal = ExtResource("2_8tlqb")
+flip_h = true
 
 [node name="PanelLateral" type="Control" parent="."]
 unique_name_in_owner = true
@@ -92,6 +103,12 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 
+[node name="BotonEsconderPanelLateral" type="TextureButton" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("2_8tlqb")
+
 [node name="BotonReiniciar" type="Button" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -102,6 +119,14 @@ text = "Reintentar"
 modulate = Color(1, 1, 1, 0.490196)
 self_modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+
+[node name="PosicionInicialPanelLateral" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 774.0
+offset_right = 814.0
+offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0
