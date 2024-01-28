@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://chgyw6mdy5mon"]
+[gd_scene load_steps=15 format=3 uid="uid://chgyw6mdy5mon"]
 
 [ext_resource type="Script" path="res://Cosas/Ingeniero/Ingeniero.gd" id="1_l0uwo"]
 [ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="2_3grnq"]
 [ext_resource type="SpriteFrames" uid="uid://j5ipnhegb71v" path="res://Assets/ingeniero/Ingeniero.tres" id="2_6c07u"]
 [ext_resource type="Texture2D" uid="uid://b7101vs5n6utg" path="res://Assets/ingeniero/nubeDePolvo.png" id="4_tojtx"]
+[ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="6_7mvwe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
@@ -27,6 +28,14 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_k5q3e"]
 colors = PackedColorArray(0.668978, 0.647933, 0.657169, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_h7lxf"]
+_data = [Vector2(0, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.991701, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bommv"]
+offsets = PackedFloat32Array(0.56338, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Ingeniero" type="RigidBody2D"]
 position = Vector2(1144, 1204)
@@ -59,6 +68,7 @@ texture = ExtResource("2_3grnq")
 
 [node name="AreaDetectoraDeLamparitas" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(25, -39)
 collision_layer = 0
 collision_mask = 2
@@ -73,6 +83,7 @@ shape = SubResource("RectangleShape2D_526vh")
 
 [node name="AreaAgarradoraDeLamparitas" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -82,6 +93,7 @@ shape = SubResource("CircleShape2D_gpf5d")
 
 [node name="AreaDeEnchufado" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -102,6 +114,7 @@ sprite_frames = ExtResource("2_6c07u")
 animation = &"cayendose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, -47)
 shape = SubResource("RectangleShape2D_igyre")
 
@@ -128,3 +141,19 @@ scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_t5ojk")
 color = Color(0.745098, 0.745098, 0.745098, 1)
 color_ramp = SubResource("Gradient_k5q3e")
+
+[node name="ShinyParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+one_shot = true
+explosiveness = 0.7
+local_coords = true
+texture = ExtResource("6_7mvwe")
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_h7lxf")
+color_ramp = SubResource("Gradient_bommv")

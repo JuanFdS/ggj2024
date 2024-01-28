@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://btibma3e67qwh"]
+[gd_scene load_steps=17 format=3 uid="uid://btibma3e67qwh"]
 
 [ext_resource type="Script" path="res://Cosas/Elefante.gd" id="1_b3yir"]
 [ext_resource type="SpriteFrames" uid="uid://chveuwmwhwqfr" path="res://Assets/elefante/Elefante.tres" id="2_p7pum"]
 [ext_resource type="Texture2D" uid="uid://k5ptghjqoc4k" path="res://Assets/elefante/Trompa.png" id="2_trvs2"]
+[ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="4_g63hr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f7mod"]
 bounce = 10.0
@@ -209,6 +210,14 @@ _data = {
 "trompa_izquierda": SubResource("Animation_g10a6")
 }
 
+[sub_resource type="Curve" id="Curve_0popb"]
+_data = [Vector2(0, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.991701, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mudm5"]
+offsets = PackedFloat32Array(0.56338, 1)
+colors = PackedColorArray(1, 1, 0.407843, 1, 1, 1, 1, 0)
+
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 17
 collision_mask = 3221225473
@@ -217,6 +226,7 @@ script = ExtResource("1_b3yir")
 pegando_trompazo = true
 
 [node name="Pivote" type="Node2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivote"]
@@ -295,3 +305,20 @@ libraries = {
 [node name="TimerPlayResonga" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 5.0
+
+[node name="ShinyParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+emitting = false
+one_shot = true
+explosiveness = 0.7
+local_coords = true
+texture = ExtResource("4_g63hr")
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_0popb")
+color_ramp = SubResource("Gradient_mudm5")

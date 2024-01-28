@@ -2,12 +2,23 @@ class_name Ingeniero
 extends RigidBody2D
 
 var lamparita_a_buscar = null
-
+const INGENIERO_SHINY_MATERIAL = preload("res://Cosas/Ingeniero/IngenieroShinyMaterial.tres")
 enum Estado { Paveando, BuscandoLamparita, LamparitaEnMano, Enchufado }
 
+@onready var shiny_particles: CPUParticles2D = $ShinyParticles
+@onready var cosas_que_se_les_aplica_material_shiny = [
+	%AgarrandoLamparita,
+	$Node2D/AgarrandoLamparita/LamparitaNueva,
+	%Mirando
+]
 var estado = Estado.Paveando
 
 func _ready():
+	if(randf() < 0.05):
+		cosas_que_se_les_aplica_material_shiny.map(func(cosa: Node2D):
+			cosa.material = INGENIERO_SHINY_MATERIAL
+		)
+		shiny_particles.restart()
 	%Mirando.visible = true
 	%Mirando.play()
 	%AgarrandoLamparita.visible = false
