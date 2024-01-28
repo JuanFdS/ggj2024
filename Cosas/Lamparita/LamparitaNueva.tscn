@@ -17,7 +17,7 @@ size = Vector2(75, 36)
 [node name="LamparitaNueva" type="RigidBody2D"]
 position = Vector2(752, 352)
 collision_layer = 2
-collision_mask = 2147483649
+collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_1633i")
 sleeping = true
 max_contacts_reported = 1

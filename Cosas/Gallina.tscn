@@ -20,7 +20,7 @@ colors = PackedColorArray(1, 1, 0.407843, 1, 1, 1, 1, 0)
 
 [node name="Gallina" type="RigidBody2D"]
 position = Vector2(219, 571)
-collision_mask = 2147483649
+collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_ag5ly")
 script = ExtResource("1_c0wb3")
 
