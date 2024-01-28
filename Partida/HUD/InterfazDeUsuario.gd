@@ -4,6 +4,14 @@ const BOTON_TIPO_DE_COSA = preload("res://Partida/HUD/BotonTipoDeCosa.tscn")
 
 signal reiniciar
 
+func _unhandled_input(event):
+	if event.is_action_pressed("panel_lateral"):
+		var esta_visible_el_panel = not %BotonMostrarPanelLateral.visible
+		var deberia_mostrar_el_panel = not esta_visible_el_panel
+		toggle_panel_lateral(deberia_mostrar_el_panel)
+	if event.is_action_pressed("reintentar"):
+		reiniciar.emit()
+
 func configurar_tipos_de_cosas(tipos_de_cosas: Array[TipoDeCosa]):
 	%MenuDeCosas.get_children().map(func(boton):
 		if boton is BotonTipoDeCosa:
@@ -23,16 +31,22 @@ func _ready():
 	%ProximoNivel.pressed.connect(func(): EstadoDelJuego.avanzar_nivel())
 	%BotonMostrarPanelLateral.visible = false
 	%BotonEsconderPanelLateral.pressed.connect(func():
-		await create_tween().tween_property(
-			%PanelLateral, "position:x", 976, 0.4).set_trans(Tween.TRANS_QUAD).finished
-		%BotonMostrarPanelLateral.visible = true
+		toggle_panel_lateral(false)
 	)
 	%BotonMostrarPanelLateral.pressed.connect(func():
+		toggle_panel_lateral(true)
+	)
+
+func toggle_panel_lateral(abrir: bool):
+	if(abrir):
 		%BotonMostrarPanelLateral.visible = false
 		await create_tween().tween_property(
 			%PanelLateral, "position:x",
 			%PosicionInicialPanelLateral.position.x, 0.4).set_trans(Tween.TRANS_QUAD).finished
-	)
+	else:
+		await create_tween().tween_property(
+			%PanelLateral, "position:x", 976, 0.4).set_trans(Tween.TRANS_QUAD).finished
+		%BotonMostrarPanelLateral.visible = true
 
 func _process(_delta):
 	%Contador.text = " + ".join(EstadoDePartida.cantidad_de_cosas.keys().map(func(cosa):
