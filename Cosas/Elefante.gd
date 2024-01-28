@@ -9,7 +9,7 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 @onready var trompa: StaticBody2D = %Trompa
 @onready var origin_x = global_position.x
 @onready var timer := %Timer
-
+@onready var area_golpe := %AreaGolpe
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -18,6 +18,13 @@ func _ready():
 	animar_trompa_hacia("izquierda")
 	trompa.add_collision_exception_with(self)
 	timer.timeout.connect(self.avanzar)
+	area_golpe.body_entered.connect(func(cosa):
+		if(cosa != self):
+			self.cosa_golpeada()	
+	)
+
+func cosa_golpeada():
+	pass
 
 func _physics_process(delta):
 	if Engine.is_editor_hint():
