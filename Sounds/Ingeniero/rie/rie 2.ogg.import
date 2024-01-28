@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dddrxhupbif7q"
+path="res://.godot/imported/rie 2.ogg-80d796ee683ced9d84c04eb13c5aa72d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Ingeniero/rie/rie 2.ogg"
+dest_files=["res://.godot/imported/rie 2.ogg-80d796ee683ced9d84c04eb13c5aa72d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

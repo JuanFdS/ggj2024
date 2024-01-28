@@ -27,4 +27,6 @@ func agregar_en(posicion_global, cosa):
 	
 	add_child(cosa)
 	cosa.global_position = posicion_global
-	cosa.apply_central_impulse(velocidad_cosa)
+	if cosa.has_method("apply_central_impulse"):
+		cosa.apply_central_impulse(velocidad_cosa)
+		
