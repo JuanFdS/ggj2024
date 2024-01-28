@@ -26,6 +26,8 @@ func _ready():
 	)
 
 func _process(delta):
+	if Engine.is_editor_hint():
+		return
 	%Foco.visible = EstadoDePartida.tipo_de_cosa_seleccionada == tipo_de_cosa
 
 func set_tipo_de_cosa(nuevo_tipo_de_cosa: TipoDeCosa):
