@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bja4572aya1sy"]
+[gd_scene load_steps=9 format=3 uid="uid://bja4572aya1sy"]
 
 [ext_resource type="Script" path="res://EstadoDelJuego.gd" id="1_2hif3"]
 [ext_resource type="Resource" uid="uid://dfiurq5fr0u1j" path="res://Partida/Habitaciones/Niveles/CuantasGallinas/CuantasGallinas.tres" id="2_gftwl"]
@@ -7,7 +7,8 @@
 [ext_resource type="Resource" uid="uid://b4481rag0o6ch" path="res://Partida/Habitaciones/Niveles/NecesitamosUnIngeniero/NecesitamosUnIngeniero.tres" id="5_xtr0k"]
 [ext_resource type="Resource" uid="uid://csn2bou5hckt2" path="res://Partida/Habitaciones/Niveles/AlRevés/AlRevés.tres" id="6_37bfa"]
 [ext_resource type="Resource" uid="uid://b6wdwr6iynpvx" path="res://Partida/Habitaciones/Niveles/Atrapado/Atrapado.tres" id="7_evie2"]
+[ext_resource type="Resource" uid="uid://b57qaigsty34v" path="res://Partida/Habitaciones/Niveles/Laberinto/Laberinto.tres" id="8_hkj5h"]
 
 [node name="EstadoDelJuego" type="Node" groups=["Persist"]]
 script = ExtResource("1_2hif3")
-niveles = Array[Resource("res://Partida/Habitaciones/Niveles/Nivel.gd")]([ExtResource("2_gftwl"), ExtResource("3_cgqng"), ExtResource("4_crcos"), ExtResource("5_xtr0k"), ExtResource("6_37bfa"), ExtResource("7_evie2")])
+niveles = Array[Resource("res://Partida/Habitaciones/Niveles/Nivel.gd")]([ExtResource("2_gftwl"), ExtResource("3_cgqng"), ExtResource("4_crcos"), ExtResource("5_xtr0k"), ExtResource("6_37bfa"), ExtResource("7_evie2"), ExtResource("8_hkj5h")])

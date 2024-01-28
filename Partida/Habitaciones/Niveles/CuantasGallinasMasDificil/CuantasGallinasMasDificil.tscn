@@ -85,7 +85,7 @@ width = 3.0
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("5_bgpm7")]
-position = Vector2(743, 587)
+position = Vector2(743, 588)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

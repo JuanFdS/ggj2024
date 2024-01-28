@@ -73,4 +73,5 @@ pause={
 2d_physics/layer_2="Lamparita"
 2d_physics/layer_3="LamparitaRota"
 2d_physics/layer_5="Elefante"
+2d_physics/layer_31="Mesita"
 2d_physics/layer_32="Terreno"

@@ -43,7 +43,8 @@ func _ready():
 		%AreaDeEnchufado.area_entered.connect(func(area_lampara_rota):
 			estado = Estado.Enchufado
 			var lampara_rota = area_lampara_rota.get_parent()
-			global_position = lampara_rota.global_position - %PuntoDeEnchufado.position
+			global_position = lampara_rota.global_position + Vector2(-15, 160)
+			global_rotation = lampara_rota.global_rotation
 			await get_tree().physics_frame
 			collision_layer = 0
 			collision_mask = 0
@@ -53,6 +54,9 @@ func _ready():
 			var lamparita_nueva = $Node2D/AgarrandoLamparita/LamparitaNueva
 			lamparita_nueva.visible = false
 			lampara_rota.arreglar()
+			
+			%AgarrandoLamparita.play("electrocutándose")
+			
 			EstadoDePartida.se_gano()
 		, CONNECT_ONE_SHOT)
 		

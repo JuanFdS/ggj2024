@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dc63h80qidv81"]
+[gd_scene load_steps=50 format=3 uid="uid://dc63h80qidv81"]
 
 [ext_resource type="Script" path="res://Sounds.gd" id="1_nv72u"]
 [ext_resource type="AudioStream" uid="uid://ck3ols50rtx2x" path="res://Sounds/click.ogg" id="2_82y2r"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://q3lok0023mk2" path="res://Sounds/elefante/elefante_pasos.ogg" id="27_l160b"]
 [ext_resource type="AudioStream" uid="uid://cncik2i3wa3pc" path="res://Sounds/elefante/elefante_revolea.ogg" id="28_ub8wp"]
 [ext_resource type="AudioStream" uid="uid://cdcbew7kxqco0" path="res://Sounds/elefante/elefante_resonga 1.ogg" id="29_gkpce"]
+[ext_resource type="AudioStream" uid="uid://bhpteb44nftip" path="res://Sounds/elefante/elefante_resonga 2.ogg" id="30_eeed6"]
 [ext_resource type="AudioStream" uid="uid://dg2jru4qafkk6" path="res://Sounds/Ingeniero/piensa/piensa 4.ogg" id="30_gvf1l"]
 [ext_resource type="AudioStream" uid="uid://dnc1abdufe4vp" path="res://Sounds/Ingeniero/piensa/piensa 3.ogg" id="31_11c3n"]
 [ext_resource type="AudioStream" uid="uid://bvil8o2srgv51" path="res://Sounds/Ingeniero/piensa/piensa 1.ogg" id="32_6gknt"]
@@ -66,6 +67,7 @@ script = ExtResource("1_nv72u")
 
 [node name="SeleccionarSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_82y2r")
+volume_db = -12.0
 bus = &"Sound"
 
 [node name="LampWinSfx" type="AudioStreamPlayer" parent="."]
@@ -138,9 +140,36 @@ stream = ExtResource("28_ub8wp")
 volume_db = -9.0
 max_polyphony = 2
 
-[node name="ElefanteResongaSfx" type="AudioStreamPlayer" parent="."]
+[node name="ElefanteResongaSfx" type="Node" parent="."]
+
+[node name="ElefanteResongaSfx1" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
 stream = ExtResource("29_gkpce")
-volume_db = -9.37
+volume_db = -12.0
+bus = &"Sound"
+
+[node name="ElefanteResongaSfx2" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
+stream = ExtResource("29_gkpce")
+volume_db = -12.0
+bus = &"Sound"
+
+[node name="ElefanteResongaSfx3" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
+stream = ExtResource("29_gkpce")
+volume_db = -12.0
+bus = &"Sound"
+
+[node name="ElefanteResongaSfx4" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
+stream = ExtResource("29_gkpce")
+volume_db = -12.0
+bus = &"Sound"
+
+[node name="ElefanteResongaSfx5" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
+stream = ExtResource("30_eeed6")
+volume_db = -12.0
+bus = &"Sound"
+
+[node name="ElefanteResongaSfx6" type="AudioStreamPlayer" parent="ElefanteResongaSfx"]
+stream = ExtResource("30_eeed6")
+volume_db = -12.0
 bus = &"Sound"
 
 [node name="IngenieroPiensaSfx" type="Node" parent="."]

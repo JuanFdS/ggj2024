@@ -259,3 +259,7 @@ metadata/_edit_lock_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ldqom")
 }
+
+[node name="TimerPlayResonga" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0

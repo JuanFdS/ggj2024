@@ -12,7 +12,15 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 	
+	%Boton.mouse_entered.connect(func():
+		%Boton.modulate.a = 1
+	)
+	%Boton.mouse_exited.connect(func():
+		%Boton.modulate.a = 0.5
+	)
+	
 	%Boton.pressed.connect(func():
+		Sounds.play_select_cosa()
 		EstadoDePartida.tipo_de_cosa_seleccionada = tipo_de_cosa
 	)
 

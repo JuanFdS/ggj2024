@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Nivel" load_steps=6 format=3 uid="uid://b57qaigsty34v"]
+
+[ext_resource type="PackedScene" uid="uid://bbkmr1os5jol4" path="res://Partida/Habitaciones/Niveles/Laberinto/Laberinto.tscn" id="1_blqxt"]
+[ext_resource type="Script" path="res://Partida/Habitaciones/Niveles/Nivel.gd" id="1_m2luw"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_l05y0"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="4_h67hj"]
+[ext_resource type="Resource" uid="uid://cy21gtmd2wny8" path="res://TiposDeCosa/Ventilador.tres" id="5_hdey8"]
+
+[resource]
+script = ExtResource("1_m2luw")
+escena = ExtResource("1_blqxt")
+nombre = "Nivel 7"
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_l05y0"), ExtResource("4_h67hj"), ExtResource("5_hdey8")])

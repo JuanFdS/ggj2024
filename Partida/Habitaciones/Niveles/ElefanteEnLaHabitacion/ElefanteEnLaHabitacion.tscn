@@ -18,12 +18,12 @@ normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yg44g"]
+a = Vector2(-4, 8)
+b = Vector2(200, 8)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2aei"]
 size = Vector2(88, 298)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yg44g"]
-a = Vector2(-3.81615, 8.07465)
-b = Vector2(199.084, 1.54919)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_a6li7")
@@ -55,6 +55,25 @@ shape = SubResource("WorldBoundaryShape2D_dioxf")
 position = Vector2(592, 702)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
+[node name="Mesita" type="StaticBody2D" parent="."]
+position = Vector2(161, 607)
+rotation = 3.14114
+scale = Vector2(0.823002, 0.823002)
+collision_layer = 1073741824
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mesita"]
+position = Vector2(0.0040741, -9.00006)
+scale = Vector2(0.694244, 0.694244)
+texture = ExtResource("6_ehfkd")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
+position = Vector2(104.99, 22.0475)
+rotation = -3.14159
+shape = SubResource("SegmentShape2D_yg44g")
+one_way_collision = true
+
 [node name="Portalámparas" parent="." instance=ExtResource("4_tufes")]
 position = Vector2(115, 61)
 rotation = 0.00162134
@@ -65,7 +84,7 @@ width = 3.0
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("5_4jnn8")]
-position = Vector2(127, 229)
+position = Vector2(111, 229)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -83,22 +102,3 @@ shape = SubResource("RectangleShape2D_l2aei")
 position = Vector2(275, 107)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_vgfa1")
-
-[node name="Mesita" type="StaticBody2D" parent="."]
-position = Vector2(161, 607)
-rotation = 3.14114
-scale = Vector2(0.823002, 0.823002)
-collision_layer = 2147483648
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
-position = Vector2(104.99, 22.0475)
-rotation = -3.11878
-shape = SubResource("SegmentShape2D_yg44g")
-one_way_collision = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mesita"]
-position = Vector2(0.00406647, -9)
-scale = Vector2(0.694244, 0.694244)
-texture = ExtResource("6_ehfkd")
-flip_v = true

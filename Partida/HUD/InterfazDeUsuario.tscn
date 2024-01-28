@@ -28,15 +28,24 @@ offset_right = 20.0
 offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_ppkp1")
 
 [node name="ProximoNivel" type="Button" parent="Mensajito"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 92.5
-offset_right = 165.0
-offset_bottom = 123.5
-text = "⏩Proximo Nivel ⏩"
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.5
+offset_top = 21.0
+offset_right = 82.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Próximo Nivel  ▶"
 
 [node name="PanelLateral" type="Control" parent="."]
 unique_name_in_owner = true
@@ -45,25 +54,28 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -186.0
-offset_bottom = 569.0
+offset_bottom = 100.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelLateral"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_right = 105.0
+offset_bottom = 245.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelLateral/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
+modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_anw5k")
 
@@ -87,6 +99,8 @@ mouse_default_cursor_shape = 2
 text = "Reintentar"
 
 [node name="BotonGallina" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas" instance=ExtResource("2_8fph6")]
+modulate = Color(1, 1, 1, 0.490196)
+self_modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

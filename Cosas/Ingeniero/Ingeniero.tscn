@@ -22,7 +22,7 @@ size = Vector2(51, 114)
 
 [node name="Ingeniero" type="RigidBody2D"]
 position = Vector2(1144, 1204)
-collision_mask = 2147483649
+collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_0born")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 1)
