@@ -7,7 +7,7 @@ Música y Sonido,Music and sound,Música y Sonido
 Programación,Programming,Programación
 leave_game,Leave game,Salir del juego
 Leave game,Leave game,Salir del juego
-Reintentar,Retry,Reintentar
+Reintentar,Retry (R),Reintentar (R)
 ¿Cuantas _ se necesitan para cambiar una lamparita?,How many _ does it take to change a lightbulb?,¿Cuantas _ se necesitan para cambiar una lamparita?
 return_to_main,Return to main menu,Volver al Menu
 return_to_menu,Back to menu,Volver al Menu
@@ -40,7 +40,7 @@ Elefante,Elephant,Elefante
 Gallina,Chicken,Gallina
 Ingeniero,Engineer,Ingeniero
 Ventilador,Fan,Ventilador
-Próximo Nivel  ▶,Next Level  ▶,Próximo Nivel  ▶
+Próximo Nivel,Next Level,Próximo Nivel
 ¡Ganaste!,You won!,¡Ganaste!
 Menor cantidad:,Lowest amount:,Menor cantidad:
 Mejor tiempo:,Best time:,Mejor tiempo:
@@ -53,3 +53,7 @@ Atrapado,Trapped,Atrapado
 Laberinto,Maze,Laberinto
 Bloqueo,Blocked,Bloqueo
 "Ganaste... pero, ¡a qué costo!","You won...but was it worth it?","Ganaste... pero, ¡a qué costo!"
+"Cambiaste la lamparita con:","It took you:","Cambiaste la lamparita con:"
+"Tardaste:","Time:","Tardaste:"
+"¡Nuevo record!","New record!","¡Nuevo record!"
+

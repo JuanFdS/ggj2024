@@ -1,4 +1,8 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://cs7m1utv6ck5q"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://cs7m1utv6ck5q"]
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_vwwws"]
+resource_name = "LowPassFilter"
+cutoff_hz = 1000.0
 
 [resource]
 bus/1/name = &"Sound"
@@ -19,3 +23,11 @@ bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = -2.3125
 bus/3/send = &"Sound"
+bus/4/name = &"IngenieroRebota"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Sound"
+bus/4/effect/0/effect = SubResource("AudioEffectLowPassFilter_vwwws")
+bus/4/effect/0/enabled = true

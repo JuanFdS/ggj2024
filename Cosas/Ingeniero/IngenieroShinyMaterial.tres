@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ceremlsvpvah2"]
+
+[ext_resource type="Shader" path="res://Cosas/Ingeniero/IngenieroShiny.gdshader" id="1_i6c5g"]
+
+[resource]
+shader = ExtResource("1_i6c5g")

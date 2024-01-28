@@ -11,6 +11,7 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 @onready var timer := %Timer
 @onready var area_golpe := %AreaGolpe
 @export var pegando_trompazo: bool = false
+@onready var shiny_particles: CPUParticles2D = $ShinyParticles
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -28,6 +29,10 @@ func _ready():
 		if(cosa != self):
 			self.cosa_golpeada()	
 	)
+	
+	if(randf() < 0.05):
+		%Pivote.modulate = Color("34fff4")
+		shiny_particles.restart()
 
 func cosa_golpeada():
 	Sounds.play_elefante_revolea()

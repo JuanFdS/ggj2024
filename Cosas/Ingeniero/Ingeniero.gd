@@ -2,37 +2,56 @@ class_name Ingeniero
 extends RigidBody2D
 
 var lamparita_a_buscar = null
-
+const INGENIERO_SHINY_MATERIAL = preload("res://Cosas/Ingeniero/IngenieroShinyMaterial.tres")
 enum Estado { Paveando, BuscandoLamparita, LamparitaEnMano, Enchufado }
 
+@onready var shiny_particles: CPUParticles2D = $ShinyParticles
+@onready var cosas_que_se_les_aplica_material_shiny = [
+	%AgarrandoLamparita,
+	$Node2D/AgarrandoLamparita/LamparitaNueva,
+	%Mirando
+]
 var estado = Estado.Paveando
 
 func _ready():
+	if(randf() < 0.05):
+		cosas_que_se_les_aplica_material_shiny.map(func(cosa: Node2D):
+			cosa.material = INGENIERO_SHINY_MATERIAL
+		)
+		shiny_particles.restart()
 	%Mirando.visible = true
 	%Mirando.play()
 	%AgarrandoLamparita.visible = false
-	
+	Sounds.paren_todo.connect(func():
+		$IngenieroCamina.stop()
+	)
+	body_entered.connect(func(body):
+		if body.get_collision_layer_value(32):
+			Sounds.play_ingeniero_rebota()
+	)
 	
 	%TimerPlayRie.timeout.connect(func():
 		Sounds.play_ingeniero_rie()
-		$TimerPlayPiensa.set_wait_time(randf_range(2.5,4))
+		$TimerPlayRie.set_wait_time(randf_range(2.5,4))
 	)
 	$TimerPlayPiensa.timeout.connect(func():
 		Sounds.play_ingeniero_piensa()
-		$TimerPlayPiensa.set_wait_time(randf_range(2.5,4))
+		$TimerPlayPiensa.set_wait_time(randf_range(2,3))
 	)
 	
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):
 		if(estado != Estado.LamparitaEnMano):
 			lamparita_a_buscar = lamparita
 			estado = Estado.BuscandoLamparita
-			Sounds.play_ingeniero_pasos()
+			#Sounds.play_ingeniero_pasos()
+			$IngenieroCamina.play()
 			%Mirando.animation = "corriendo"
 	, CONNECT_ONE_SHOT)
 	
 	%AreaAgarradoraDeLamparitas.body_entered.connect(func(lamparita: Node2D):
 		$TimerPlayPiensa.stop()
-		Sounds.stop_ingeniero_pasos()
+		#Sounds.stop_ingeniero_pasos()
+		$IngenieroCamina.stop()
 		$TimerPlayRie.start()
 		estado = Estado.LamparitaEnMano
 		mass = 1.2

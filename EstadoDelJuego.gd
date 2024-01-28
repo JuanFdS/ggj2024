@@ -30,21 +30,31 @@ func empezar_nivel(nivel: Nivel):
 	jugando = true
 
 func partida_ganada(cantidad_de_cosas, tiempo):
+	jugando = false
 	var nuevo_puntaje = PuntajeMasAlto.new(cantidad_de_cosas, tiempo)
-	if(not puntajes_mas_altos.has(nivel_actual.resource_path)):
-		puntajes_mas_altos[nivel_actual.resource_path] = {}
-	puntajes_mas_altos[nivel_actual.resource_path].keys().map(func(tipo_puntaje):
-		var puntaje_previo = puntajes_mas_altos[nivel_actual.resource_path][tipo_puntaje]
+	var nivel_id = nivel_actual.resource_path
+	if(not puntajes_mas_altos.has(nivel_id)):
+		puntajes_mas_altos[nivel_id] = {}
+	if(not puntajes_mas_altos[nivel_id]):
+		puntajes_mas_altos[nivel_id][CANTIDAD] = nuevo_puntaje
+		puntajes_mas_altos[nivel_id][TIEMPO] = nuevo_puntaje
+	puntajes_mas_altos[nivel_id].keys().map(func(tipo_puntaje):
+		var puntaje_previo = puntajes_mas_altos[nivel_id][tipo_puntaje]
 		var puntaje_que_queda = puntaje_previo.menor_segun(nuevo_puntaje, tipo_puntaje)
-		puntajes_mas_altos[nivel_actual.resource_path][tipo_puntaje] = puntaje_que_queda
+		puntajes_mas_altos[nivel_id][tipo_puntaje] = puntaje_que_queda
 	)
-	puntajes_mas_altos[nivel_actual.resource_path][CANTIDAD] = nuevo_puntaje
-	puntajes_mas_altos[nivel_actual.resource_path][TIEMPO] = nuevo_puntaje
 
 func puntajes_altos_para_nivel(nivel: Nivel):
 	if(not puntajes_mas_altos.has(nivel.resource_path)):
 		puntajes_mas_altos[nivel.resource_path] = {}
 	return puntajes_mas_altos[nivel.resource_path]
+
+func puntaje_alto_como_texto_para(nivel: Nivel, tipo_puntaje):
+	var puntaje = puntajes_altos_para_nivel(nivel)
+	if puntaje.has(tipo_puntaje):
+		return puntaje[tipo_puntaje].como_texto(tipo_puntaje)
+	else:
+		return ""
 
 func puntajes_altos_como_texto_para(nivel: Nivel):
 	var puntajes = puntajes_altos_para_nivel(nivel)
@@ -107,10 +117,15 @@ class PuntajeMasAlto:
 	func menor_segun(otro_puntaje, tipo_puntaje):
 		match tipo_puntaje:
 			CANTIDAD:
-				return otro_puntaje if otro_puntaje.uso_menos_cosas_que(self) else self
+				if otro_puntaje.uso_menos_cosas_que(self):
+					return otro_puntaje
+				else:
+					return self
 			TIEMPO:
-				return otro_puntaje if otro_puntaje.tardo_menos_que(self) else self
-	
+				if otro_puntaje.tardo_menos_que(self):
+					return otro_puntaje
+				else:
+					return self
 	func cantidad_total():
 		return cantidad_de_cosas.keys().reduce(func(acum, tipo_cosa):
 			var cantidad = cantidad_de_cosas[tipo_cosa]

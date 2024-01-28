@@ -1,13 +1,14 @@
 extends Node
 
 var ingeniero_index = 0
+signal paren_todo
 
 func play_spawn():
 	$SpawnSfx.play_random()
 
 func play_gallina():
 	var stream = $GallinaSfx.get_children().pick_random()
-	stream.set_pitch_scale(randf_range(0.85,1.5))
+	stream.set_pitch_scale(randf_range(0.85,1.7))
 	stream.play()
 
 func play_lamp_collision():
@@ -18,7 +19,7 @@ func play_lamp_win():
 
 func stop_all_sounds():
 	$LampWinSfx.stop()
-	$IngenieroCamina.stop()
+	paren_todo.emit()
 	$ShockSfx.stop()
 	
 	var streams = $GallinaSfx.get_children()
@@ -58,9 +59,6 @@ func play_ingeniero_rie():
 	stream.play_random()
 	#stream.set_pitch_scale(randf_range(0.85,1.5))
 	ingeniero_index+=1
-	
-func play_ingeniero_pasos():
-	$IngenieroCamina.play()
 
 func stop_ingeniero_pasos():
 	$IngenieroCamina.stop()
@@ -78,3 +76,6 @@ func play_shock():
 
 func play_ingeniero_muere():
 	$IngenieroMuere.play_random()
+	
+func play_ingeniero_rebota():
+	$IngenieroRebotaSfx.play_random()
