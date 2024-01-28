@@ -3,6 +3,10 @@ extends Node
 var ingeniero_index = 0
 signal paren_todo
 
+func play_musica():
+	if not $Musica.is_playing():
+		$Musica.play()
+
 func play_spawn():
 	$SpawnSfx.play_random()
 
@@ -47,7 +51,7 @@ func play_elefante_resonga():
 	stream.play()
 
 func play_ingeniero_piensa():
-	ingeniero_index = ingeniero_index%5
+	ingeniero_index = ingeniero_index % 5
 	var stream = $IngenieroPiensaSfx.get_children()[ingeniero_index]
 	stream.play_random()
 	stream.set_pitch_scale(randf_range(0.85,1.5))

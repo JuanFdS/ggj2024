@@ -15,6 +15,7 @@ var new_game = true
 const CursorPiolita = preload("res://Assets/Cursor.png")
 
 func _ready() -> void:
+	Sounds.play_musica()
 	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_IBEAM)
 	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_POINTING_HAND)
 	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_ARROW)
