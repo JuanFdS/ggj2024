@@ -8,8 +8,8 @@ func _ready():
 	%BotonesContainer.get_children().front().focuseate()
 	var botones = %BotonesContainer.get_children()
 	for i in range(0, botones.size() - 1):
-		var boton: Button = botones[i].get_node("Button")
-		var siguiente_boton: Button = botones[i + 1].get_node("Button")
+		var boton: Button = botones[i].get_node("%Button")
+		var siguiente_boton: Button = botones[i + 1].get_node("%Button")
 		boton.focus_neighbor_right = boton.get_path_to(siguiente_boton)
 		siguiente_boton.focus_neighbor_left = siguiente_boton.get_path_to(boton)
 

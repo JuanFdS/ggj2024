@@ -15,8 +15,8 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0568w"]
-bg_color = Color(0.25098, 0.65098, 0.803922, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ergkc"]
+bg_color = Color(0.588235, 0.298039, 0.360784, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -39,8 +39,8 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ergkc"]
-bg_color = Color(0.588235, 0.298039, 0.360784, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0568w"]
+bg_color = Color(0.25098, 0.65098, 0.803922, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -56,25 +56,33 @@ custom_minimum_size = Vector2(150, 150)
 script = ExtResource("1_t1lp0")
 nivel = ExtResource("2_h1aes")
 
-[node name="Button" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_g14sf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0568w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ergkc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e1kug")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ergkc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0568w")
 text = "¿Cuantas
 gallinas?"
 clip_text = true
 
-[node name="Iconos" type="HBoxContainer" parent="Button"]
+[node name="Iconos" type="HBoxContainer" parent="HBoxContainer/Button"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -13.0
-offset_top = 64.0
-offset_right = 37.0
-offset_bottom = 114.0
-theme_override_constants/separation = -30
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 57.0
+offset_bottom = 59.0
+theme_override_constants/separation = -50
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "asdfasdf"
