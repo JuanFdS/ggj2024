@@ -12,6 +12,7 @@ func _ready():
 	area_de_vientito.body_exited.connect(func(cosa):
 		cosas_ventiladas.erase(cosa)
 	)
+	Sounds.play_ventilador()
 	# vvv Movimiento vvv
 	#var tween = create_tween().set_loops().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN_OUT)
 	#tween.tween_property(self, "rotation", PI / 4.0, 3.0)

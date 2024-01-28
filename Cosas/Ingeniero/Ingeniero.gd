@@ -56,6 +56,9 @@ func _ready():
 			lampara_rota.arreglar()
 			
 			%AgarrandoLamparita.play("electrocutándose")
+			$TimerPlayRie.stop()
+			Sounds.play_shock()
+			Sounds.play_ingeniero_muere()
 			
 			EstadoDePartida.se_gano(tr("Ganaste... pero, ¡a qué costo!"))
 		, CONNECT_ONE_SHOT)
@@ -72,4 +75,5 @@ func _physics_process(_delta):
 
 func saltar():
 	if(estado == Estado.LamparitaEnMano):
+		Sounds.play_ingeniero_salta()
 		apply_impulse(Vector2(0, -700).rotated(rotation) * mass)

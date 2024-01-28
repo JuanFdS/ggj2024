@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhu6u2m4jlnko"
+path="res://.godot/imported/salto 1.ogg-b8ade58ac5e1ebddb26f2a87f9e4f0a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Ingeniero/saltos/salto 1.ogg"
+dest_files=["res://.godot/imported/salto 1.ogg-b8ade58ac5e1ebddb26f2a87f9e4f0a4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
