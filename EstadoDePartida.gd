@@ -19,7 +19,8 @@ func _physics_process(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawnear_cosa() -> PhysicsBody2D:
-	cantidad_de_cosas[tipo_de_cosa_seleccionada.nombre] = cantidad_de_cosas.get(tipo_de_cosa_seleccionada.nombre, 0) + 1
+	if not ganado:
+		cantidad_de_cosas[tipo_de_cosa_seleccionada.nombre] = cantidad_de_cosas.get(tipo_de_cosa_seleccionada.nombre, 0) + 1
 	return tipo_de_cosa_seleccionada.escena.instantiate()
 	
 func inicializar():
