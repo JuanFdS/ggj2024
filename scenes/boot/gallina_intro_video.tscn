@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ehrvsjvp61gu"]
+[gd_scene load_steps=4 format=3 uid="uid://g6y3qg5nuilf"]
 
-[ext_resource type="Script" path="res://scenes/boot/bootsplash_scene.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://r0besd7t4c5i" path="res://scenes/gallina_video.tscn" id="2_1qxuf"]
-[ext_resource type="PackedScene" uid="uid://g6y3qg5nuilf" path="res://scenes/boot/gallina_intro_video.tscn" id="3_vsw68"]
+[ext_resource type="Script" path="res://scenes/boot/bootsplash_scene.gd" id="1_4ajud"]
+[ext_resource type="PackedScene" uid="uid://cmmr5jbylu08i" path="res://scenes/boot/godot/godot_logo.tscn" id="2_uk4lj"]
+[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="3_t3y5f"]
 
 [node name="BootsplashScene" type="Control"]
 layout_mode = 3
@@ -11,11 +11,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2")
-fade_duration = 3.0
-stay_duration = 7.0
-node = ExtResource("2_1qxuf")
-next_scene = ExtResource("3_vsw68")
+script = ExtResource("1_4ajud")
+fade_duration = 1.5
+stay_duration = 3.0
+node = ExtResource("2_uk4lj")
+next_scene = ExtResource("3_t3y5f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

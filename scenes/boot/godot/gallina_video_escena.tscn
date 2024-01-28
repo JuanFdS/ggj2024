@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsdv704vbjdo2"]
+
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="1_smvmc"]
+[ext_resource type="PackedScene" uid="uid://ehrvsjvp61gu" path="res://scenes/boot/bootsplash_scene.tscn" id="2_awtg4"]
+[ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/game_settings_scene.tscn" id="3_2dibq"]
+
+[node name="GodotBootsplashScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_smvmc")
+
+[node name="BootsplashScene" parent="." instance=ExtResource("2_awtg4")]
+layout_mode = 1
+theme = ExtResource("1_smvmc")
+node = ExtResource("3_2dibq")
