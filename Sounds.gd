@@ -33,8 +33,12 @@ func play_elefante_pasos():
 func play_elefante_revolea():
 	$ElefanteRevoleaSfx.play()
 	
+	
 func play_elefante_resonga():
-	$ElefanteResongaSfx.play()
+	var stream = $ElefanteResongaSfx.get_children().pick_random()
+	stream.set_pitch_scale(randf_range(0.88,1.4))
+	stream.set_volume_db(randf_range(-12,-9))
+	stream.play()
 
 func play_ingeniero_piensa():
 	ingeniero_index = ingeniero_index%5
@@ -55,3 +59,5 @@ func play_ingeniero_pasos():
 
 func stop_ingeniero_pasos():
 	$IngenieroCamina.stop()
+	
+

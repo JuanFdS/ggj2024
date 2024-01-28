@@ -15,6 +15,11 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 	
+	$TimerPlayResonga.start()
+	%TimerPlayResonga.timeout.connect(func():
+		Sounds.play_elefante_resonga()
+		$TimerPlayResonga.set_wait_time(randf_range(5,8))
+	)
 	animar_trompa_hacia("izquierda")
 	trompa.add_collision_exception_with(self)
 	timer.timeout.connect(self.avanzar)
