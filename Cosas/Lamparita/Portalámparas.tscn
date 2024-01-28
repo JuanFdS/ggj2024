@@ -23,7 +23,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3, -4)
+position = Vector2(-9, 17)
 shape = SubResource("CircleShape2D_66xfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
