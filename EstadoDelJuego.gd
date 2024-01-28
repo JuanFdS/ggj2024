@@ -30,6 +30,7 @@ func empezar_nivel(nivel: Nivel):
 	jugando = true
 
 func partida_ganada(cantidad_de_cosas, tiempo):
+	jugando = false
 	var nuevo_puntaje = PuntajeMasAlto.new(cantidad_de_cosas, tiempo)
 	var nivel_id = nivel_actual.resource_path
 	if(not puntajes_mas_altos.has(nivel_id)):
