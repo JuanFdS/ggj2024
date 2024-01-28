@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Nivel" load_steps=6 format=3 uid="uid://do7q4xxllcxhn"]
+
+[ext_resource type="Script" path="res://Partida/Habitaciones/Niveles/Nivel.gd" id="1_ij212"]
+[ext_resource type="PackedScene" uid="uid://ypgy82ukawo6" path="res://Partida/Habitaciones/Niveles/Bloqueo/Bloqueo.tscn" id="1_qr78w"]
+[ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_av512"]
+[ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="4_kn7k5"]
+[ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="5_cpi6b"]
+
+[resource]
+script = ExtResource("1_ij212")
+escena = ExtResource("1_qr78w")
+nombre = "Nivel 8"
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_av512"), ExtResource("4_kn7k5"), ExtResource("5_cpi6b")])

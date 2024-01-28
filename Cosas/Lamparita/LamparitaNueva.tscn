@@ -9,10 +9,10 @@ friction = 0.7
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o31s1"]
-radius = 13.0
+radius = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du3yr"]
-size = Vector2(75, 36)
+size = Vector2(60, 36)
 
 [node name="LamparitaNueva" type="RigidBody2D"]
 position = Vector2(752, 352)
@@ -38,10 +38,11 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRosca"]
+position = Vector2(14.4283, -2.89014)
 shape = SubResource("CircleShape2D_o31s1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(29.5717, -0.109863)
+position = Vector2(34, -0.109863)
 shape = SubResource("RectangleShape2D_du3yr")
 
 [node name="Luz" type="PointLight2D" parent="."]
