@@ -25,7 +25,7 @@ func _ready():
 func _process(_delta):
 	%Contador.text = " + ".join(EstadoDePartida.cantidad_de_cosas.keys().map(func(cosa):
 		var cantidad = EstadoDePartida.cantidad_de_cosas[cosa]
-		return "%d × %s" % [cantidad, cosa]
+		return "%d × %s" % [cantidad, tr(cosa)]
 	))
 	if(%Contador.text.is_empty()):
 		%Contador.text = "0x"

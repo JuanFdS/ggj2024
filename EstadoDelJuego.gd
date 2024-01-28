@@ -97,12 +97,12 @@ class PuntajeMasAlto:
 	func como_texto(tipo_puntaje):
 		match tipo_puntaje:
 			CANTIDAD:
-				return "Menor cantidad: " + " + ".join(cantidad_de_cosas.keys().map(func(cosa):
+				return "%s " % tr("Menor cantidad:") + " + ".join(cantidad_de_cosas.keys().map(func(cosa):
 					var cantidad = cantidad_de_cosas[cosa]
-					return "%d × %s" % [cantidad, cosa]
+					return "%d × %s" % [cantidad, tr(cosa)]
 				))
 			TIEMPO:
-				return "Menor tiempo: %.2fs" % tiempo
+				return "%s %.2fs" % [tr("Mejor tiempo:"), tiempo]
 
 	func menor_segun(otro_puntaje, tipo_puntaje):
 		match tipo_puntaje:

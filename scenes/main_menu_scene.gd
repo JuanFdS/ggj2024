@@ -13,6 +13,7 @@ var next_scene = game_scene
 var new_game = true
 
 func _ready() -> void:
+	cambiar_titulo()
 	overlay.visible = true
 	new_game_button.disabled = game_scene == null
 	settings_button.disabled = settings_scene == null
@@ -53,6 +54,7 @@ func _on_fade_overlay_on_complete_fade_out() -> void:
 	get_tree().change_scene_to_packed(next_scene)
 
 func cambiar_titulo():
+	var se_necesitan_para_cambiar_un_foquito = tr("se_necesitan_para_cambiar_un_foquito")
 	var cuantxs = {
 		"gallinas": "Cuantas",
 		"ingenieros": "Cuantos",
@@ -65,12 +67,12 @@ func cambiar_titulo():
 		"productores": "Cuantos"
 	}
 	var nueva_cosa = cuantxs.keys().pick_random()
-	titulo.text = "[center]¿%s
+	titulo.text = "[center]%s
 [shake][color=black]%s[/color][/shake]
-se necesitan para cambiar un foquito?
-[/center]" % [cuantxs[nueva_cosa], "---"]
+%s
+[/center]" % [tr(cuantxs[nueva_cosa]), "---", se_necesitan_para_cambiar_un_foquito]
 	await get_tree().create_timer(0.3).timeout
-	titulo.text = "[center]¿%s
+	titulo.text = "[center]%s
 [tornado][color=black]%s[/color][/tornado]
-se necesitan para cambiar un foquito?
-[/center]" % [cuantxs[nueva_cosa], nueva_cosa]
+%s
+[/center]" % [tr(cuantxs[nueva_cosa]), tr(nueva_cosa), se_necesitan_para_cambiar_un_foquito]

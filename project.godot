@@ -67,6 +67,10 @@ pause={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://i18n/translation.csv", "res://i18n/translation.en.translation", "res://i18n/translation.es.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Cosas"
