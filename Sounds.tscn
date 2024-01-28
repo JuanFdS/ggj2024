@@ -171,7 +171,7 @@ bus = &"Gallinas"
 
 [node name="ElefantePasosSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_l160b")
-volume_db = -6.09
+volume_db = -6.0
 pitch_scale = 0.91
 bus = &"Sound"
 
@@ -325,7 +325,7 @@ use_stream_array = true
 stream_array = SubResource("Resource_fnojt")
 
 [node name="IngenieroSaltaSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("50_p27rs")
+stream = ExtResource("46_hag3w")
 script = ExtResource("3_5uvqe")
 use_stream_array = true
 stream_array = SubResource("Resource_d1dv8")
