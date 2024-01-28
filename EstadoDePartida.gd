@@ -24,13 +24,14 @@ func _physics_process(delta):
 func spawnear_cosa() -> PhysicsBody2D:
 	if not ganado:
 		cantidad_de_cosas[tipo_de_cosa_seleccionada.nombre] = cantidad_de_cosas.get(tipo_de_cosa_seleccionada.nombre, 0) + 1
+		contando_el_tiempo = true
 	return tipo_de_cosa_seleccionada.escena.instantiate()
 	
 func inicializar():
 	tiempo = 0.0
 	cantidad_de_cosas = {}
 	ganado = false
-	contando_el_tiempo = true
+	contando_el_tiempo = false
 	inicio_nivel.emit()
 	
 func reiniciar():
