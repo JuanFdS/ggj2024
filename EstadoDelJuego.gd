@@ -26,6 +26,7 @@ func empezar_nivel(nivel: Nivel):
 	nivel_actual = nivel
 	get_tree().change_scene_to_packed(PARTIDA)
 	EstadoDePartida.reiniciar()
+	EstadoDePartida.tipo_de_cosa_seleccionada = nivel.tipos_de_cosas.front()
 	jugando = true
 
 func partida_ganada(cantidad_de_cosas, tiempo):
