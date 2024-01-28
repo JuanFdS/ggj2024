@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fi0oenq5qr8t"]
+[gd_scene load_steps=8 format=3 uid="uid://fi0oenq5qr8t"]
 
 [ext_resource type="Script" path="res://Partida/SelectorDeNiveles/BotonSeleccionDeNivel.gd" id="1_t1lp0"]
 [ext_resource type="Resource" uid="uid://dfiurq5fr0u1j" path="res://Partida/Habitaciones/Niveles/CuantasGallinas/CuantasGallinas.tres" id="2_h1aes"]
@@ -51,6 +51,9 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="LabelSettings" id="LabelSettings_8lrwh"]
+font_size = 20
+
 [node name="BotonSeleccionDeNivel" type="MarginContainer"]
 custom_minimum_size = Vector2(150, 150)
 script = ExtResource("1_t1lp0")
@@ -58,10 +61,11 @@ nivel = ExtResource("2_h1aes")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(200, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -86,3 +90,4 @@ theme_override_constants/separation = -50
 unique_name_in_owner = true
 layout_mode = 2
 text = "asdfasdf"
+label_settings = SubResource("LabelSettings_8lrwh")

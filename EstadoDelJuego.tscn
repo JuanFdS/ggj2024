@@ -12,4 +12,4 @@
 
 [node name="EstadoDelJuego" type="Node" groups=["Persist"]]
 script = ExtResource("1_2hif3")
-niveles = Array[Resource("res://Partida/Habitaciones/Niveles/Nivel.gd")]([ExtResource("2_gftwl"), ExtResource("3_cgqng"), ExtResource("4_crcos"), ExtResource("5_xtr0k"), ExtResource("6_37bfa"), ExtResource("7_evie2"), ExtResource("8_hkj5h"), ExtResource("9_slnko")])
+niveles = Array[Resource("res://Partida/Habitaciones/Niveles/Nivel.gd")]([ExtResource("2_gftwl"), ExtResource("4_crcos"), ExtResource("5_xtr0k"), ExtResource("3_cgqng"), ExtResource("6_37bfa"), ExtResource("7_evie2"), ExtResource("8_hkj5h"), ExtResource("9_slnko")])

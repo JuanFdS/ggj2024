@@ -15,7 +15,7 @@ func _ready():
 		textura.custom_minimum_size = Vector2(80, 80)
 		%Iconos.add_child(textura, true)
 	)
-	%Label.text = "%s\n%s" % [nivel.nombre, EstadoDelJuego.puntajes_altos_como_texto_para(nivel)]
+	%Label.text = "%s\n%s" % [tr(nivel.nombre), EstadoDelJuego.puntajes_altos_como_texto_para(nivel)]
 
 func focuseate():
 	%Button.grab_focus()
