@@ -9,13 +9,17 @@ signal game_exited
 @onready var menu_container := %MenuContainer
 @onready var back_button := %BackButton
 @onready var volver_a_seleccion_de_niveles_button := %VolverASeleccionDeNiveles
+@onready var to_main_menu_button := %ToMainMenuButton
 const SELECTOR_DE_NIVELES = preload("res://Partida/SelectorDeNiveles/SelectorDeNiveles.tscn")
+const MAIN_MENU_SCENE = preload("res://scenes/main_menu_scene.tscn")
+
 
 func _ready() -> void:
 	resume_button.pressed.connect(_resume)
 	settings_button.pressed.connect(_settings)
 	exit_button.pressed.connect(_exit)
 	back_button.pressed.connect(_pause_menu)
+	to_main_menu_button.pressed.connect(_to_main_menu)
 	volver_a_seleccion_de_niveles_button.pressed.connect(func():
 		get_tree().change_scene_to_packed(SELECTOR_DE_NIVELES)
 		_resume()
@@ -37,7 +41,11 @@ func _settings() -> void:
 func _exit() -> void:
 	game_exited.emit()
 	get_tree().quit()
-	
+
+func _to_main_menu():
+	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+	_resume()
+
 func _pause_menu() -> void:
 	visible = true
 	settings_container.visible = false

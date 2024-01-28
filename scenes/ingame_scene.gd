@@ -5,10 +5,10 @@ extends Node2D
 
 func _ready() -> void:
 	fade_overlay.visible = true
-	#
-	#if SaveGame.has_save():
-		#SaveGame.load_game(get_tree())
-	#
+	
+	if SaveGame.has_save():
+		SaveGame.load_game(get_tree())
+	
 	pause_overlay.game_exited.connect(_save_game)
 
 func _input(event) -> void:
@@ -20,4 +20,4 @@ func _input(event) -> void:
 		
 func _save_game() -> void:
 	pass
-	#SaveGame.save_game(get_tree())
+	SaveGame.save_game(get_tree())

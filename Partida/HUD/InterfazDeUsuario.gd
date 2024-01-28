@@ -31,6 +31,9 @@ func _process(_delta):
 		var cantidad = EstadoDePartida.cantidad_de_cosas[cosa]
 		return "%d × %s" % [cantidad, cosa]
 	))
+	if(%Contador.text.is_empty()):
+		%Contador.text = "0x"
+	%LabelTimer.text = "%.2fs" % EstadoDePartida.tiempo
 	
 	if(EstadoDePartida.ganado):
 		%Mensajito.visible = true

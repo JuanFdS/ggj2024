@@ -55,6 +55,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "settings"
 
+[node name="ToMainMenuButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "to_main_menu"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
