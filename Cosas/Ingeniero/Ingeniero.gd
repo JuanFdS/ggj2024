@@ -22,11 +22,13 @@ func _ready():
 	%Mirando.visible = true
 	%Mirando.play()
 	%AgarrandoLamparita.visible = false
-	
+	Sounds.paren_todo.connect(func():
+		$IngenieroCamina.stop()
+	)
 	
 	%TimerPlayRie.timeout.connect(func():
 		Sounds.play_ingeniero_rie()
-		$TimerPlayPiensa.set_wait_time(randf_range(2.5,4))
+		$TimerPlayRie.set_wait_time(randf_range(2.5,4))
 	)
 	$TimerPlayPiensa.timeout.connect(func():
 		Sounds.play_ingeniero_piensa()
@@ -37,13 +39,15 @@ func _ready():
 		if(estado != Estado.LamparitaEnMano):
 			lamparita_a_buscar = lamparita
 			estado = Estado.BuscandoLamparita
-			Sounds.play_ingeniero_pasos()
+			#Sounds.play_ingeniero_pasos()
+			$IngenieroCamina.play()
 			%Mirando.animation = "corriendo"
 	, CONNECT_ONE_SHOT)
 	
 	%AreaAgarradoraDeLamparitas.body_entered.connect(func(lamparita: Node2D):
 		$TimerPlayPiensa.stop()
-		Sounds.stop_ingeniero_pasos()
+		#Sounds.stop_ingeniero_pasos()
+		$IngenieroCamina.stop()
 		$TimerPlayRie.start()
 		estado = Estado.LamparitaEnMano
 		mass = 1.2

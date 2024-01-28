@@ -5,6 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://j5ipnhegb71v" path="res://Assets/ingeniero/Ingeniero.tres" id="2_6c07u"]
 [ext_resource type="Texture2D" uid="uid://b7101vs5n6utg" path="res://Assets/ingeniero/nubeDePolvo.png" id="4_tojtx"]
 [ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="6_7mvwe"]
+[ext_resource type="AudioStream" uid="uid://yge8n0081sv0" path="res://Sounds/Ingeniero/pasos.ogg" id="5_u8hmj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0born"]
 friction = 0.5
@@ -123,6 +124,7 @@ unique_name_in_owner = true
 wait_time = 3.0
 
 [node name="TimerPlayPiensa" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
@@ -157,3 +159,9 @@ initial_velocity_min = 20.0
 initial_velocity_max = 30.0
 scale_amount_curve = SubResource("Curve_h7lxf")
 color_ramp = SubResource("Gradient_bommv")
+
+[node name="IngenieroCamina" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u8hmj")
+volume_db = -2.0
+max_polyphony = 3
+bus = &"Sound"
