@@ -10,6 +10,7 @@ var gravity_versor: Vector2 = ProjectSettings.get_setting("physics/2d/default_gr
 @onready var origin_x = global_position.x
 @onready var timer := %Timer
 @onready var area_golpe := %AreaGolpe
+@export var pegando_trompazo: bool = false
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -34,7 +35,8 @@ func cosa_golpeada():
 func _physics_process(_delta):
 	if Engine.is_editor_hint():
 		return
-	pass
+	%Trompa.constant_linear_velocity = Vector2(0, -1400) if(pegando_trompazo) else Vector2.ZERO
+
 
 func avanzar():
 	if [true, false].pick_random():
@@ -50,32 +52,33 @@ func cambiar_direccion():
 	else:
 		animar_transicion("izquierda", "derecha")
 	
-	$SpriteTrompa.scale.x *= -1
+	%SpriteTrompa.scale.x *= -1
 
 func animar_transicion(direccion_inicial, direccion_final):
 	Sounds.play_elefante_pasos()
-	$AnimatedSprite2D.play("%s_a_%s" % [direccion_inicial, direccion_final])
-	$SpriteTrompa.visible = false
-	$AnimatedSprite2D.animation_finished.connect(func():
+	%AnimatedSprite2D.play("%s_a_%s" % [direccion_inicial, direccion_final])
+	%SpriteTrompa.visible = false
+	%AnimatedSprite2D.animation_finished.connect(func():
 		animar_trompa_hacia(direccion_final)
-		$SpriteTrompa.visible = true
+		%SpriteTrompa.visible = true
 	, CONNECT_ONE_SHOT)
 
 func animar_trompa_hacia(nombre_direccion):
-	$AnimatedSprite2D.play(nombre_direccion)
-	$AnimationPlayer.play("trompa_%s" % nombre_direccion)
+	%AnimatedSprite2D.play(nombre_direccion)
+	%AnimationPlayer.play("trompa_%s" % nombre_direccion)
 
 func play_animations():
-	$AnimatedSprite2D.stop()
-	$AnimationPlayer.stop()
+	%AnimatedSprite2D.stop()
+	%AnimationPlayer.stop()
 	
-	$AnimatedSprite2D.play("derecha")
-	$AnimationPlayer.play("trompa_derecha")
+	%AnimatedSprite2D.play("derecha")
+	%AnimationPlayer.play("trompa_derecha")
 
 func stop_animations():
-	$AnimatedSprite2D.pause()
-	$AnimationPlayer.pause()
-#
+	%AnimatedSprite2D.pause()
+	%AnimationPlayer.pause()
+
+
 #func _extend_inspector_begin(inspector: ExtendableInspector):
 	#var play_animations_button =\
 		#CommonControls.new(inspector).method_button("play_animations")
@@ -84,4 +87,4 @@ func stop_animations():
 #
 	#inspector.add_custom_control(play_animations_button)
 	#inspector.add_custom_control(stop_animations_button)
-
+#

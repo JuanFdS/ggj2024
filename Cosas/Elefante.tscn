@@ -17,15 +17,15 @@ size = Vector2(25.5281, 10.2084)
 size = Vector2(25.5281, 10.2084)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyd1i"]
-radius = 28.7545
-height = 60.0053
+radius = 10.2528
+height = 30.4979
 
 [sub_resource type="Animation" id="Animation_7u5om"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteTrompa:scale")
+tracks/0/path = NodePath("Pivote/SpriteTrompa:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +37,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteTrompa:rotation")
+tracks/1/path = NodePath("Pivote/SpriteTrompa:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -49,7 +49,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SpriteTrompa:position")
+tracks/2/path = NodePath("Pivote/SpriteTrompa:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -64,7 +64,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteTrompa:rotation")
+tracks/0/path = NodePath("Pivote/SpriteTrompa:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -76,7 +76,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteTrompa:position")
+tracks/1/path = NodePath("Pivote/SpriteTrompa:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -88,7 +88,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SpriteTrompa:scale")
+tracks/2/path = NodePath("Pivote/SpriteTrompa:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -103,7 +103,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteTrompa:scale")
+tracks/0/path = NodePath("Pivote/SpriteTrompa:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,7 +115,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteTrompa:position")
+tracks/1/path = NodePath("Pivote/SpriteTrompa:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,7 +127,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SpriteTrompa:rotation")
+tracks/2/path = NodePath("Pivote/SpriteTrompa:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -136,6 +136,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [3.11143, 3.52207, 2.30034]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pegando_trompazo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_g10a6"]
 resource_name = "trompa_izquierda"
@@ -143,7 +155,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteTrompa:rotation")
+tracks/0/path = NodePath("Pivote/SpriteTrompa:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -155,7 +167,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteTrompa:position")
+tracks/1/path = NodePath("Pivote/SpriteTrompa:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -167,7 +179,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SpriteTrompa:scale")
+tracks/2/path = NodePath("Pivote/SpriteTrompa:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -175,6 +187,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.568, -0.568)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pegando_trompazo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ldqom"]
@@ -186,12 +210,25 @@ _data = {
 }
 
 [node name="RigidBody2D" type="RigidBody2D"]
-collision_layer = 16
-collision_mask = 2147483648
+collision_layer = 17
+collision_mask = 3221225473
 mass = 100.0
 script = ExtResource("1_b3yir")
+pegando_trompazo = true
 
-[node name="SpriteTrompa" type="Sprite2D" parent="."]
+[node name="Pivote" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivote"]
+unique_name_in_owner = true
+position = Vector2(0, -34)
+scale = Vector2(0.55, 0.55)
+sprite_frames = ExtResource("2_p7pum")
+animation = &"derecha"
+frame_progress = 0.985208
+
+[node name="SpriteTrompa" type="Sprite2D" parent="Pivote"]
+unique_name_in_owner = true
 z_index = 1
 position = Vector2(-94, 19)
 rotation = 2.94549
@@ -199,7 +236,7 @@ scale = Vector2(0.568, -0.568)
 texture = ExtResource("2_trvs2")
 offset = Vector2(-120.566, -110.43)
 
-[node name="Trompa" type="StaticBody2D" parent="SpriteTrompa"]
+[node name="Trompa" type="StaticBody2D" parent="Pivote/SpriteTrompa"]
 unique_name_in_owner = true
 position = Vector2(651.117, -61.8024)
 rotation = 2.83267
@@ -209,29 +246,33 @@ collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_f7mod")
 constant_linear_velocity = Vector2(0, -1000)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteTrompa/Trompa"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/SpriteTrompa/Trompa"]
 position = Vector2(88.5, -16)
 rotation = -1.3204
+scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_rigyh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpriteTrompa/Trompa"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pivote/SpriteTrompa/Trompa"]
 position = Vector2(77.25, 1.74999)
 rotation = -0.555452
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_rigyh")
 
-[node name="AreaGolpe" type="Area2D" parent="SpriteTrompa/Trompa"]
+[node name="AreaGolpe" type="Area2D" parent="Pivote/SpriteTrompa/Trompa"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 19
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteTrompa/Trompa/AreaGolpe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/SpriteTrompa/Trompa/AreaGolpe"]
 position = Vector2(88.5, -16)
 rotation = -1.3204
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_1d5r1")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpriteTrompa/Trompa/AreaGolpe"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pivote/SpriteTrompa/Trompa/AreaGolpe"]
 position = Vector2(77.25, 1.74999)
 rotation = -0.555452
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_gk5xx")
 
 [node name="Timer" type="Timer" parent="."]
@@ -239,24 +280,14 @@ unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, -30)
-scale = Vector2(0.578125, 0.519375)
-sprite_frames = ExtResource("2_p7pum")
-animation = &"derecha"
-frame = 3
-frame_progress = 0.103248
-metadata/_edit_lock_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 17)
 rotation = 1.56701
 scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_hyd1i")
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ldqom")
 }

@@ -84,7 +84,7 @@ width = 3.0
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="LamparitaNueva" parent="." instance=ExtResource("5_4jnn8")]
-position = Vector2(111, 229)
+position = Vector2(92, 229)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
