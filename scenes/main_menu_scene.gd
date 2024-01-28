@@ -12,7 +12,12 @@ extends Node2D
 var next_scene = game_scene
 var new_game = true
 
+const CursorPiolita = preload("res://Assets/Cursor.png")
+
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_IBEAM)
+	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(CursorPiolita, Input.CURSOR_ARROW)
 	cambiar_titulo()
 	overlay.visible = true
 	new_game_button.disabled = game_scene == null
