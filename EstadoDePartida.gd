@@ -11,7 +11,7 @@ func _ready():
 	inicializar()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func spawnear_cosa() -> RigidBody2D:
+func spawnear_cosa() -> PhysicsBody2D:
 	cantidad_de_cosas[tipo_de_cosa_seleccionada.nombre] = cantidad_de_cosas.get(tipo_de_cosa_seleccionada.nombre, 0) + 1
 	return tipo_de_cosa_seleccionada.escena.instantiate()
 	

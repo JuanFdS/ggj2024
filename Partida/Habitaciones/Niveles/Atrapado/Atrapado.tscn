@@ -94,13 +94,11 @@ flip_v = true
 [node name="Pared3" type="StaticBody2D" parent="."]
 position = Vector2(145, 517)
 rotation = -1.0341
-scale = Vector2(1, 1)
 collision_layer = 2147483648
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared3"]
 position = Vector2(262.765, 86.8968)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h5fsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pared3"]

@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b83c57cwhkoa6" path="res://Partida/Habitaciones/Niveles/Atrapado/Atrapado.tscn" id="1_vmvxm"]
 [ext_resource type="Resource" uid="uid://ddj4n35rvig3h" path="res://TiposDeCosa/Gallina.tres" id="3_jvew0"]
 [ext_resource type="Resource" uid="uid://bjrenhl57k3j3" path="res://TiposDeCosa/Ingeniero.tres" id="4_cqfhn"]
-[ext_resource type="Resource" uid="uid://dy7qc2pn6grp8" path="res://TiposDeCosa/Elefante.tres" id="5_qype7"]
+[ext_resource type="Resource" uid="uid://cy21gtmd2wny8" path="res://TiposDeCosa/Ventilador.tres" id="6_iqolg"]
 
 [resource]
 script = ExtResource("1_e8kev")
 escena = ExtResource("1_vmvxm")
 nombre = "Nivel 6"
-tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_jvew0"), ExtResource("4_cqfhn"), ExtResource("5_qype7")])
+tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_jvew0"), ExtResource("4_cqfhn"), ExtResource("6_iqolg")])
