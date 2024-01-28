@@ -78,7 +78,7 @@ streams = Array[AudioStream]([ExtResource("38_m5fx6"), ExtResource("39_k68y7"), 
 
 [sub_resource type="Resource" id="Resource_d1dv8"]
 script = ExtResource("4_mss6c")
-streams = Array[AudioStream]([ExtResource("47_qfe76"), ExtResource("48_2n1al"), ExtResource("49_w528x"), ExtResource("50_p27rs"), ExtResource("51_6dn84"), ExtResource("46_hag3w"), ExtResource("52_enmtn")])
+streams = Array[AudioStream]([ExtResource("48_2n1al"), ExtResource("49_w528x"), ExtResource("50_p27rs"), ExtResource("46_hag3w"), ExtResource("47_qfe76"), ExtResource("51_6dn84"), ExtResource("52_enmtn")])
 
 [sub_resource type="Resource" id="Resource_atij1"]
 script = ExtResource("4_mss6c")
@@ -171,7 +171,7 @@ bus = &"Gallinas"
 
 [node name="ElefantePasosSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_l160b")
-volume_db = -6.09
+volume_db = -6.0
 pitch_scale = 0.91
 bus = &"Sound"
 
@@ -327,6 +327,16 @@ stream_array = SubResource("Resource_fnojt")
 [node name="IngenieroSaltaSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("46_hag3w")
 script = ExtResource("3_5uvqe")
+use_stream_array = true
+stream_array = SubResource("Resource_d1dv8")
+
+[node name="IngenieroRebotaSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_2n1al")
+volume_db = -9.52879
+bus = &"IngenieroRebota"
+script = ExtResource("3_5uvqe")
+volume = -7.0
+volume_deviation = 1.297
 use_stream_array = true
 stream_array = SubResource("Resource_d1dv8")
 

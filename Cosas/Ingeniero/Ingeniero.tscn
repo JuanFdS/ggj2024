@@ -44,6 +44,8 @@ collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_0born")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 1)
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_l0uwo")
 
 [node name="Node2D" type="Node2D" parent="."]

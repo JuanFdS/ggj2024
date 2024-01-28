@@ -25,6 +25,10 @@ func _ready():
 	Sounds.paren_todo.connect(func():
 		$IngenieroCamina.stop()
 	)
+	body_entered.connect(func(body):
+		if body.get_collision_layer_value(32):
+			Sounds.play_ingeniero_rebota()
+	)
 	
 	%TimerPlayRie.timeout.connect(func():
 		Sounds.play_ingeniero_rie()
@@ -32,7 +36,7 @@ func _ready():
 	)
 	$TimerPlayPiensa.timeout.connect(func():
 		Sounds.play_ingeniero_piensa()
-		$TimerPlayPiensa.set_wait_time(randf_range(2.5,4))
+		$TimerPlayPiensa.set_wait_time(randf_range(2,3))
 	)
 	
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):

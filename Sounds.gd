@@ -76,3 +76,6 @@ func play_shock():
 
 func play_ingeniero_muere():
 	$IngenieroMuere.play_random()
+	
+func play_ingeniero_rebota():
+	$IngenieroRebotaSfx.play_random()
