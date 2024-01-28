@@ -1,0 +1,182 @@
+[gd_scene load_steps=16 format=3 uid="uid://ddrvchty8utjp"]
+
+[ext_resource type="Script" path="res://Habitacion.gd" id="1_3wrf7"]
+[ext_resource type="PackedScene" uid="uid://dgkjtc3vl2qun" path="res://Cosas/Ventilador/Ventilador.tscn" id="2_nl3fs"]
+[ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="3_snnq3"]
+[ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="4_u6rho"]
+[ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="5_wyc82"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wwflv"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dioxf"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
+
+[sub_resource type="Animation" id="Animation_m8fes"]
+resource_name = "portalamparas_con_viento"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0586511, 0.0670344]
+}
+
+[sub_resource type="Animation" id="Animation_yrd1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0586511]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvdr2"]
+_data = {
+"RESET": SubResource("Animation_yrd1f"),
+"portalamparas_con_viento": SubResource("Animation_m8fes")
+}
+
+[sub_resource type="GDScript" id="GDScript_eqwy8"]
+script/source = "extends AnimationPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.play(\"portalamparas_con_viento\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g2bh7"]
+a = Vector2(-56, 8)
+b = Vector2(90, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedih"]
+size = Vector2(88, 246)
+
+[node name="Habitacion" type="Node2D"]
+script = ExtResource("1_3wrf7")
+
+[node name="Ventilador" parent="." instance=ExtResource("2_nl3fs")]
+position = Vector2(17, 479)
+rotation = 0.013955
+fuerza = 1500.0
+
+[node name="Ventilador2" parent="." instance=ExtResource("2_nl3fs")]
+position = Vector2(31, 734)
+rotation = -0.913593
+fuerza = 1500.0
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_snnq3")
+centered = false
+
+[node name="ParedesYPiso" type="StaticBody2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(0, 327)
+shape = SubResource("WorldBoundaryShape2D_kf7ph")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(958, 323)
+shape = SubResource("WorldBoundaryShape2D_wwflv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(571, 0)
+shape = SubResource("WorldBoundaryShape2D_dioxf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ParedesYPiso"]
+position = Vector2(592, 702)
+shape = SubResource("WorldBoundaryShape2D_niugd")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(138, 755)
+rotation = -0.0586511
+
+[node name="Portalámparas" parent="Node2D" instance=ExtResource("4_u6rho")]
+position = Vector2(69, -224)
+rotation = -2.84288
+
+[node name="Line2D" type="Line2D" parent="Node2D/Portalámparas"]
+points = PackedVector2Array(-1, -75, 0, -331)
+width = 3.0
+default_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_nvdr2")
+}
+script = SubResource("GDScript_eqwy8")
+
+[node name="LamparitaNueva" parent="." instance=ExtResource("5_wyc82")]
+position = Vector2(659.436, 123.558)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Mesita" type="StaticBody2D" parent="."]
+position = Vector2(789, 607)
+rotation = 3.14114
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
+position = Vector2(28, 9)
+rotation = -3.11878
+shape = SubResource("SegmentShape2D_g2bh7")
+one_way_collision = true
+
+[node name="Estante" type="StaticBody2D" parent="."]
+position = Vector2(699, 143)
+rotation = 3.14114
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estante"]
+position = Vector2(28, 9)
+rotation = -3.11878
+shape = SubResource("SegmentShape2D_g2bh7")
+one_way_collision = true
+
+[node name="Pared" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-150, -3)
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(298, 101)
+shape = SubResource("RectangleShape2D_gedih")
+
+[node name="Line2D" type="Line2D" parent="Pared"]
+position = Vector2(5, 3)
+points = PackedVector2Array(261, -22, 261, 136.586, 261, 229)
+width = 30.0
+default_color = Color(0.415686, 0.239216, 0.180392, 1)
