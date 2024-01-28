@@ -5,9 +5,9 @@ extends Node2D
 func _ready():
 	$BotonRotar.button_down.connect(func():
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			$Ventilador.global_rotation += PI / 10
-		else:
 			$Ventilador.global_rotation -= PI / 10
+		else:
+			$Ventilador.global_rotation += PI / 10
 	)
 
 

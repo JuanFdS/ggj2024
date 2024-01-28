@@ -66,7 +66,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
 position = Vector2(17.63, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita2" type="StaticBody2D" parent="."]
@@ -85,7 +84,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita2"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita3" type="StaticBody2D" parent="."]
@@ -104,7 +102,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita3"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita5" type="StaticBody2D" parent="."]
@@ -123,7 +120,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita5"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita6" type="StaticBody2D" parent="."]
@@ -142,7 +138,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita6"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita8" type="StaticBody2D" parent="."]
@@ -161,7 +156,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita8"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita10" type="StaticBody2D" parent="."]
@@ -180,7 +174,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita10"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita9" type="StaticBody2D" parent="."]
@@ -199,7 +192,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita9"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita7" type="StaticBody2D" parent="."]
@@ -218,7 +210,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita7"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Mesita4" type="StaticBody2D" parent="."]
@@ -237,7 +228,6 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita4"]
 position = Vector2(4.27519, -30.1464)
 rotation = -3.14159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xvupe")
 
 [node name="Portalámparas" parent="." instance=ExtResource("4_71410")]
