@@ -23,7 +23,7 @@ func _unhandled_input(event):
 		Sounds.play_spawn()
 
 func agregar_en(posicion_global, cosa):
-	var velocidad_cosa = clamp(velocidad_cursor, -velocidad_maxima_cosa, velocidad_maxima_cosa)
+	var velocidad_cosa = velocidad_cursor.clamp(-velocidad_maxima_cosa, velocidad_maxima_cosa)
 	
 	add_child(cosa)
 	cosa.global_position = posicion_global
