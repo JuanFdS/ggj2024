@@ -30,6 +30,21 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="Animation" id="Animation_nmn8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+
 [sub_resource type="Animation" id="Animation_4s1wc"]
 resource_name = "portalámparas"
 length = 3.0
@@ -45,21 +60,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.5),
 "update": 0,
 "values": [0.0523599, -0.0523599]
-}
-
-[sub_resource type="Animation" id="Animation_nmn8e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.261799]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_estyp"]

@@ -74,7 +74,8 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelLateral/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
+modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_anw5k")
 
@@ -98,6 +99,8 @@ mouse_default_cursor_shape = 2
 text = "Reintentar"
 
 [node name="BotonGallina" parent="PanelLateral/MarginContainer/PanelContainer/MarginContainer/MenuDeCosas" instance=ExtResource("2_8fph6")]
+modulate = Color(1, 1, 1, 0.490196)
+self_modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
