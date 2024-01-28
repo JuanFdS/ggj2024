@@ -35,7 +35,7 @@ func _ready():
 		Sounds.stop_ingeniero_pasos()
 		$TimerPlayRie.start()
 		estado = Estado.LamparitaEnMano
-		mass = 5
+		mass = 1.2
 		%Mirando.visible = false
 		%AgarrandoLamparita.visible = true
 		lamparita.queue_free()
