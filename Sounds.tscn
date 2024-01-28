@@ -315,7 +315,7 @@ stream_array = SubResource("Resource_fnojt")
 
 [node name="IngenieroCamina" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("44_mph8s")
-volume_db = -9.0
+volume_db = -6.0
 max_polyphony = 3
 bus = &"Sound"
 
