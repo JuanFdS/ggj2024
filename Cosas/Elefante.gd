@@ -26,7 +26,7 @@ func _ready():
 func cosa_golpeada():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Engine.is_editor_hint():
 		return
 	pass

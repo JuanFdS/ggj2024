@@ -12,13 +12,15 @@ func _ready():
 	%Mirando.play()
 	%AgarrandoLamparita.visible = false
 	%AreaDetectoraDeLamparitas.body_entered.connect(func(lamparita):
-		lamparita_a_buscar = lamparita
-		estado = Estado.BuscandoLamparita
-		%Mirando.animation = "corriendo"
+		if(estado != Estado.LamparitaEnMano):
+			lamparita_a_buscar = lamparita
+			estado = Estado.BuscandoLamparita
+			%Mirando.animation = "corriendo"
 	, CONNECT_ONE_SHOT)
 	
 	%AreaAgarradoraDeLamparitas.body_entered.connect(func(lamparita: Node2D):
 		estado = Estado.LamparitaEnMano
+		mass = 5
 		%Mirando.visible = false
 		%AgarrandoLamparita.visible = true
 		lamparita.queue_free()
@@ -43,11 +45,11 @@ func _ready():
 	
 	%Saltar.timeout.connect(self.saltar)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if(is_instance_valid(lamparita_a_buscar) and estado == Estado.BuscandoLamparita):
 		var direction_x: float = sign(global_position.direction_to(lamparita_a_buscar.global_position).x)
 		
-		apply_central_force(mass * 800.0 * Vector2(direction_x, 5.0))
+		apply_central_force(mass * 800.0 * Vector2(direction_x, 0.5))
 
 func saltar():
 	if(estado == Estado.LamparitaEnMano):

@@ -8,8 +8,8 @@
 friction = 0.5
 bounce = 1.2
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_psnfl"]
-radius = 381.495
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_526vh"]
+size = Vector2(520, 910)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gpf5d"]
 radius = 93.02
@@ -56,8 +56,14 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaDetectoraDeLamparitas"]
-position = Vector2(132.143, -42.4285)
-shape = SubResource("CircleShape2D_psnfl")
+position = Vector2(333.571, -43.8571)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_526vh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/AreaDetectoraDeLamparitas"]
+position = Vector2(333.571, -43.8571)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_526vh")
 
 [node name="AreaAgarradoraDeLamparitas" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
@@ -75,7 +81,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaDeEnchufado"]
 position = Vector2(2.85706, -157.143)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mh18q")
 
 [node name="Saltar" type="Timer" parent="Node2D"]
