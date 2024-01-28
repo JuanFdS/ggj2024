@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_m2luw")
 escena = ExtResource("1_blqxt")
-nombre = "Nivel 7"
+nombre = "Laberinto"
 tipos_de_cosas = Array[Resource("res://TipoDeCosa.gd")]([ExtResource("3_l05y0"), ExtResource("4_h67hj"), ExtResource("5_hdey8")])

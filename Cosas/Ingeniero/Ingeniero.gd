@@ -57,7 +57,7 @@ func _ready():
 			
 			%AgarrandoLamparita.play("electrocutándose")
 			
-			EstadoDePartida.se_gano()
+			EstadoDePartida.se_gano("Ganaste... pero, ¡a qué costo!")
 		, CONNECT_ONE_SHOT)
 		
 	, CONNECT_ONE_SHOT)
