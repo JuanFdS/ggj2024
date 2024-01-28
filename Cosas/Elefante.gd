@@ -24,7 +24,7 @@ func _ready():
 	)
 
 func cosa_golpeada():
-	pass
+	Sounds.play_elefante_revolea()
 
 func _physics_process(_delta):
 	if Engine.is_editor_hint():
@@ -48,6 +48,7 @@ func cambiar_direccion():
 	$SpriteTrompa.scale.x *= -1
 
 func animar_transicion(direccion_inicial, direccion_final):
+	Sounds.play_elefante_pasos()
 	$AnimatedSprite2D.play("%s_a_%s" % [direccion_inicial, direccion_final])
 	$SpriteTrompa.visible = false
 	$AnimatedSprite2D.animation_finished.connect(func():

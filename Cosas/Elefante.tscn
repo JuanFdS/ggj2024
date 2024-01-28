@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btibma3e67qwh"]
+[gd_scene load_steps=14 format=3 uid="uid://btibma3e67qwh"]
 
 [ext_resource type="Script" path="res://Cosas/Elefante.gd" id="1_b3yir"]
 [ext_resource type="SpriteFrames" uid="uid://chveuwmwhwqfr" path="res://Assets/elefante/Elefante.tres" id="2_p7pum"]
@@ -8,6 +8,12 @@
 bounce = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rigyh"]
+size = Vector2(25.5281, 10.2084)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d5r1"]
+size = Vector2(25.5281, 10.2084)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk5xx"]
 size = Vector2(25.5281, 10.2084)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyd1i"]
@@ -212,20 +218,20 @@ position = Vector2(77.25, 1.74999)
 rotation = -0.555452
 shape = SubResource("RectangleShape2D_rigyh")
 
-[node name="AreaGolpe" type="Area2D" parent="SpriteTrompa"]
+[node name="AreaGolpe" type="Area2D" parent="SpriteTrompa/Trompa"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 19
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteTrompa/AreaGolpe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteTrompa/Trompa/AreaGolpe"]
 position = Vector2(88.5, -16)
 rotation = -1.3204
-shape = SubResource("RectangleShape2D_rigyh")
+shape = SubResource("RectangleShape2D_1d5r1")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpriteTrompa/AreaGolpe"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpriteTrompa/Trompa/AreaGolpe"]
 position = Vector2(77.25, 1.74999)
 rotation = -0.555452
-shape = SubResource("RectangleShape2D_rigyh")
+shape = SubResource("RectangleShape2D_gk5xx")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
