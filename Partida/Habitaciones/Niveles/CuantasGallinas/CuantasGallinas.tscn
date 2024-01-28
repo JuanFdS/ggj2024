@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.261799]
+"values": [0.0523599]
 }
 
 [sub_resource type="Animation" id="Animation_4s1wc"]
@@ -104,7 +104,7 @@ shape = SubResource("WorldBoundaryShape2D_niugd")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(503, -4)
-rotation = 0.261799
+rotation = 0.0523599
 script = SubResource("GDScript_xpa7v")
 
 [node name="Portalámparas" parent="Node2D" instance=ExtResource("3_fgbml")]
