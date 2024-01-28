@@ -13,6 +13,7 @@ func _ready():
 		return
 	
 	%Boton.pressed.connect(func():
+		Sounds.play_select_cosa()
 		EstadoDePartida.tipo_de_cosa_seleccionada = tipo_de_cosa
 	)
 
