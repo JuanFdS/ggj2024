@@ -61,28 +61,34 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nse13")
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_top = 756.0
 offset_right = 961.0
-offset_bottom = 1506.0
-text = "Desde hace milenios la humanidad ha buscado la respuesta a una pregunta...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-...¿cuantas gallinas se necesitan para cambiar un foquito?"
+offset_bottom = 1280.0
 label_settings = SubResource("LabelSettings_d8y2b")
 horizontal_alignment = 1
 
+[node name="Label" type="Label" parent="CanvasLayer/Label"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Desde hace milenios la humanidad ha buscado la respuesta a una pregunta..."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "...¿cuantas gallinas se necesitan para cambiar un foquito?"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Label"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 57.2
 offset_right = 962.0
