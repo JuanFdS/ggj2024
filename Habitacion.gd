@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	var posicion_actual_cursor = get_viewport().get_mouse_position()
+	var posicion_actual_cursor = posicion_cursor()
 
 	velocidad_cursor = (posicion_actual_cursor - ultima_posicion_cursor) / delta
 	ultima_posicion_cursor = posicion_actual_cursor
@@ -18,9 +18,12 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.is_echo():
 		var nueva_cosa = EstadoDePartida.spawnear_cosa()
 		
-		agregar_en(ultima_posicion_cursor, nueva_cosa)
+		agregar_en(posicion_cursor(), nueva_cosa)
 		
 		Sounds.play_spawn()
+
+func posicion_cursor():
+	return get_viewport().get_mouse_position()
 
 func agregar_en(posicion_global, cosa):
 	var velocidad_cosa = velocidad_cursor.clamp(-velocidad_maxima_cosa, velocidad_maxima_cosa)
