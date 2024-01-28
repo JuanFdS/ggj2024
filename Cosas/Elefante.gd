@@ -62,13 +62,13 @@ func play_animations():
 func stop_animations():
 	$AnimatedSprite2D.pause()
 	$AnimationPlayer.pause()
-
-func _extend_inspector_begin(inspector: ExtendableInspector):
-	var play_animations_button =\
-		CommonControls.new(inspector).method_button("play_animations")
-	var stop_animations_button =\
-		CommonControls.new(inspector).method_button("stop_animations")
-
-	inspector.add_custom_control(play_animations_button)
-	inspector.add_custom_control(stop_animations_button)
+#
+#func _extend_inspector_begin(inspector: ExtendableInspector):
+	#var play_animations_button =\
+		#CommonControls.new(inspector).method_button("play_animations")
+	#var stop_animations_button =\
+		#CommonControls.new(inspector).method_button("stop_animations")
+#
+	#inspector.add_custom_control(play_animations_button)
+	#inspector.add_custom_control(stop_animations_button)
 
