@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 run/physics_engine="DEFAULT"
 
+[audio]
+
+driver/output_latency.web=100
+
 [autoload]
 
 EstadoDePartida="*res://EstadoDePartida.tscn"
