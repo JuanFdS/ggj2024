@@ -15,8 +15,6 @@ func mostrar():
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		disappear()
-	if event is InputEventKey:
-		disappear()
 	
 	get_viewport().set_input_as_handled()
 
