@@ -87,18 +87,6 @@ rotation = -3.11878
 shape = SubResource("SegmentShape2D_g2bh7")
 one_way_collision = true
 
-[node name="Estante" type="StaticBody2D" parent="."]
-position = Vector2(699, 143)
-rotation = 3.14114
-collision_layer = 2147483648
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Estante"]
-position = Vector2(28, 9)
-rotation = -3.11878
-shape = SubResource("SegmentShape2D_g2bh7")
-one_way_collision = true
-
 [node name="Pared" type="StaticBody2D" parent="."]
 position = Vector2(-150, -3)
 collision_layer = 2147483648
