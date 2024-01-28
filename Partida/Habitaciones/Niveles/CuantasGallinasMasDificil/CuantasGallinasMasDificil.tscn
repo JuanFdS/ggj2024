@@ -1,9 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bddrigd52rbbe"]
+[gd_scene load_steps=13 format=3 uid="uid://bddrigd52rbbe"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_7yjuk"]
-[ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="3_af1kb"]
+[ext_resource type="Texture2D" uid="uid://b2jrja4dk8mgl" path="res://Assets/habitación/Cuarto con cuadritos corridos.jpg" id="2_x2v7x"]
+[ext_resource type="Texture2D" uid="uid://bqp5blb354016" path="res://Assets/habitación/Mesa.png" id="3_c2tai"]
 [ext_resource type="PackedScene" uid="uid://ddiobupwuxrqh" path="res://Cosas/Lamparita/Portalámparas.tscn" id="4_4e6o8"]
 [ext_resource type="PackedScene" uid="uid://2petxoiduwhd" path="res://Cosas/Lamparita/LamparitaNueva.tscn" id="5_bgpm7"]
+[ext_resource type="Texture2D" uid="uid://j4ltqjc1e7mx" path="res://Assets/habitación/Madero.png" id="6_pj10d"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rreit"]
+a = Vector2(-3.81615, 8.07465)
+b = Vector2(199.084, 1.54919)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kf7ph"]
 normal = Vector2(1, 0)
@@ -16,12 +22,8 @@ normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_g2bh7"]
-a = Vector2(-56, 8)
-b = Vector2(90, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedih"]
-size = Vector2(22, 246)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0bql"]
+size = Vector2(88, 298)
 
 [node name="Habitacion" type="Node2D"]
 script = ExtResource("1_7yjuk")
@@ -29,8 +31,28 @@ script = ExtResource("1_7yjuk")
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -1
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_af1kb")
+texture = ExtResource("2_x2v7x")
 centered = false
+
+[node name="Mesita2" type="StaticBody2D" parent="."]
+position = Vector2(784, 618)
+rotation = 3.14114
+scale = Vector2(0.823002, 0.823002)
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mesita2"]
+position = Vector2(0.00408936, -9)
+scale = Vector2(0.694244, 0.694244)
+texture = ExtResource("3_c2tai")
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita2"]
+position = Vector2(87.9791, 22.04)
+rotation = -3.11878
+shape = SubResource("SegmentShape2D_rreit")
+one_way_collision = true
 
 [node name="ParedesYPiso" type="StaticBody2D" parent="."]
 collision_layer = 2147483648
@@ -68,28 +90,16 @@ position = Vector2(743, 587)
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="Mesita" type="StaticBody2D" parent="."]
-position = Vector2(789, 607)
-rotation = 3.14114
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2(-4, 31)
 collision_layer = 2147483648
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesita"]
-position = Vector2(28, 9)
-rotation = -3.11878
-shape = SubResource("SegmentShape2D_g2bh7")
-one_way_collision = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(298, 75)
+shape = SubResource("RectangleShape2D_t0bql")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2147483648
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(265, 101)
-shape = SubResource("RectangleShape2D_gedih")
-
-[node name="Line2D" type="Line2D" parent="StaticBody2D"]
-position = Vector2(5, 3)
-points = PackedVector2Array(261, -22, 261, 136.586, 261, 229)
-width = 30.0
-default_color = Color(0.415686, 0.239216, 0.180392, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Pared"]
+position = Vector2(275, 107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_pj10d")
