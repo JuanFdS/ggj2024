@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://2b8dm42xl212"
+path="res://.godot/imported/VentiladorClickMask.png-d3e963a8ff9a77fe0d222bfeb7f2564b.res"
+
+[deps]
+
+source_file="res://Assets/ventilador/VentiladorClickMask.png"
+dest_files=["res://.godot/imported/VentiladorClickMask.png-d3e963a8ff9a77fe0d222bfeb7f2564b.res"]
+
+[params]
+
+create_from=1
+threshold=0.0
