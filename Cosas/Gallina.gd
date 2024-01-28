@@ -1,12 +1,13 @@
 extends RigidBody2D
 
+@onready var shiny_particles: CPUParticles2D = $ShinyParticles
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play()
 	Sounds.play_gallina()
+	if(randf() < 0.05):
+		$AnimatedSprite2D.modulate = Color("de9b57")
+		shiny_particles.restart()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass

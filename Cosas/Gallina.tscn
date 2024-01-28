@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr7eculfvr0fs"]
+[gd_scene load_steps=8 format=3 uid="uid://cr7eculfvr0fs"]
 
 [ext_resource type="Script" path="res://Cosas/Gallina.gd" id="1_c0wb3"]
 [ext_resource type="SpriteFrames" uid="uid://bxfnqcvondsl6" path="res://Assets/gallina/Gallina.tres" id="2_wuodg"]
+[ext_resource type="Texture2D" uid="uid://px3vaov4srsx" path="res://Cosas/sparkle.png" id="3_fiol7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag5ly"]
 bounce = 1.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8v2r4"]
 radius = 32.0156
+
+[sub_resource type="Curve" id="Curve_snciu"]
+_data = [Vector2(0, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.991701, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_2u51r"]
+offsets = PackedFloat32Array(0.56338, 1)
+colors = PackedColorArray(1, 1, 0.407843, 1, 1, 1, 1, 0)
 
 [node name="Gallina" type="RigidBody2D"]
 position = Vector2(219, 571)
@@ -40,3 +49,19 @@ scale = Vector2(0.38125, 0.384191)
 sprite_frames = ExtResource("2_wuodg")
 frame = 1
 frame_progress = 0.538328
+
+[node name="ShinyParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+one_shot = true
+explosiveness = 0.7
+local_coords = true
+texture = ExtResource("3_fiol7")
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_snciu")
+color_ramp = SubResource("Gradient_2u51r")
