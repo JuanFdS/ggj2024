@@ -10,6 +10,8 @@ var mensaje_ganador: String
 
 var contando_el_tiempo := false
 
+signal inicio_nivel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	inicializar()
@@ -29,6 +31,7 @@ func inicializar():
 	cantidad_de_cosas = {}
 	ganado = false
 	contando_el_tiempo = true
+	inicio_nivel.emit()
 	
 func reiniciar():
 	Sounds.stop_all_sounds()
