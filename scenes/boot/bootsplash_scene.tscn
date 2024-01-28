@@ -15,6 +15,7 @@ script = ExtResource("2")
 fade_duration = 2.0
 node = ExtResource("2_ygt08")
 next_scene = ExtResource("3_pv4ns")
+interuptable = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
