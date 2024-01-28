@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4blrdjthcxnn"]
 
-[ext_resource type="Texture2D" uid="uid://8tuyrxdepv1c" path="res://Assets/gallina/Pollo2.png" id="1_6p87n"]
+[ext_resource type="Texture2D" uid="uid://b2pvp7hwsigtv" path="res://Assets/lamparita/Foquito.png" id="1_h1dnd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lfok"]
 bg_color = Color(1, 0.8, 0.8, 1)
@@ -31,6 +31,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4lfok")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-texture = ExtResource("1_6p87n")
+texture = ExtResource("1_h1dnd")
 expand_mode = 2
 stretch_mode = 4

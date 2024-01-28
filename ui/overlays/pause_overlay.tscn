@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
 
 [node name="PauseOverlay" type="CenterContainer"]
+process_mode = 3
 visible = false
 z_index = 10
 anchors_preset = 15
