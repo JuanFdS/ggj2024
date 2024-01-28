@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5ttswqrynkhn"]
+[gd_scene load_steps=14 format=3 uid="uid://c5ttswqrynkhn"]
 
 [ext_resource type="Script" path="res://Habitacion.gd" id="1_chpqs"]
 [ext_resource type="Texture2D" uid="uid://c3x42lqjy22pk" path="res://Assets/Fondito.jpg" id="2_c41qd"]
@@ -15,6 +15,58 @@ normal = Vector2(-1, 0)
 normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_niugd"]
+
+[sub_resource type="GDScript" id="GDScript_xpa7v"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"portalámparas\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_4s1wc"]
+resource_name = "portalámparas"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [0.0523599, -0.0523599]
+}
+
+[sub_resource type="Animation" id="Animation_nmn8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_estyp"]
+_data = {
+"RESET": SubResource("Animation_nmn8e"),
+"portalámparas": SubResource("Animation_4s1wc")
+}
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_g2bh7"]
 a = Vector2(-56, 8)
@@ -50,16 +102,26 @@ shape = SubResource("WorldBoundaryShape2D_dioxf")
 position = Vector2(592, 702)
 shape = SubResource("WorldBoundaryShape2D_niugd")
 
-[node name="Portalámparas" parent="." instance=ExtResource("3_fgbml")]
-position = Vector2(475, 34)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(503, -4)
+rotation = 0.261799
+script = SubResource("GDScript_xpa7v")
 
-[node name="Line2D" type="Line2D" parent="Portalámparas"]
+[node name="Portalámparas" parent="Node2D" instance=ExtResource("3_fgbml")]
+position = Vector2(-1, 325)
+
+[node name="Line2D" type="Line2D" parent="Node2D/Portalámparas"]
 points = PackedVector2Array(-1, -75, 0, -331)
 width = 3.0
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_estyp")
+}
+
 [node name="LamparitaNueva" parent="." instance=ExtResource("4_ygj8x")]
-position = Vector2(743, 587)
+position = Vector2(743, 588)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
