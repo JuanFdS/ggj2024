@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl8lsg76m0ay3"]
+
+[ext_resource type="Script" path="res://scenes/CreditosContainer.gd" id="1_1q7ly"]
+[ext_resource type="Texture2D" uid="uid://c0byuiadrlnov" path="res://Assets/creditos/Creditos3.png" id="2_gia1m"]
+[ext_resource type="Texture2D" uid="uid://dhre84fxi2kcy" path="res://Assets/creditos/Creditos2.png" id="3_o0bug"]
+[ext_resource type="Texture2D" uid="uid://bfbx8o657fox1" path="res://Assets/creditos/Creditos4.png" id="4_hk373"]
+[ext_resource type="Texture2D" uid="uid://8wcni3xuyg2a" path="res://Assets/creditos/Creditos1.png" id="5_6lwrl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieef5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_clw65"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2k43"]
+font_size = 30
+
+[node name="CreditosContainer" type="PanelContainer"]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ieef5")
+script = ExtResource("1_1q7ly")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 65.0
+offset_right = 409.0
+offset_bottom = 134.0
+text = "Arte"
+label_settings = SubResource("LabelSettings_clw65")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 136.0
+offset_right = 742.0
+offset_bottom = 205.0
+text = "Lucía Lopez Lemir"
+label_settings = SubResource("LabelSettings_t2k43")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 358.0
+offset_top = -134.0
+offset_right = 1074.0
+offset_bottom = 365.0
+texture = ExtResource("2_gia1m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pausa" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 235.0
+offset_right = 578.0
+offset_bottom = 304.0
+text = "Música y Sonido"
+label_settings = SubResource("LabelSettings_clw65")
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 305.0
+offset_right = 574.0
+offset_bottom = 374.0
+text = "Lucas González"
+label_settings = SubResource("LabelSettings_t2k43")
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = -16.0
+offset_top = 153.0
+offset_right = 406.0
+offset_bottom = 557.0
+texture = ExtResource("3_o0bug")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Pausa2" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 475.0
+offset_right = 703.0
+offset_bottom = 544.0
+text = "Programación"
+label_settings = SubResource("LabelSettings_clw65")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 548.0
+offset_right = 703.0
+offset_bottom = 590.0
+text = "Facundo Javier Gelatti"
+label_settings = SubResource("LabelSettings_t2k43")
+horizontal_alignment = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 673.0
+offset_top = 375.0
+offset_right = 960.0
+offset_bottom = 664.0
+texture = ExtResource("4_hk373")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 594.0
+offset_right = 703.0
+offset_bottom = 681.0
+text = "Juan Manuel
+Fernandes dos Santos"
+label_settings = SubResource("LabelSettings_t2k43")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = -28.0
+offset_top = 488.0
+offset_right = 249.0
+offset_bottom = 749.0
+texture = ExtResource("5_6lwrl")
+expand_mode = 1
+stretch_mode = 4
